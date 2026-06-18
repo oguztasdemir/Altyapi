@@ -1,0 +1,3846 @@
+{
+  "TACTICAL_DB": {
+    "4-3-3": {
+      "patterns": [
+        "4-3-3",
+        "433",
+        "dort uc uc"
+      ],
+      "reply": "4-3-3 dizilişi geniş hücum, kanat bindirmeleri ve orta saha üçlüsünün kontrolüne dayalı hücumcu bir sistemdir. Pros: Kanat etkinliği. Cons: Bek arkası boşluklar."
+    },
+    "4-4-2": {
+      "patterns": [
+        "4-4-2",
+        "442",
+        "dort dort iki"
+      ],
+      "reply": "4-4-2 dengeli yapısıyla sahayı en iyi parselleyen klasik sistemdir. Çift forvetin uyumu ve kanat ortaları gol yollarını açar. Pros: Dengeli bloklar. Cons: Merkezde eksik kalma."
+    },
+    "3-5-2": {
+      "patterns": [
+        "3-5-2",
+        "352",
+        "uc bes iki"
+      ],
+      "reply": "3-5-2 orta sahayı kalabalık tutup oyunu domine etmeyi amaçlar. Kanat beklerinin kondisyonu hayati önem taşır. Pros: Merkez üstünlüğü. Cons: Kanat arkası koridorlar."
+    },
+    "5-3-2": {
+      "patterns": [
+        "5-3-2",
+        "532",
+        "bes uc iki"
+      ],
+      "reply": "Savunma güvenliğini ön planda tutan, kontra ataklara dayalı bir sistemdir. Üçlü stoper hattı ceza sahasını kapatır. Pros: Katı savunma. Cons: Hücumda yalnız kalma."
+    },
+    "4-2-3-1": {
+      "patterns": [
+        "4-2-3-1",
+        "4231",
+        "dort iki uc bir"
+      ],
+      "reply": "Modern futbolda en yaygın sistemlerden biridir. İki ön libero savunmayı korurken, 10 numara hücumu yönlendirir. Pros: Hücum çeşitliliği. Cons: Kanatların savunma desteği eksikliği."
+    },
+    "4-1-4-1": {
+      "patterns": [
+        "4-1-4-1",
+        "4141",
+        "dort bir dort bir"
+      ],
+      "reply": "Defansif orta sahanın (çapa) savunma önünü süpürdüğü, orta saha beşlisinin topa sahip olduğu sistemdir. Pros: Top kontrolü. Cons: Forvetin yalnız kalması."
+    },
+    "3-4-3": {
+      "patterns": [
+        "3-4-3",
+        "343",
+        "uc dort uc"
+      ],
+      "reply": "Son derece ofansif, kanat beklerin ve üçlü hücum hattının presine dayalı akıcı bir sistemdir. Pros: Ön alan presi. Cons: Geçiş savunmasında zafiyet."
+    },
+    "5-4-1": {
+      "patterns": [
+        "5-4-1",
+        "541",
+        "bes dort bir"
+      ],
+      "reply": "Tamamen savunma odaklı (otobüsü çekme) ve hızlı kanat oyuncularıyla kontra arayan sistemdir. Pros: Aşırı katı savunma. Cons: Hücum üretkenliği azlığı."
+    },
+    "4-1-2-1-2": {
+      "patterns": [
+        "4-1-2-1-2",
+        "dar elmas",
+        "diamond"
+      ],
+      "reply": "Orta sahayı elmas şeklinde kuran, kanatsız, merkez paslaşmalarına ve beklerin bindirmelerine dayanan sistemdir. Pros: Merkez paslaşması. Cons: Kanat savunma zaafı."
+    },
+    "4-5-1": {
+      "patterns": [
+        "4-5-1",
+        "451",
+        "dort bes bir"
+      ],
+      "reply": "Orta sahayı tamamen kapatıp rakibi boğmayı amaçlayan katı ve mücadeleci bir sistemdir. Pros: Alan daraltma. Cons: Skor bulma zorluğu."
+    },
+    "taktik-1": {
+      "patterns": [
+        "taktik varyasyon 1",
+        "dizilis 1",
+        "sistem 1"
+      ],
+      "reply": "Altyapı Akademisi 1. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-2": {
+      "patterns": [
+        "taktik varyasyon 2",
+        "dizilis 2",
+        "sistem 2"
+      ],
+      "reply": "Altyapı Akademisi 2. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-3": {
+      "patterns": [
+        "taktik varyasyon 3",
+        "dizilis 3",
+        "sistem 3"
+      ],
+      "reply": "Altyapı Akademisi 3. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-4": {
+      "patterns": [
+        "taktik varyasyon 4",
+        "dizilis 4",
+        "sistem 4"
+      ],
+      "reply": "Altyapı Akademisi 4. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-5": {
+      "patterns": [
+        "taktik varyasyon 5",
+        "dizilis 5",
+        "sistem 5"
+      ],
+      "reply": "Altyapı Akademisi 5. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-6": {
+      "patterns": [
+        "taktik varyasyon 6",
+        "dizilis 6",
+        "sistem 6"
+      ],
+      "reply": "Altyapı Akademisi 6. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-7": {
+      "patterns": [
+        "taktik varyasyon 7",
+        "dizilis 7",
+        "sistem 7"
+      ],
+      "reply": "Altyapı Akademisi 7. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-8": {
+      "patterns": [
+        "taktik varyasyon 8",
+        "dizilis 8",
+        "sistem 8"
+      ],
+      "reply": "Altyapı Akademisi 8. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-9": {
+      "patterns": [
+        "taktik varyasyon 9",
+        "dizilis 9",
+        "sistem 9"
+      ],
+      "reply": "Altyapı Akademisi 9. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-10": {
+      "patterns": [
+        "taktik varyasyon 10",
+        "dizilis 10",
+        "sistem 10"
+      ],
+      "reply": "Altyapı Akademisi 10. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-11": {
+      "patterns": [
+        "taktik varyasyon 11",
+        "dizilis 11",
+        "sistem 11"
+      ],
+      "reply": "Altyapı Akademisi 11. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-12": {
+      "patterns": [
+        "taktik varyasyon 12",
+        "dizilis 12",
+        "sistem 12"
+      ],
+      "reply": "Altyapı Akademisi 12. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-13": {
+      "patterns": [
+        "taktik varyasyon 13",
+        "dizilis 13",
+        "sistem 13"
+      ],
+      "reply": "Altyapı Akademisi 13. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-14": {
+      "patterns": [
+        "taktik varyasyon 14",
+        "dizilis 14",
+        "sistem 14"
+      ],
+      "reply": "Altyapı Akademisi 14. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-15": {
+      "patterns": [
+        "taktik varyasyon 15",
+        "dizilis 15",
+        "sistem 15"
+      ],
+      "reply": "Altyapı Akademisi 15. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-16": {
+      "patterns": [
+        "taktik varyasyon 16",
+        "dizilis 16",
+        "sistem 16"
+      ],
+      "reply": "Altyapı Akademisi 16. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-17": {
+      "patterns": [
+        "taktik varyasyon 17",
+        "dizilis 17",
+        "sistem 17"
+      ],
+      "reply": "Altyapı Akademisi 17. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-18": {
+      "patterns": [
+        "taktik varyasyon 18",
+        "dizilis 18",
+        "sistem 18"
+      ],
+      "reply": "Altyapı Akademisi 18. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-19": {
+      "patterns": [
+        "taktik varyasyon 19",
+        "dizilis 19",
+        "sistem 19"
+      ],
+      "reply": "Altyapı Akademisi 19. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-20": {
+      "patterns": [
+        "taktik varyasyon 20",
+        "dizilis 20",
+        "sistem 20"
+      ],
+      "reply": "Altyapı Akademisi 20. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-21": {
+      "patterns": [
+        "taktik varyasyon 21",
+        "dizilis 21",
+        "sistem 21"
+      ],
+      "reply": "Altyapı Akademisi 21. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-22": {
+      "patterns": [
+        "taktik varyasyon 22",
+        "dizilis 22",
+        "sistem 22"
+      ],
+      "reply": "Altyapı Akademisi 22. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-23": {
+      "patterns": [
+        "taktik varyasyon 23",
+        "dizilis 23",
+        "sistem 23"
+      ],
+      "reply": "Altyapı Akademisi 23. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-24": {
+      "patterns": [
+        "taktik varyasyon 24",
+        "dizilis 24",
+        "sistem 24"
+      ],
+      "reply": "Altyapı Akademisi 24. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-25": {
+      "patterns": [
+        "taktik varyasyon 25",
+        "dizilis 25",
+        "sistem 25"
+      ],
+      "reply": "Altyapı Akademisi 25. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-26": {
+      "patterns": [
+        "taktik varyasyon 26",
+        "dizilis 26",
+        "sistem 26"
+      ],
+      "reply": "Altyapı Akademisi 26. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-27": {
+      "patterns": [
+        "taktik varyasyon 27",
+        "dizilis 27",
+        "sistem 27"
+      ],
+      "reply": "Altyapı Akademisi 27. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-28": {
+      "patterns": [
+        "taktik varyasyon 28",
+        "dizilis 28",
+        "sistem 28"
+      ],
+      "reply": "Altyapı Akademisi 28. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-29": {
+      "patterns": [
+        "taktik varyasyon 29",
+        "dizilis 29",
+        "sistem 29"
+      ],
+      "reply": "Altyapı Akademisi 29. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-30": {
+      "patterns": [
+        "taktik varyasyon 30",
+        "dizilis 30",
+        "sistem 30"
+      ],
+      "reply": "Altyapı Akademisi 30. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-31": {
+      "patterns": [
+        "taktik varyasyon 31",
+        "dizilis 31",
+        "sistem 31"
+      ],
+      "reply": "Altyapı Akademisi 31. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-32": {
+      "patterns": [
+        "taktik varyasyon 32",
+        "dizilis 32",
+        "sistem 32"
+      ],
+      "reply": "Altyapı Akademisi 32. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-33": {
+      "patterns": [
+        "taktik varyasyon 33",
+        "dizilis 33",
+        "sistem 33"
+      ],
+      "reply": "Altyapı Akademisi 33. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-34": {
+      "patterns": [
+        "taktik varyasyon 34",
+        "dizilis 34",
+        "sistem 34"
+      ],
+      "reply": "Altyapı Akademisi 34. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-35": {
+      "patterns": [
+        "taktik varyasyon 35",
+        "dizilis 35",
+        "sistem 35"
+      ],
+      "reply": "Altyapı Akademisi 35. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-36": {
+      "patterns": [
+        "taktik varyasyon 36",
+        "dizilis 36",
+        "sistem 36"
+      ],
+      "reply": "Altyapı Akademisi 36. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-37": {
+      "patterns": [
+        "taktik varyasyon 37",
+        "dizilis 37",
+        "sistem 37"
+      ],
+      "reply": "Altyapı Akademisi 37. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-38": {
+      "patterns": [
+        "taktik varyasyon 38",
+        "dizilis 38",
+        "sistem 38"
+      ],
+      "reply": "Altyapı Akademisi 38. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-39": {
+      "patterns": [
+        "taktik varyasyon 39",
+        "dizilis 39",
+        "sistem 39"
+      ],
+      "reply": "Altyapı Akademisi 39. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-40": {
+      "patterns": [
+        "taktik varyasyon 40",
+        "dizilis 40",
+        "sistem 40"
+      ],
+      "reply": "Altyapı Akademisi 40. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-41": {
+      "patterns": [
+        "taktik varyasyon 41",
+        "dizilis 41",
+        "sistem 41"
+      ],
+      "reply": "Altyapı Akademisi 41. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-42": {
+      "patterns": [
+        "taktik varyasyon 42",
+        "dizilis 42",
+        "sistem 42"
+      ],
+      "reply": "Altyapı Akademisi 42. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-43": {
+      "patterns": [
+        "taktik varyasyon 43",
+        "dizilis 43",
+        "sistem 43"
+      ],
+      "reply": "Altyapı Akademisi 43. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-44": {
+      "patterns": [
+        "taktik varyasyon 44",
+        "dizilis 44",
+        "sistem 44"
+      ],
+      "reply": "Altyapı Akademisi 44. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-45": {
+      "patterns": [
+        "taktik varyasyon 45",
+        "dizilis 45",
+        "sistem 45"
+      ],
+      "reply": "Altyapı Akademisi 45. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-46": {
+      "patterns": [
+        "taktik varyasyon 46",
+        "dizilis 46",
+        "sistem 46"
+      ],
+      "reply": "Altyapı Akademisi 46. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-47": {
+      "patterns": [
+        "taktik varyasyon 47",
+        "dizilis 47",
+        "sistem 47"
+      ],
+      "reply": "Altyapı Akademisi 47. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-48": {
+      "patterns": [
+        "taktik varyasyon 48",
+        "dizilis 48",
+        "sistem 48"
+      ],
+      "reply": "Altyapı Akademisi 48. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-49": {
+      "patterns": [
+        "taktik varyasyon 49",
+        "dizilis 49",
+        "sistem 49"
+      ],
+      "reply": "Altyapı Akademisi 49. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-50": {
+      "patterns": [
+        "taktik varyasyon 50",
+        "dizilis 50",
+        "sistem 50"
+      ],
+      "reply": "Altyapı Akademisi 50. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-51": {
+      "patterns": [
+        "taktik varyasyon 51",
+        "dizilis 51",
+        "sistem 51"
+      ],
+      "reply": "Altyapı Akademisi 51. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-52": {
+      "patterns": [
+        "taktik varyasyon 52",
+        "dizilis 52",
+        "sistem 52"
+      ],
+      "reply": "Altyapı Akademisi 52. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-53": {
+      "patterns": [
+        "taktik varyasyon 53",
+        "dizilis 53",
+        "sistem 53"
+      ],
+      "reply": "Altyapı Akademisi 53. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-54": {
+      "patterns": [
+        "taktik varyasyon 54",
+        "dizilis 54",
+        "sistem 54"
+      ],
+      "reply": "Altyapı Akademisi 54. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-55": {
+      "patterns": [
+        "taktik varyasyon 55",
+        "dizilis 55",
+        "sistem 55"
+      ],
+      "reply": "Altyapı Akademisi 55. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-56": {
+      "patterns": [
+        "taktik varyasyon 56",
+        "dizilis 56",
+        "sistem 56"
+      ],
+      "reply": "Altyapı Akademisi 56. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-57": {
+      "patterns": [
+        "taktik varyasyon 57",
+        "dizilis 57",
+        "sistem 57"
+      ],
+      "reply": "Altyapı Akademisi 57. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-58": {
+      "patterns": [
+        "taktik varyasyon 58",
+        "dizilis 58",
+        "sistem 58"
+      ],
+      "reply": "Altyapı Akademisi 58. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-59": {
+      "patterns": [
+        "taktik varyasyon 59",
+        "dizilis 59",
+        "sistem 59"
+      ],
+      "reply": "Altyapı Akademisi 59. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-60": {
+      "patterns": [
+        "taktik varyasyon 60",
+        "dizilis 60",
+        "sistem 60"
+      ],
+      "reply": "Altyapı Akademisi 60. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-61": {
+      "patterns": [
+        "taktik varyasyon 61",
+        "dizilis 61",
+        "sistem 61"
+      ],
+      "reply": "Altyapı Akademisi 61. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-62": {
+      "patterns": [
+        "taktik varyasyon 62",
+        "dizilis 62",
+        "sistem 62"
+      ],
+      "reply": "Altyapı Akademisi 62. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-63": {
+      "patterns": [
+        "taktik varyasyon 63",
+        "dizilis 63",
+        "sistem 63"
+      ],
+      "reply": "Altyapı Akademisi 63. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-64": {
+      "patterns": [
+        "taktik varyasyon 64",
+        "dizilis 64",
+        "sistem 64"
+      ],
+      "reply": "Altyapı Akademisi 64. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-65": {
+      "patterns": [
+        "taktik varyasyon 65",
+        "dizilis 65",
+        "sistem 65"
+      ],
+      "reply": "Altyapı Akademisi 65. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-66": {
+      "patterns": [
+        "taktik varyasyon 66",
+        "dizilis 66",
+        "sistem 66"
+      ],
+      "reply": "Altyapı Akademisi 66. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-67": {
+      "patterns": [
+        "taktik varyasyon 67",
+        "dizilis 67",
+        "sistem 67"
+      ],
+      "reply": "Altyapı Akademisi 67. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-68": {
+      "patterns": [
+        "taktik varyasyon 68",
+        "dizilis 68",
+        "sistem 68"
+      ],
+      "reply": "Altyapı Akademisi 68. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-69": {
+      "patterns": [
+        "taktik varyasyon 69",
+        "dizilis 69",
+        "sistem 69"
+      ],
+      "reply": "Altyapı Akademisi 69. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-70": {
+      "patterns": [
+        "taktik varyasyon 70",
+        "dizilis 70",
+        "sistem 70"
+      ],
+      "reply": "Altyapı Akademisi 70. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-71": {
+      "patterns": [
+        "taktik varyasyon 71",
+        "dizilis 71",
+        "sistem 71"
+      ],
+      "reply": "Altyapı Akademisi 71. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-72": {
+      "patterns": [
+        "taktik varyasyon 72",
+        "dizilis 72",
+        "sistem 72"
+      ],
+      "reply": "Altyapı Akademisi 72. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-73": {
+      "patterns": [
+        "taktik varyasyon 73",
+        "dizilis 73",
+        "sistem 73"
+      ],
+      "reply": "Altyapı Akademisi 73. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-74": {
+      "patterns": [
+        "taktik varyasyon 74",
+        "dizilis 74",
+        "sistem 74"
+      ],
+      "reply": "Altyapı Akademisi 74. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-75": {
+      "patterns": [
+        "taktik varyasyon 75",
+        "dizilis 75",
+        "sistem 75"
+      ],
+      "reply": "Altyapı Akademisi 75. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-76": {
+      "patterns": [
+        "taktik varyasyon 76",
+        "dizilis 76",
+        "sistem 76"
+      ],
+      "reply": "Altyapı Akademisi 76. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-77": {
+      "patterns": [
+        "taktik varyasyon 77",
+        "dizilis 77",
+        "sistem 77"
+      ],
+      "reply": "Altyapı Akademisi 77. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-78": {
+      "patterns": [
+        "taktik varyasyon 78",
+        "dizilis 78",
+        "sistem 78"
+      ],
+      "reply": "Altyapı Akademisi 78. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-79": {
+      "patterns": [
+        "taktik varyasyon 79",
+        "dizilis 79",
+        "sistem 79"
+      ],
+      "reply": "Altyapı Akademisi 79. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-80": {
+      "patterns": [
+        "taktik varyasyon 80",
+        "dizilis 80",
+        "sistem 80"
+      ],
+      "reply": "Altyapı Akademisi 80. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-81": {
+      "patterns": [
+        "taktik varyasyon 81",
+        "dizilis 81",
+        "sistem 81"
+      ],
+      "reply": "Altyapı Akademisi 81. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-82": {
+      "patterns": [
+        "taktik varyasyon 82",
+        "dizilis 82",
+        "sistem 82"
+      ],
+      "reply": "Altyapı Akademisi 82. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-83": {
+      "patterns": [
+        "taktik varyasyon 83",
+        "dizilis 83",
+        "sistem 83"
+      ],
+      "reply": "Altyapı Akademisi 83. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-84": {
+      "patterns": [
+        "taktik varyasyon 84",
+        "dizilis 84",
+        "sistem 84"
+      ],
+      "reply": "Altyapı Akademisi 84. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-85": {
+      "patterns": [
+        "taktik varyasyon 85",
+        "dizilis 85",
+        "sistem 85"
+      ],
+      "reply": "Altyapı Akademisi 85. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-86": {
+      "patterns": [
+        "taktik varyasyon 86",
+        "dizilis 86",
+        "sistem 86"
+      ],
+      "reply": "Altyapı Akademisi 86. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-87": {
+      "patterns": [
+        "taktik varyasyon 87",
+        "dizilis 87",
+        "sistem 87"
+      ],
+      "reply": "Altyapı Akademisi 87. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-88": {
+      "patterns": [
+        "taktik varyasyon 88",
+        "dizilis 88",
+        "sistem 88"
+      ],
+      "reply": "Altyapı Akademisi 88. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-89": {
+      "patterns": [
+        "taktik varyasyon 89",
+        "dizilis 89",
+        "sistem 89"
+      ],
+      "reply": "Altyapı Akademisi 89. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-90": {
+      "patterns": [
+        "taktik varyasyon 90",
+        "dizilis 90",
+        "sistem 90"
+      ],
+      "reply": "Altyapı Akademisi 90. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-91": {
+      "patterns": [
+        "taktik varyasyon 91",
+        "dizilis 91",
+        "sistem 91"
+      ],
+      "reply": "Altyapı Akademisi 91. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-92": {
+      "patterns": [
+        "taktik varyasyon 92",
+        "dizilis 92",
+        "sistem 92"
+      ],
+      "reply": "Altyapı Akademisi 92. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-93": {
+      "patterns": [
+        "taktik varyasyon 93",
+        "dizilis 93",
+        "sistem 93"
+      ],
+      "reply": "Altyapı Akademisi 93. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-94": {
+      "patterns": [
+        "taktik varyasyon 94",
+        "dizilis 94",
+        "sistem 94"
+      ],
+      "reply": "Altyapı Akademisi 94. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-95": {
+      "patterns": [
+        "taktik varyasyon 95",
+        "dizilis 95",
+        "sistem 95"
+      ],
+      "reply": "Altyapı Akademisi 95. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-96": {
+      "patterns": [
+        "taktik varyasyon 96",
+        "dizilis 96",
+        "sistem 96"
+      ],
+      "reply": "Altyapı Akademisi 96. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-97": {
+      "patterns": [
+        "taktik varyasyon 97",
+        "dizilis 97",
+        "sistem 97"
+      ],
+      "reply": "Altyapı Akademisi 97. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-98": {
+      "patterns": [
+        "taktik varyasyon 98",
+        "dizilis 98",
+        "sistem 98"
+      ],
+      "reply": "Altyapı Akademisi 98. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-99": {
+      "patterns": [
+        "taktik varyasyon 99",
+        "dizilis 99",
+        "sistem 99"
+      ],
+      "reply": "Altyapı Akademisi 99. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-100": {
+      "patterns": [
+        "taktik varyasyon 100",
+        "dizilis 100",
+        "sistem 100"
+      ],
+      "reply": "Altyapı Akademisi 100. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-101": {
+      "patterns": [
+        "taktik varyasyon 101",
+        "dizilis 101",
+        "sistem 101"
+      ],
+      "reply": "Altyapı Akademisi 101. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-102": {
+      "patterns": [
+        "taktik varyasyon 102",
+        "dizilis 102",
+        "sistem 102"
+      ],
+      "reply": "Altyapı Akademisi 102. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-103": {
+      "patterns": [
+        "taktik varyasyon 103",
+        "dizilis 103",
+        "sistem 103"
+      ],
+      "reply": "Altyapı Akademisi 103. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-104": {
+      "patterns": [
+        "taktik varyasyon 104",
+        "dizilis 104",
+        "sistem 104"
+      ],
+      "reply": "Altyapı Akademisi 104. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-105": {
+      "patterns": [
+        "taktik varyasyon 105",
+        "dizilis 105",
+        "sistem 105"
+      ],
+      "reply": "Altyapı Akademisi 105. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-106": {
+      "patterns": [
+        "taktik varyasyon 106",
+        "dizilis 106",
+        "sistem 106"
+      ],
+      "reply": "Altyapı Akademisi 106. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-107": {
+      "patterns": [
+        "taktik varyasyon 107",
+        "dizilis 107",
+        "sistem 107"
+      ],
+      "reply": "Altyapı Akademisi 107. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-108": {
+      "patterns": [
+        "taktik varyasyon 108",
+        "dizilis 108",
+        "sistem 108"
+      ],
+      "reply": "Altyapı Akademisi 108. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-109": {
+      "patterns": [
+        "taktik varyasyon 109",
+        "dizilis 109",
+        "sistem 109"
+      ],
+      "reply": "Altyapı Akademisi 109. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-110": {
+      "patterns": [
+        "taktik varyasyon 110",
+        "dizilis 110",
+        "sistem 110"
+      ],
+      "reply": "Altyapı Akademisi 110. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-111": {
+      "patterns": [
+        "taktik varyasyon 111",
+        "dizilis 111",
+        "sistem 111"
+      ],
+      "reply": "Altyapı Akademisi 111. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-112": {
+      "patterns": [
+        "taktik varyasyon 112",
+        "dizilis 112",
+        "sistem 112"
+      ],
+      "reply": "Altyapı Akademisi 112. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-113": {
+      "patterns": [
+        "taktik varyasyon 113",
+        "dizilis 113",
+        "sistem 113"
+      ],
+      "reply": "Altyapı Akademisi 113. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-114": {
+      "patterns": [
+        "taktik varyasyon 114",
+        "dizilis 114",
+        "sistem 114"
+      ],
+      "reply": "Altyapı Akademisi 114. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-115": {
+      "patterns": [
+        "taktik varyasyon 115",
+        "dizilis 115",
+        "sistem 115"
+      ],
+      "reply": "Altyapı Akademisi 115. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-116": {
+      "patterns": [
+        "taktik varyasyon 116",
+        "dizilis 116",
+        "sistem 116"
+      ],
+      "reply": "Altyapı Akademisi 116. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-117": {
+      "patterns": [
+        "taktik varyasyon 117",
+        "dizilis 117",
+        "sistem 117"
+      ],
+      "reply": "Altyapı Akademisi 117. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-118": {
+      "patterns": [
+        "taktik varyasyon 118",
+        "dizilis 118",
+        "sistem 118"
+      ],
+      "reply": "Altyapı Akademisi 118. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-119": {
+      "patterns": [
+        "taktik varyasyon 119",
+        "dizilis 119",
+        "sistem 119"
+      ],
+      "reply": "Altyapı Akademisi 119. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-120": {
+      "patterns": [
+        "taktik varyasyon 120",
+        "dizilis 120",
+        "sistem 120"
+      ],
+      "reply": "Altyapı Akademisi 120. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-121": {
+      "patterns": [
+        "taktik varyasyon 121",
+        "dizilis 121",
+        "sistem 121"
+      ],
+      "reply": "Altyapı Akademisi 121. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-122": {
+      "patterns": [
+        "taktik varyasyon 122",
+        "dizilis 122",
+        "sistem 122"
+      ],
+      "reply": "Altyapı Akademisi 122. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-123": {
+      "patterns": [
+        "taktik varyasyon 123",
+        "dizilis 123",
+        "sistem 123"
+      ],
+      "reply": "Altyapı Akademisi 123. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-124": {
+      "patterns": [
+        "taktik varyasyon 124",
+        "dizilis 124",
+        "sistem 124"
+      ],
+      "reply": "Altyapı Akademisi 124. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-125": {
+      "patterns": [
+        "taktik varyasyon 125",
+        "dizilis 125",
+        "sistem 125"
+      ],
+      "reply": "Altyapı Akademisi 125. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-126": {
+      "patterns": [
+        "taktik varyasyon 126",
+        "dizilis 126",
+        "sistem 126"
+      ],
+      "reply": "Altyapı Akademisi 126. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-127": {
+      "patterns": [
+        "taktik varyasyon 127",
+        "dizilis 127",
+        "sistem 127"
+      ],
+      "reply": "Altyapı Akademisi 127. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-128": {
+      "patterns": [
+        "taktik varyasyon 128",
+        "dizilis 128",
+        "sistem 128"
+      ],
+      "reply": "Altyapı Akademisi 128. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-129": {
+      "patterns": [
+        "taktik varyasyon 129",
+        "dizilis 129",
+        "sistem 129"
+      ],
+      "reply": "Altyapı Akademisi 129. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-130": {
+      "patterns": [
+        "taktik varyasyon 130",
+        "dizilis 130",
+        "sistem 130"
+      ],
+      "reply": "Altyapı Akademisi 130. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-131": {
+      "patterns": [
+        "taktik varyasyon 131",
+        "dizilis 131",
+        "sistem 131"
+      ],
+      "reply": "Altyapı Akademisi 131. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-132": {
+      "patterns": [
+        "taktik varyasyon 132",
+        "dizilis 132",
+        "sistem 132"
+      ],
+      "reply": "Altyapı Akademisi 132. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-133": {
+      "patterns": [
+        "taktik varyasyon 133",
+        "dizilis 133",
+        "sistem 133"
+      ],
+      "reply": "Altyapı Akademisi 133. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-134": {
+      "patterns": [
+        "taktik varyasyon 134",
+        "dizilis 134",
+        "sistem 134"
+      ],
+      "reply": "Altyapı Akademisi 134. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-135": {
+      "patterns": [
+        "taktik varyasyon 135",
+        "dizilis 135",
+        "sistem 135"
+      ],
+      "reply": "Altyapı Akademisi 135. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-136": {
+      "patterns": [
+        "taktik varyasyon 136",
+        "dizilis 136",
+        "sistem 136"
+      ],
+      "reply": "Altyapı Akademisi 136. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-137": {
+      "patterns": [
+        "taktik varyasyon 137",
+        "dizilis 137",
+        "sistem 137"
+      ],
+      "reply": "Altyapı Akademisi 137. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-138": {
+      "patterns": [
+        "taktik varyasyon 138",
+        "dizilis 138",
+        "sistem 138"
+      ],
+      "reply": "Altyapı Akademisi 138. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-139": {
+      "patterns": [
+        "taktik varyasyon 139",
+        "dizilis 139",
+        "sistem 139"
+      ],
+      "reply": "Altyapı Akademisi 139. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-140": {
+      "patterns": [
+        "taktik varyasyon 140",
+        "dizilis 140",
+        "sistem 140"
+      ],
+      "reply": "Altyapı Akademisi 140. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-141": {
+      "patterns": [
+        "taktik varyasyon 141",
+        "dizilis 141",
+        "sistem 141"
+      ],
+      "reply": "Altyapı Akademisi 141. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-142": {
+      "patterns": [
+        "taktik varyasyon 142",
+        "dizilis 142",
+        "sistem 142"
+      ],
+      "reply": "Altyapı Akademisi 142. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-143": {
+      "patterns": [
+        "taktik varyasyon 143",
+        "dizilis 143",
+        "sistem 143"
+      ],
+      "reply": "Altyapı Akademisi 143. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-144": {
+      "patterns": [
+        "taktik varyasyon 144",
+        "dizilis 144",
+        "sistem 144"
+      ],
+      "reply": "Altyapı Akademisi 144. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-145": {
+      "patterns": [
+        "taktik varyasyon 145",
+        "dizilis 145",
+        "sistem 145"
+      ],
+      "reply": "Altyapı Akademisi 145. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-146": {
+      "patterns": [
+        "taktik varyasyon 146",
+        "dizilis 146",
+        "sistem 146"
+      ],
+      "reply": "Altyapı Akademisi 146. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-147": {
+      "patterns": [
+        "taktik varyasyon 147",
+        "dizilis 147",
+        "sistem 147"
+      ],
+      "reply": "Altyapı Akademisi 147. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-148": {
+      "patterns": [
+        "taktik varyasyon 148",
+        "dizilis 148",
+        "sistem 148"
+      ],
+      "reply": "Altyapı Akademisi 148. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    },
+    "taktik-149": {
+      "patterns": [
+        "taktik varyasyon 149",
+        "dizilis 149",
+        "sistem 149"
+      ],
+      "reply": "Altyapı Akademisi 149. Taktik Varyasyonu: Bu formasyon, geçiş oyununda merkez kalabalığını korurken, kanat beklerin bindirmeleriyle rakip savunmayı enlemesine açmayı hedefler."
+    }
+  },
+  "TRAINING_DB": {
+    "pas": {
+      "patterns": [
+        "pas",
+        "passing",
+        "kisa pas"
+      ],
+      "reply": "Pas yeteneğini geliştirmek için rondo (5e2), üçgen kurma ve yön değiştirme çalışmaları yapmalısınız."
+    },
+    "sut": {
+      "patterns": [
+        "sut",
+        "shooting",
+        "bitiricilik"
+      ],
+      "reply": "Bitiricilik antrenmanları cepheden şut, duran top varyasyonları ve kaleciyle karşı karşıya çalışmalarla desteklenmelidir."
+    },
+    "kondisyon": {
+      "patterns": [
+        "kondisyon",
+        "dayaniklilik",
+        "stamina"
+      ],
+      "reply": "Dayanıklılık için interval koşular, istasyon idmanları ve yüksek tempolu dar alan maçları yaptırın."
+    },
+    "hiz": {
+      "patterns": [
+        "hiz",
+        "hizlanma",
+        "pace",
+        "acceleration"
+      ],
+      "reply": "Hız ve patlayıcılık için kısa mesafe deparları, direnç bandı çalışmaları ve reaksiyon egzersizleri etkilidir."
+    },
+    "ceviklik": {
+      "patterns": [
+        "ceviklik",
+        "agility",
+        "koordinasyon"
+      ],
+      "reply": "Çeviklik antrenmanlarında merdiven çalışmaları, ani yön değiştirme engelleri ve koordinasyon parkurları kullanılmalıdır."
+    },
+    "karar-alma": {
+      "patterns": [
+        "karar alma",
+        "decision",
+        "oyun zekasi"
+      ],
+      "reply": "Karar alma yeteneği dar alan oyunları, baskı altında pas ve sürekli maç simülasyonları ile gelişir."
+    },
+    "vizyon": {
+      "patterns": [
+        "vizyon",
+        "vision",
+        "oyun gorus"
+      ],
+      "reply": "Oyun görüşünü geliştirmek için taktik tahtası analizleri ve topsuz alan koşu idmanları planlanmalıdır."
+    },
+    "markaj": {
+      "patterns": [
+        "markaj",
+        "marking",
+        "savunma yerlesimi"
+      ],
+      "reply": "Bire bir savunma, gölge markajı ve ceza sahası içi yerleşme çalışmaları savunma disiplinini artırır."
+    },
+    "ozellik-1": {
+      "patterns": [
+        "oyuncu ozelligi 1",
+        "ozellik 1 nasil gelisir",
+        "ozellik 1"
+      ],
+      "reply": "Altyapı oyuncularının 1. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-2": {
+      "patterns": [
+        "oyuncu ozelligi 2",
+        "ozellik 2 nasil gelisir",
+        "ozellik 2"
+      ],
+      "reply": "Altyapı oyuncularının 2. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-3": {
+      "patterns": [
+        "oyuncu ozelligi 3",
+        "ozellik 3 nasil gelisir",
+        "ozellik 3"
+      ],
+      "reply": "Altyapı oyuncularının 3. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-4": {
+      "patterns": [
+        "oyuncu ozelligi 4",
+        "ozellik 4 nasil gelisir",
+        "ozellik 4"
+      ],
+      "reply": "Altyapı oyuncularının 4. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-5": {
+      "patterns": [
+        "oyuncu ozelligi 5",
+        "ozellik 5 nasil gelisir",
+        "ozellik 5"
+      ],
+      "reply": "Altyapı oyuncularının 5. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-6": {
+      "patterns": [
+        "oyuncu ozelligi 6",
+        "ozellik 6 nasil gelisir",
+        "ozellik 6"
+      ],
+      "reply": "Altyapı oyuncularının 6. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-7": {
+      "patterns": [
+        "oyuncu ozelligi 7",
+        "ozellik 7 nasil gelisir",
+        "ozellik 7"
+      ],
+      "reply": "Altyapı oyuncularının 7. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-8": {
+      "patterns": [
+        "oyuncu ozelligi 8",
+        "ozellik 8 nasil gelisir",
+        "ozellik 8"
+      ],
+      "reply": "Altyapı oyuncularının 8. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-9": {
+      "patterns": [
+        "oyuncu ozelligi 9",
+        "ozellik 9 nasil gelisir",
+        "ozellik 9"
+      ],
+      "reply": "Altyapı oyuncularının 9. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-10": {
+      "patterns": [
+        "oyuncu ozelligi 10",
+        "ozellik 10 nasil gelisir",
+        "ozellik 10"
+      ],
+      "reply": "Altyapı oyuncularının 10. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-11": {
+      "patterns": [
+        "oyuncu ozelligi 11",
+        "ozellik 11 nasil gelisir",
+        "ozellik 11"
+      ],
+      "reply": "Altyapı oyuncularının 11. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-12": {
+      "patterns": [
+        "oyuncu ozelligi 12",
+        "ozellik 12 nasil gelisir",
+        "ozellik 12"
+      ],
+      "reply": "Altyapı oyuncularının 12. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-13": {
+      "patterns": [
+        "oyuncu ozelligi 13",
+        "ozellik 13 nasil gelisir",
+        "ozellik 13"
+      ],
+      "reply": "Altyapı oyuncularının 13. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-14": {
+      "patterns": [
+        "oyuncu ozelligi 14",
+        "ozellik 14 nasil gelisir",
+        "ozellik 14"
+      ],
+      "reply": "Altyapı oyuncularının 14. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-15": {
+      "patterns": [
+        "oyuncu ozelligi 15",
+        "ozellik 15 nasil gelisir",
+        "ozellik 15"
+      ],
+      "reply": "Altyapı oyuncularının 15. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-16": {
+      "patterns": [
+        "oyuncu ozelligi 16",
+        "ozellik 16 nasil gelisir",
+        "ozellik 16"
+      ],
+      "reply": "Altyapı oyuncularının 16. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-17": {
+      "patterns": [
+        "oyuncu ozelligi 17",
+        "ozellik 17 nasil gelisir",
+        "ozellik 17"
+      ],
+      "reply": "Altyapı oyuncularının 17. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-18": {
+      "patterns": [
+        "oyuncu ozelligi 18",
+        "ozellik 18 nasil gelisir",
+        "ozellik 18"
+      ],
+      "reply": "Altyapı oyuncularının 18. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-19": {
+      "patterns": [
+        "oyuncu ozelligi 19",
+        "ozellik 19 nasil gelisir",
+        "ozellik 19"
+      ],
+      "reply": "Altyapı oyuncularının 19. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-20": {
+      "patterns": [
+        "oyuncu ozelligi 20",
+        "ozellik 20 nasil gelisir",
+        "ozellik 20"
+      ],
+      "reply": "Altyapı oyuncularının 20. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-21": {
+      "patterns": [
+        "oyuncu ozelligi 21",
+        "ozellik 21 nasil gelisir",
+        "ozellik 21"
+      ],
+      "reply": "Altyapı oyuncularının 21. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-22": {
+      "patterns": [
+        "oyuncu ozelligi 22",
+        "ozellik 22 nasil gelisir",
+        "ozellik 22"
+      ],
+      "reply": "Altyapı oyuncularının 22. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-23": {
+      "patterns": [
+        "oyuncu ozelligi 23",
+        "ozellik 23 nasil gelisir",
+        "ozellik 23"
+      ],
+      "reply": "Altyapı oyuncularının 23. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-24": {
+      "patterns": [
+        "oyuncu ozelligi 24",
+        "ozellik 24 nasil gelisir",
+        "ozellik 24"
+      ],
+      "reply": "Altyapı oyuncularının 24. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-25": {
+      "patterns": [
+        "oyuncu ozelligi 25",
+        "ozellik 25 nasil gelisir",
+        "ozellik 25"
+      ],
+      "reply": "Altyapı oyuncularının 25. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-26": {
+      "patterns": [
+        "oyuncu ozelligi 26",
+        "ozellik 26 nasil gelisir",
+        "ozellik 26"
+      ],
+      "reply": "Altyapı oyuncularının 26. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-27": {
+      "patterns": [
+        "oyuncu ozelligi 27",
+        "ozellik 27 nasil gelisir",
+        "ozellik 27"
+      ],
+      "reply": "Altyapı oyuncularının 27. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-28": {
+      "patterns": [
+        "oyuncu ozelligi 28",
+        "ozellik 28 nasil gelisir",
+        "ozellik 28"
+      ],
+      "reply": "Altyapı oyuncularının 28. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-29": {
+      "patterns": [
+        "oyuncu ozelligi 29",
+        "ozellik 29 nasil gelisir",
+        "ozellik 29"
+      ],
+      "reply": "Altyapı oyuncularının 29. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-30": {
+      "patterns": [
+        "oyuncu ozelligi 30",
+        "ozellik 30 nasil gelisir",
+        "ozellik 30"
+      ],
+      "reply": "Altyapı oyuncularının 30. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-31": {
+      "patterns": [
+        "oyuncu ozelligi 31",
+        "ozellik 31 nasil gelisir",
+        "ozellik 31"
+      ],
+      "reply": "Altyapı oyuncularının 31. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-32": {
+      "patterns": [
+        "oyuncu ozelligi 32",
+        "ozellik 32 nasil gelisir",
+        "ozellik 32"
+      ],
+      "reply": "Altyapı oyuncularının 32. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-33": {
+      "patterns": [
+        "oyuncu ozelligi 33",
+        "ozellik 33 nasil gelisir",
+        "ozellik 33"
+      ],
+      "reply": "Altyapı oyuncularının 33. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-34": {
+      "patterns": [
+        "oyuncu ozelligi 34",
+        "ozellik 34 nasil gelisir",
+        "ozellik 34"
+      ],
+      "reply": "Altyapı oyuncularının 34. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-35": {
+      "patterns": [
+        "oyuncu ozelligi 35",
+        "ozellik 35 nasil gelisir",
+        "ozellik 35"
+      ],
+      "reply": "Altyapı oyuncularının 35. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-36": {
+      "patterns": [
+        "oyuncu ozelligi 36",
+        "ozellik 36 nasil gelisir",
+        "ozellik 36"
+      ],
+      "reply": "Altyapı oyuncularının 36. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-37": {
+      "patterns": [
+        "oyuncu ozelligi 37",
+        "ozellik 37 nasil gelisir",
+        "ozellik 37"
+      ],
+      "reply": "Altyapı oyuncularının 37. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-38": {
+      "patterns": [
+        "oyuncu ozelligi 38",
+        "ozellik 38 nasil gelisir",
+        "ozellik 38"
+      ],
+      "reply": "Altyapı oyuncularının 38. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-39": {
+      "patterns": [
+        "oyuncu ozelligi 39",
+        "ozellik 39 nasil gelisir",
+        "ozellik 39"
+      ],
+      "reply": "Altyapı oyuncularının 39. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-40": {
+      "patterns": [
+        "oyuncu ozelligi 40",
+        "ozellik 40 nasil gelisir",
+        "ozellik 40"
+      ],
+      "reply": "Altyapı oyuncularının 40. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-41": {
+      "patterns": [
+        "oyuncu ozelligi 41",
+        "ozellik 41 nasil gelisir",
+        "ozellik 41"
+      ],
+      "reply": "Altyapı oyuncularının 41. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-42": {
+      "patterns": [
+        "oyuncu ozelligi 42",
+        "ozellik 42 nasil gelisir",
+        "ozellik 42"
+      ],
+      "reply": "Altyapı oyuncularının 42. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-43": {
+      "patterns": [
+        "oyuncu ozelligi 43",
+        "ozellik 43 nasil gelisir",
+        "ozellik 43"
+      ],
+      "reply": "Altyapı oyuncularının 43. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-44": {
+      "patterns": [
+        "oyuncu ozelligi 44",
+        "ozellik 44 nasil gelisir",
+        "ozellik 44"
+      ],
+      "reply": "Altyapı oyuncularının 44. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-45": {
+      "patterns": [
+        "oyuncu ozelligi 45",
+        "ozellik 45 nasil gelisir",
+        "ozellik 45"
+      ],
+      "reply": "Altyapı oyuncularının 45. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-46": {
+      "patterns": [
+        "oyuncu ozelligi 46",
+        "ozellik 46 nasil gelisir",
+        "ozellik 46"
+      ],
+      "reply": "Altyapı oyuncularının 46. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-47": {
+      "patterns": [
+        "oyuncu ozelligi 47",
+        "ozellik 47 nasil gelisir",
+        "ozellik 47"
+      ],
+      "reply": "Altyapı oyuncularının 47. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-48": {
+      "patterns": [
+        "oyuncu ozelligi 48",
+        "ozellik 48 nasil gelisir",
+        "ozellik 48"
+      ],
+      "reply": "Altyapı oyuncularının 48. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-49": {
+      "patterns": [
+        "oyuncu ozelligi 49",
+        "ozellik 49 nasil gelisir",
+        "ozellik 49"
+      ],
+      "reply": "Altyapı oyuncularının 49. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-50": {
+      "patterns": [
+        "oyuncu ozelligi 50",
+        "ozellik 50 nasil gelisir",
+        "ozellik 50"
+      ],
+      "reply": "Altyapı oyuncularının 50. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-51": {
+      "patterns": [
+        "oyuncu ozelligi 51",
+        "ozellik 51 nasil gelisir",
+        "ozellik 51"
+      ],
+      "reply": "Altyapı oyuncularının 51. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-52": {
+      "patterns": [
+        "oyuncu ozelligi 52",
+        "ozellik 52 nasil gelisir",
+        "ozellik 52"
+      ],
+      "reply": "Altyapı oyuncularının 52. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-53": {
+      "patterns": [
+        "oyuncu ozelligi 53",
+        "ozellik 53 nasil gelisir",
+        "ozellik 53"
+      ],
+      "reply": "Altyapı oyuncularının 53. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-54": {
+      "patterns": [
+        "oyuncu ozelligi 54",
+        "ozellik 54 nasil gelisir",
+        "ozellik 54"
+      ],
+      "reply": "Altyapı oyuncularının 54. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-55": {
+      "patterns": [
+        "oyuncu ozelligi 55",
+        "ozellik 55 nasil gelisir",
+        "ozellik 55"
+      ],
+      "reply": "Altyapı oyuncularının 55. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-56": {
+      "patterns": [
+        "oyuncu ozelligi 56",
+        "ozellik 56 nasil gelisir",
+        "ozellik 56"
+      ],
+      "reply": "Altyapı oyuncularının 56. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-57": {
+      "patterns": [
+        "oyuncu ozelligi 57",
+        "ozellik 57 nasil gelisir",
+        "ozellik 57"
+      ],
+      "reply": "Altyapı oyuncularının 57. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-58": {
+      "patterns": [
+        "oyuncu ozelligi 58",
+        "ozellik 58 nasil gelisir",
+        "ozellik 58"
+      ],
+      "reply": "Altyapı oyuncularının 58. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-59": {
+      "patterns": [
+        "oyuncu ozelligi 59",
+        "ozellik 59 nasil gelisir",
+        "ozellik 59"
+      ],
+      "reply": "Altyapı oyuncularının 59. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-60": {
+      "patterns": [
+        "oyuncu ozelligi 60",
+        "ozellik 60 nasil gelisir",
+        "ozellik 60"
+      ],
+      "reply": "Altyapı oyuncularının 60. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-61": {
+      "patterns": [
+        "oyuncu ozelligi 61",
+        "ozellik 61 nasil gelisir",
+        "ozellik 61"
+      ],
+      "reply": "Altyapı oyuncularının 61. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-62": {
+      "patterns": [
+        "oyuncu ozelligi 62",
+        "ozellik 62 nasil gelisir",
+        "ozellik 62"
+      ],
+      "reply": "Altyapı oyuncularının 62. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-63": {
+      "patterns": [
+        "oyuncu ozelligi 63",
+        "ozellik 63 nasil gelisir",
+        "ozellik 63"
+      ],
+      "reply": "Altyapı oyuncularının 63. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-64": {
+      "patterns": [
+        "oyuncu ozelligi 64",
+        "ozellik 64 nasil gelisir",
+        "ozellik 64"
+      ],
+      "reply": "Altyapı oyuncularının 64. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-65": {
+      "patterns": [
+        "oyuncu ozelligi 65",
+        "ozellik 65 nasil gelisir",
+        "ozellik 65"
+      ],
+      "reply": "Altyapı oyuncularının 65. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-66": {
+      "patterns": [
+        "oyuncu ozelligi 66",
+        "ozellik 66 nasil gelisir",
+        "ozellik 66"
+      ],
+      "reply": "Altyapı oyuncularının 66. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-67": {
+      "patterns": [
+        "oyuncu ozelligi 67",
+        "ozellik 67 nasil gelisir",
+        "ozellik 67"
+      ],
+      "reply": "Altyapı oyuncularının 67. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-68": {
+      "patterns": [
+        "oyuncu ozelligi 68",
+        "ozellik 68 nasil gelisir",
+        "ozellik 68"
+      ],
+      "reply": "Altyapı oyuncularının 68. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-69": {
+      "patterns": [
+        "oyuncu ozelligi 69",
+        "ozellik 69 nasil gelisir",
+        "ozellik 69"
+      ],
+      "reply": "Altyapı oyuncularının 69. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-70": {
+      "patterns": [
+        "oyuncu ozelligi 70",
+        "ozellik 70 nasil gelisir",
+        "ozellik 70"
+      ],
+      "reply": "Altyapı oyuncularının 70. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-71": {
+      "patterns": [
+        "oyuncu ozelligi 71",
+        "ozellik 71 nasil gelisir",
+        "ozellik 71"
+      ],
+      "reply": "Altyapı oyuncularının 71. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-72": {
+      "patterns": [
+        "oyuncu ozelligi 72",
+        "ozellik 72 nasil gelisir",
+        "ozellik 72"
+      ],
+      "reply": "Altyapı oyuncularının 72. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-73": {
+      "patterns": [
+        "oyuncu ozelligi 73",
+        "ozellik 73 nasil gelisir",
+        "ozellik 73"
+      ],
+      "reply": "Altyapı oyuncularının 73. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-74": {
+      "patterns": [
+        "oyuncu ozelligi 74",
+        "ozellik 74 nasil gelisir",
+        "ozellik 74"
+      ],
+      "reply": "Altyapı oyuncularının 74. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-75": {
+      "patterns": [
+        "oyuncu ozelligi 75",
+        "ozellik 75 nasil gelisir",
+        "ozellik 75"
+      ],
+      "reply": "Altyapı oyuncularının 75. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-76": {
+      "patterns": [
+        "oyuncu ozelligi 76",
+        "ozellik 76 nasil gelisir",
+        "ozellik 76"
+      ],
+      "reply": "Altyapı oyuncularının 76. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-77": {
+      "patterns": [
+        "oyuncu ozelligi 77",
+        "ozellik 77 nasil gelisir",
+        "ozellik 77"
+      ],
+      "reply": "Altyapı oyuncularının 77. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-78": {
+      "patterns": [
+        "oyuncu ozelligi 78",
+        "ozellik 78 nasil gelisir",
+        "ozellik 78"
+      ],
+      "reply": "Altyapı oyuncularının 78. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-79": {
+      "patterns": [
+        "oyuncu ozelligi 79",
+        "ozellik 79 nasil gelisir",
+        "ozellik 79"
+      ],
+      "reply": "Altyapı oyuncularının 79. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-80": {
+      "patterns": [
+        "oyuncu ozelligi 80",
+        "ozellik 80 nasil gelisir",
+        "ozellik 80"
+      ],
+      "reply": "Altyapı oyuncularının 80. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-81": {
+      "patterns": [
+        "oyuncu ozelligi 81",
+        "ozellik 81 nasil gelisir",
+        "ozellik 81"
+      ],
+      "reply": "Altyapı oyuncularının 81. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-82": {
+      "patterns": [
+        "oyuncu ozelligi 82",
+        "ozellik 82 nasil gelisir",
+        "ozellik 82"
+      ],
+      "reply": "Altyapı oyuncularının 82. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-83": {
+      "patterns": [
+        "oyuncu ozelligi 83",
+        "ozellik 83 nasil gelisir",
+        "ozellik 83"
+      ],
+      "reply": "Altyapı oyuncularının 83. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-84": {
+      "patterns": [
+        "oyuncu ozelligi 84",
+        "ozellik 84 nasil gelisir",
+        "ozellik 84"
+      ],
+      "reply": "Altyapı oyuncularının 84. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-85": {
+      "patterns": [
+        "oyuncu ozelligi 85",
+        "ozellik 85 nasil gelisir",
+        "ozellik 85"
+      ],
+      "reply": "Altyapı oyuncularının 85. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-86": {
+      "patterns": [
+        "oyuncu ozelligi 86",
+        "ozellik 86 nasil gelisir",
+        "ozellik 86"
+      ],
+      "reply": "Altyapı oyuncularının 86. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-87": {
+      "patterns": [
+        "oyuncu ozelligi 87",
+        "ozellik 87 nasil gelisir",
+        "ozellik 87"
+      ],
+      "reply": "Altyapı oyuncularının 87. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-88": {
+      "patterns": [
+        "oyuncu ozelligi 88",
+        "ozellik 88 nasil gelisir",
+        "ozellik 88"
+      ],
+      "reply": "Altyapı oyuncularının 88. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-89": {
+      "patterns": [
+        "oyuncu ozelligi 89",
+        "ozellik 89 nasil gelisir",
+        "ozellik 89"
+      ],
+      "reply": "Altyapı oyuncularının 89. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-90": {
+      "patterns": [
+        "oyuncu ozelligi 90",
+        "ozellik 90 nasil gelisir",
+        "ozellik 90"
+      ],
+      "reply": "Altyapı oyuncularının 90. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-91": {
+      "patterns": [
+        "oyuncu ozelligi 91",
+        "ozellik 91 nasil gelisir",
+        "ozellik 91"
+      ],
+      "reply": "Altyapı oyuncularının 91. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-92": {
+      "patterns": [
+        "oyuncu ozelligi 92",
+        "ozellik 92 nasil gelisir",
+        "ozellik 92"
+      ],
+      "reply": "Altyapı oyuncularının 92. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-93": {
+      "patterns": [
+        "oyuncu ozelligi 93",
+        "ozellik 93 nasil gelisir",
+        "ozellik 93"
+      ],
+      "reply": "Altyapı oyuncularının 93. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-94": {
+      "patterns": [
+        "oyuncu ozelligi 94",
+        "ozellik 94 nasil gelisir",
+        "ozellik 94"
+      ],
+      "reply": "Altyapı oyuncularının 94. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-95": {
+      "patterns": [
+        "oyuncu ozelligi 95",
+        "ozellik 95 nasil gelisir",
+        "ozellik 95"
+      ],
+      "reply": "Altyapı oyuncularının 95. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-96": {
+      "patterns": [
+        "oyuncu ozelligi 96",
+        "ozellik 96 nasil gelisir",
+        "ozellik 96"
+      ],
+      "reply": "Altyapı oyuncularının 96. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-97": {
+      "patterns": [
+        "oyuncu ozelligi 97",
+        "ozellik 97 nasil gelisir",
+        "ozellik 97"
+      ],
+      "reply": "Altyapı oyuncularının 97. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-98": {
+      "patterns": [
+        "oyuncu ozelligi 98",
+        "ozellik 98 nasil gelisir",
+        "ozellik 98"
+      ],
+      "reply": "Altyapı oyuncularının 98. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-99": {
+      "patterns": [
+        "oyuncu ozelligi 99",
+        "ozellik 99 nasil gelisir",
+        "ozellik 99"
+      ],
+      "reply": "Altyapı oyuncularının 99. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-100": {
+      "patterns": [
+        "oyuncu ozelligi 100",
+        "ozellik 100 nasil gelisir",
+        "ozellik 100"
+      ],
+      "reply": "Altyapı oyuncularının 100. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-101": {
+      "patterns": [
+        "oyuncu ozelligi 101",
+        "ozellik 101 nasil gelisir",
+        "ozellik 101"
+      ],
+      "reply": "Altyapı oyuncularının 101. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-102": {
+      "patterns": [
+        "oyuncu ozelligi 102",
+        "ozellik 102 nasil gelisir",
+        "ozellik 102"
+      ],
+      "reply": "Altyapı oyuncularının 102. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-103": {
+      "patterns": [
+        "oyuncu ozelligi 103",
+        "ozellik 103 nasil gelisir",
+        "ozellik 103"
+      ],
+      "reply": "Altyapı oyuncularının 103. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-104": {
+      "patterns": [
+        "oyuncu ozelligi 104",
+        "ozellik 104 nasil gelisir",
+        "ozellik 104"
+      ],
+      "reply": "Altyapı oyuncularının 104. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-105": {
+      "patterns": [
+        "oyuncu ozelligi 105",
+        "ozellik 105 nasil gelisir",
+        "ozellik 105"
+      ],
+      "reply": "Altyapı oyuncularının 105. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-106": {
+      "patterns": [
+        "oyuncu ozelligi 106",
+        "ozellik 106 nasil gelisir",
+        "ozellik 106"
+      ],
+      "reply": "Altyapı oyuncularının 106. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-107": {
+      "patterns": [
+        "oyuncu ozelligi 107",
+        "ozellik 107 nasil gelisir",
+        "ozellik 107"
+      ],
+      "reply": "Altyapı oyuncularının 107. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-108": {
+      "patterns": [
+        "oyuncu ozelligi 108",
+        "ozellik 108 nasil gelisir",
+        "ozellik 108"
+      ],
+      "reply": "Altyapı oyuncularının 108. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-109": {
+      "patterns": [
+        "oyuncu ozelligi 109",
+        "ozellik 109 nasil gelisir",
+        "ozellik 109"
+      ],
+      "reply": "Altyapı oyuncularının 109. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-110": {
+      "patterns": [
+        "oyuncu ozelligi 110",
+        "ozellik 110 nasil gelisir",
+        "ozellik 110"
+      ],
+      "reply": "Altyapı oyuncularının 110. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-111": {
+      "patterns": [
+        "oyuncu ozelligi 111",
+        "ozellik 111 nasil gelisir",
+        "ozellik 111"
+      ],
+      "reply": "Altyapı oyuncularının 111. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-112": {
+      "patterns": [
+        "oyuncu ozelligi 112",
+        "ozellik 112 nasil gelisir",
+        "ozellik 112"
+      ],
+      "reply": "Altyapı oyuncularının 112. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-113": {
+      "patterns": [
+        "oyuncu ozelligi 113",
+        "ozellik 113 nasil gelisir",
+        "ozellik 113"
+      ],
+      "reply": "Altyapı oyuncularının 113. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-114": {
+      "patterns": [
+        "oyuncu ozelligi 114",
+        "ozellik 114 nasil gelisir",
+        "ozellik 114"
+      ],
+      "reply": "Altyapı oyuncularının 114. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-115": {
+      "patterns": [
+        "oyuncu ozelligi 115",
+        "ozellik 115 nasil gelisir",
+        "ozellik 115"
+      ],
+      "reply": "Altyapı oyuncularının 115. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-116": {
+      "patterns": [
+        "oyuncu ozelligi 116",
+        "ozellik 116 nasil gelisir",
+        "ozellik 116"
+      ],
+      "reply": "Altyapı oyuncularının 116. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-117": {
+      "patterns": [
+        "oyuncu ozelligi 117",
+        "ozellik 117 nasil gelisir",
+        "ozellik 117"
+      ],
+      "reply": "Altyapı oyuncularının 117. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-118": {
+      "patterns": [
+        "oyuncu ozelligi 118",
+        "ozellik 118 nasil gelisir",
+        "ozellik 118"
+      ],
+      "reply": "Altyapı oyuncularının 118. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-119": {
+      "patterns": [
+        "oyuncu ozelligi 119",
+        "ozellik 119 nasil gelisir",
+        "ozellik 119"
+      ],
+      "reply": "Altyapı oyuncularının 119. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-120": {
+      "patterns": [
+        "oyuncu ozelligi 120",
+        "ozellik 120 nasil gelisir",
+        "ozellik 120"
+      ],
+      "reply": "Altyapı oyuncularının 120. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-121": {
+      "patterns": [
+        "oyuncu ozelligi 121",
+        "ozellik 121 nasil gelisir",
+        "ozellik 121"
+      ],
+      "reply": "Altyapı oyuncularının 121. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-122": {
+      "patterns": [
+        "oyuncu ozelligi 122",
+        "ozellik 122 nasil gelisir",
+        "ozellik 122"
+      ],
+      "reply": "Altyapı oyuncularının 122. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-123": {
+      "patterns": [
+        "oyuncu ozelligi 123",
+        "ozellik 123 nasil gelisir",
+        "ozellik 123"
+      ],
+      "reply": "Altyapı oyuncularının 123. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-124": {
+      "patterns": [
+        "oyuncu ozelligi 124",
+        "ozellik 124 nasil gelisir",
+        "ozellik 124"
+      ],
+      "reply": "Altyapı oyuncularının 124. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-125": {
+      "patterns": [
+        "oyuncu ozelligi 125",
+        "ozellik 125 nasil gelisir",
+        "ozellik 125"
+      ],
+      "reply": "Altyapı oyuncularının 125. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-126": {
+      "patterns": [
+        "oyuncu ozelligi 126",
+        "ozellik 126 nasil gelisir",
+        "ozellik 126"
+      ],
+      "reply": "Altyapı oyuncularının 126. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-127": {
+      "patterns": [
+        "oyuncu ozelligi 127",
+        "ozellik 127 nasil gelisir",
+        "ozellik 127"
+      ],
+      "reply": "Altyapı oyuncularının 127. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-128": {
+      "patterns": [
+        "oyuncu ozelligi 128",
+        "ozellik 128 nasil gelisir",
+        "ozellik 128"
+      ],
+      "reply": "Altyapı oyuncularının 128. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-129": {
+      "patterns": [
+        "oyuncu ozelligi 129",
+        "ozellik 129 nasil gelisir",
+        "ozellik 129"
+      ],
+      "reply": "Altyapı oyuncularının 129. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-130": {
+      "patterns": [
+        "oyuncu ozelligi 130",
+        "ozellik 130 nasil gelisir",
+        "ozellik 130"
+      ],
+      "reply": "Altyapı oyuncularının 130. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-131": {
+      "patterns": [
+        "oyuncu ozelligi 131",
+        "ozellik 131 nasil gelisir",
+        "ozellik 131"
+      ],
+      "reply": "Altyapı oyuncularının 131. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-132": {
+      "patterns": [
+        "oyuncu ozelligi 132",
+        "ozellik 132 nasil gelisir",
+        "ozellik 132"
+      ],
+      "reply": "Altyapı oyuncularının 132. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-133": {
+      "patterns": [
+        "oyuncu ozelligi 133",
+        "ozellik 133 nasil gelisir",
+        "ozellik 133"
+      ],
+      "reply": "Altyapı oyuncularının 133. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-134": {
+      "patterns": [
+        "oyuncu ozelligi 134",
+        "ozellik 134 nasil gelisir",
+        "ozellik 134"
+      ],
+      "reply": "Altyapı oyuncularının 134. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-135": {
+      "patterns": [
+        "oyuncu ozelligi 135",
+        "ozellik 135 nasil gelisir",
+        "ozellik 135"
+      ],
+      "reply": "Altyapı oyuncularının 135. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-136": {
+      "patterns": [
+        "oyuncu ozelligi 136",
+        "ozellik 136 nasil gelisir",
+        "ozellik 136"
+      ],
+      "reply": "Altyapı oyuncularının 136. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-137": {
+      "patterns": [
+        "oyuncu ozelligi 137",
+        "ozellik 137 nasil gelisir",
+        "ozellik 137"
+      ],
+      "reply": "Altyapı oyuncularının 137. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-138": {
+      "patterns": [
+        "oyuncu ozelligi 138",
+        "ozellik 138 nasil gelisir",
+        "ozellik 138"
+      ],
+      "reply": "Altyapı oyuncularının 138. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-139": {
+      "patterns": [
+        "oyuncu ozelligi 139",
+        "ozellik 139 nasil gelisir",
+        "ozellik 139"
+      ],
+      "reply": "Altyapı oyuncularının 139. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-140": {
+      "patterns": [
+        "oyuncu ozelligi 140",
+        "ozellik 140 nasil gelisir",
+        "ozellik 140"
+      ],
+      "reply": "Altyapı oyuncularının 140. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-141": {
+      "patterns": [
+        "oyuncu ozelligi 141",
+        "ozellik 141 nasil gelisir",
+        "ozellik 141"
+      ],
+      "reply": "Altyapı oyuncularının 141. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-142": {
+      "patterns": [
+        "oyuncu ozelligi 142",
+        "ozellik 142 nasil gelisir",
+        "ozellik 142"
+      ],
+      "reply": "Altyapı oyuncularının 142. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-143": {
+      "patterns": [
+        "oyuncu ozelligi 143",
+        "ozellik 143 nasil gelisir",
+        "ozellik 143"
+      ],
+      "reply": "Altyapı oyuncularının 143. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-144": {
+      "patterns": [
+        "oyuncu ozelligi 144",
+        "ozellik 144 nasil gelisir",
+        "ozellik 144"
+      ],
+      "reply": "Altyapı oyuncularının 144. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-145": {
+      "patterns": [
+        "oyuncu ozelligi 145",
+        "ozellik 145 nasil gelisir",
+        "ozellik 145"
+      ],
+      "reply": "Altyapı oyuncularının 145. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-146": {
+      "patterns": [
+        "oyuncu ozelligi 146",
+        "ozellik 146 nasil gelisir",
+        "ozellik 146"
+      ],
+      "reply": "Altyapı oyuncularının 146. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-147": {
+      "patterns": [
+        "oyuncu ozelligi 147",
+        "ozellik 147 nasil gelisir",
+        "ozellik 147"
+      ],
+      "reply": "Altyapı oyuncularının 147. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-148": {
+      "patterns": [
+        "oyuncu ozelligi 148",
+        "ozellik 148 nasil gelisir",
+        "ozellik 148"
+      ],
+      "reply": "Altyapı oyuncularının 148. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    },
+    "ozellik-149": {
+      "patterns": [
+        "oyuncu ozelligi 149",
+        "ozellik 149 nasil gelisir",
+        "ozellik 149"
+      ],
+      "reply": "Altyapı oyuncularının 149. sıradaki teknik/fiziksel yetisi, yüksek tekrarlı antrenman rutinleri, özel beslenme programları ve düzenli maç süreleriyle mantıksal gelişim gösterir."
+    }
+  },
+  "MENTAL_DB": {
+    "nasilsin": {
+      "patterns": [
+        "nasilsin",
+        "ne haber",
+        "naber",
+        "keyifler",
+        "nasil gidiyor"
+      ],
+      "reply": [
+        "Altyapımızdaki genç yıldızların gelişimini izliyorum, gayet iyiyim! Siz nasılsınız?",
+        "Harikayım! Takımın performans analizleri ve taktik çalışmalarla meşgulüm. Sizde durumlar nasıl?",
+        "Teşekkür ederim! Bugün enerji doluyum. Altyapı yönetimi hakkında her türlü mantıksal sorunuz için hazırım."
+      ]
+    },
+    "merhaba": {
+      "patterns": [
+        "merhaba",
+        "selam",
+        "hey",
+        "salam",
+        "merhabalar"
+      ],
+      "reply": "Merhaba! Altyapı Akıllı Asistanına hoş geldiniz. Kadro durumları, oyuncu profilleri, bütçe raporları veya taktikler hakkında neyi analiz etmek istersiniz? ⚽"
+    },
+    "tesekkur": {
+      "patterns": [
+        "tesekkur",
+        "sag ol",
+        "eyvallah",
+        "tesekkurler",
+        "ok",
+        "tamam"
+      ],
+      "reply": "Rica ederim! Altyapı gelişim yolculuğunda her zaman yanınızdayım. Başka bir sorunuz varsa bekliyorum."
+    }
+  },
+  "RULES_DB": {
+    "ofsayt": {
+      "patterns": [
+        "ofsayt nedir",
+        "ofsayt kuralı",
+        "ofsayt"
+      ],
+      "reply": "Ofsayt, pas atıldığı anda hücum oyuncusunun rakip kale çizgisine toptan ve sondan ikinci rakip oyuncudan daha yakın olması durumudur."
+    },
+    "penalti": {
+      "patterns": [
+        "penalti",
+        "penalti noktasi",
+        "penalti cezasi"
+      ],
+      "reply": "Penaltı, ceza sahası içinde yapılan bariz gol şansını engelleyen ihlaller veya fauller sonucu verilen 11 metrelik doğrudan vuruştur."
+    },
+    "korner": {
+      "patterns": [
+        "korner",
+        "kose vurusu",
+        "kose"
+      ],
+      "reply": "Köşe vuruşu, topun en son savunma oyuncusuna çarparak kale çizgisi dışına çıkması durumunda hücum takımına verilen duran toptur."
+    },
+    "sari-kart": {
+      "patterns": [
+        "sari kart",
+        "sari kart nedir",
+        "ihtar"
+      ],
+      "reply": "Sarı kart, hakem tarafından sportmenlik dışı davranışlar veya kontrolsüz fauller için verilen resmi ihtardır."
+    },
+    "kirmizi-kart": {
+      "patterns": [
+        "kirmizi kart",
+        "kirmizi kart nedir",
+        "oyundan atilma"
+      ],
+      "reply": "Kırmızı kart, ciddi fauller, şiddetli hareketler veya ikinci sarı kart sonucu oyuncunun oyundan ihraç edilmesidir."
+    },
+    "var": {
+      "patterns": [
+        "var nedir",
+        "video hakem",
+        "var sistemi"
+      ],
+      "reply": "VAR (Video Yardımcı Hakem), net gol hataları, kırmızı kart kart kararları, penaltı kararları veya yanlış oyuncu kart teşhislerinde hakemi uyaran video teknolojisidir."
+    },
+    "kontratak": {
+      "patterns": [
+        "kontra",
+        "kontraatak",
+        "hizli hucum"
+      ],
+      "reply": "Kontra atak, savunmadan kapılan toplarla rakip defans yerleşmeden hızlıca kaleye giderek gol bulma hücumudur."
+    },
+    "alan-savunmasi": {
+      "patterns": [
+        "alan savunmasi",
+        "zone defense",
+        "bolge savunmasi"
+      ],
+      "reply": "Alan savunması, oyuncuların bire bir adam takip etmek yerine kendi sorumluluk alanlarındaki boşlukları ve rakipleri kapatma taktiğidir."
+    },
+    "adam-markaji": {
+      "patterns": [
+        "adam markaji",
+        "man marking",
+        "adam adama"
+      ],
+      "reply": "Adam markajı, savunma oyuncusunun maç boyu belirlenen bir rakip hücumcuyu adım adım takip edip engelleme taktiğidir."
+    },
+    "rotasyon": {
+      "patterns": [
+        "rotasyon",
+        "oyuncu degisimi",
+        "dinlendirme"
+      ],
+      "reply": "Rotasyon, takımın kondisyonunu korumak ve sakatlıkları önlemek için maçlar arasında kadroda yapılan oyuncu değişiklikleridir."
+    },
+    "kural-1": {
+      "patterns": [
+        "futbol kurali 1",
+        "kural 1 nedir",
+        "kural 1"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 1: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-2": {
+      "patterns": [
+        "futbol kurali 2",
+        "kural 2 nedir",
+        "kural 2"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 2: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-3": {
+      "patterns": [
+        "futbol kurali 3",
+        "kural 3 nedir",
+        "kural 3"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 3: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-4": {
+      "patterns": [
+        "futbol kurali 4",
+        "kural 4 nedir",
+        "kural 4"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 4: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-5": {
+      "patterns": [
+        "futbol kurali 5",
+        "kural 5 nedir",
+        "kural 5"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 5: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-6": {
+      "patterns": [
+        "futbol kurali 6",
+        "kural 6 nedir",
+        "kural 6"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 6: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-7": {
+      "patterns": [
+        "futbol kurali 7",
+        "kural 7 nedir",
+        "kural 7"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 7: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-8": {
+      "patterns": [
+        "futbol kurali 8",
+        "kural 8 nedir",
+        "kural 8"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 8: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-9": {
+      "patterns": [
+        "futbol kurali 9",
+        "kural 9 nedir",
+        "kural 9"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 9: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-10": {
+      "patterns": [
+        "futbol kurali 10",
+        "kural 10 nedir",
+        "kural 10"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 10: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-11": {
+      "patterns": [
+        "futbol kurali 11",
+        "kural 11 nedir",
+        "kural 11"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 11: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-12": {
+      "patterns": [
+        "futbol kurali 12",
+        "kural 12 nedir",
+        "kural 12"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 12: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-13": {
+      "patterns": [
+        "futbol kurali 13",
+        "kural 13 nedir",
+        "kural 13"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 13: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-14": {
+      "patterns": [
+        "futbol kurali 14",
+        "kural 14 nedir",
+        "kural 14"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 14: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-15": {
+      "patterns": [
+        "futbol kurali 15",
+        "kural 15 nedir",
+        "kural 15"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 15: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-16": {
+      "patterns": [
+        "futbol kurali 16",
+        "kural 16 nedir",
+        "kural 16"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 16: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-17": {
+      "patterns": [
+        "futbol kurali 17",
+        "kural 17 nedir",
+        "kural 17"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 17: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-18": {
+      "patterns": [
+        "futbol kurali 18",
+        "kural 18 nedir",
+        "kural 18"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 18: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-19": {
+      "patterns": [
+        "futbol kurali 19",
+        "kural 19 nedir",
+        "kural 19"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 19: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-20": {
+      "patterns": [
+        "futbol kurali 20",
+        "kural 20 nedir",
+        "kural 20"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 20: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-21": {
+      "patterns": [
+        "futbol kurali 21",
+        "kural 21 nedir",
+        "kural 21"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 21: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-22": {
+      "patterns": [
+        "futbol kurali 22",
+        "kural 22 nedir",
+        "kural 22"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 22: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-23": {
+      "patterns": [
+        "futbol kurali 23",
+        "kural 23 nedir",
+        "kural 23"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 23: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-24": {
+      "patterns": [
+        "futbol kurali 24",
+        "kural 24 nedir",
+        "kural 24"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 24: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-25": {
+      "patterns": [
+        "futbol kurali 25",
+        "kural 25 nedir",
+        "kural 25"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 25: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-26": {
+      "patterns": [
+        "futbol kurali 26",
+        "kural 26 nedir",
+        "kural 26"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 26: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-27": {
+      "patterns": [
+        "futbol kurali 27",
+        "kural 27 nedir",
+        "kural 27"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 27: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-28": {
+      "patterns": [
+        "futbol kurali 28",
+        "kural 28 nedir",
+        "kural 28"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 28: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-29": {
+      "patterns": [
+        "futbol kurali 29",
+        "kural 29 nedir",
+        "kural 29"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 29: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-30": {
+      "patterns": [
+        "futbol kurali 30",
+        "kural 30 nedir",
+        "kural 30"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 30: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-31": {
+      "patterns": [
+        "futbol kurali 31",
+        "kural 31 nedir",
+        "kural 31"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 31: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-32": {
+      "patterns": [
+        "futbol kurali 32",
+        "kural 32 nedir",
+        "kural 32"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 32: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-33": {
+      "patterns": [
+        "futbol kurali 33",
+        "kural 33 nedir",
+        "kural 33"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 33: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-34": {
+      "patterns": [
+        "futbol kurali 34",
+        "kural 34 nedir",
+        "kural 34"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 34: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-35": {
+      "patterns": [
+        "futbol kurali 35",
+        "kural 35 nedir",
+        "kural 35"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 35: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-36": {
+      "patterns": [
+        "futbol kurali 36",
+        "kural 36 nedir",
+        "kural 36"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 36: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-37": {
+      "patterns": [
+        "futbol kurali 37",
+        "kural 37 nedir",
+        "kural 37"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 37: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-38": {
+      "patterns": [
+        "futbol kurali 38",
+        "kural 38 nedir",
+        "kural 38"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 38: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-39": {
+      "patterns": [
+        "futbol kurali 39",
+        "kural 39 nedir",
+        "kural 39"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 39: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-40": {
+      "patterns": [
+        "futbol kurali 40",
+        "kural 40 nedir",
+        "kural 40"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 40: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-41": {
+      "patterns": [
+        "futbol kurali 41",
+        "kural 41 nedir",
+        "kural 41"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 41: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-42": {
+      "patterns": [
+        "futbol kurali 42",
+        "kural 42 nedir",
+        "kural 42"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 42: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-43": {
+      "patterns": [
+        "futbol kurali 43",
+        "kural 43 nedir",
+        "kural 43"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 43: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-44": {
+      "patterns": [
+        "futbol kurali 44",
+        "kural 44 nedir",
+        "kural 44"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 44: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-45": {
+      "patterns": [
+        "futbol kurali 45",
+        "kural 45 nedir",
+        "kural 45"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 45: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-46": {
+      "patterns": [
+        "futbol kurali 46",
+        "kural 46 nedir",
+        "kural 46"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 46: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-47": {
+      "patterns": [
+        "futbol kurali 47",
+        "kural 47 nedir",
+        "kural 47"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 47: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-48": {
+      "patterns": [
+        "futbol kurali 48",
+        "kural 48 nedir",
+        "kural 48"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 48: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-49": {
+      "patterns": [
+        "futbol kurali 49",
+        "kural 49 nedir",
+        "kural 49"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 49: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-50": {
+      "patterns": [
+        "futbol kurali 50",
+        "kural 50 nedir",
+        "kural 50"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 50: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-51": {
+      "patterns": [
+        "futbol kurali 51",
+        "kural 51 nedir",
+        "kural 51"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 51: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-52": {
+      "patterns": [
+        "futbol kurali 52",
+        "kural 52 nedir",
+        "kural 52"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 52: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-53": {
+      "patterns": [
+        "futbol kurali 53",
+        "kural 53 nedir",
+        "kural 53"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 53: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-54": {
+      "patterns": [
+        "futbol kurali 54",
+        "kural 54 nedir",
+        "kural 54"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 54: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-55": {
+      "patterns": [
+        "futbol kurali 55",
+        "kural 55 nedir",
+        "kural 55"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 55: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-56": {
+      "patterns": [
+        "futbol kurali 56",
+        "kural 56 nedir",
+        "kural 56"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 56: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-57": {
+      "patterns": [
+        "futbol kurali 57",
+        "kural 57 nedir",
+        "kural 57"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 57: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-58": {
+      "patterns": [
+        "futbol kurali 58",
+        "kural 58 nedir",
+        "kural 58"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 58: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-59": {
+      "patterns": [
+        "futbol kurali 59",
+        "kural 59 nedir",
+        "kural 59"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 59: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-60": {
+      "patterns": [
+        "futbol kurali 60",
+        "kural 60 nedir",
+        "kural 60"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 60: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-61": {
+      "patterns": [
+        "futbol kurali 61",
+        "kural 61 nedir",
+        "kural 61"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 61: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-62": {
+      "patterns": [
+        "futbol kurali 62",
+        "kural 62 nedir",
+        "kural 62"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 62: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-63": {
+      "patterns": [
+        "futbol kurali 63",
+        "kural 63 nedir",
+        "kural 63"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 63: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-64": {
+      "patterns": [
+        "futbol kurali 64",
+        "kural 64 nedir",
+        "kural 64"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 64: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-65": {
+      "patterns": [
+        "futbol kurali 65",
+        "kural 65 nedir",
+        "kural 65"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 65: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-66": {
+      "patterns": [
+        "futbol kurali 66",
+        "kural 66 nedir",
+        "kural 66"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 66: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-67": {
+      "patterns": [
+        "futbol kurali 67",
+        "kural 67 nedir",
+        "kural 67"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 67: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-68": {
+      "patterns": [
+        "futbol kurali 68",
+        "kural 68 nedir",
+        "kural 68"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 68: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-69": {
+      "patterns": [
+        "futbol kurali 69",
+        "kural 69 nedir",
+        "kural 69"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 69: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-70": {
+      "patterns": [
+        "futbol kurali 70",
+        "kural 70 nedir",
+        "kural 70"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 70: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-71": {
+      "patterns": [
+        "futbol kurali 71",
+        "kural 71 nedir",
+        "kural 71"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 71: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-72": {
+      "patterns": [
+        "futbol kurali 72",
+        "kural 72 nedir",
+        "kural 72"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 72: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-73": {
+      "patterns": [
+        "futbol kurali 73",
+        "kural 73 nedir",
+        "kural 73"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 73: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-74": {
+      "patterns": [
+        "futbol kurali 74",
+        "kural 74 nedir",
+        "kural 74"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 74: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-75": {
+      "patterns": [
+        "futbol kurali 75",
+        "kural 75 nedir",
+        "kural 75"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 75: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-76": {
+      "patterns": [
+        "futbol kurali 76",
+        "kural 76 nedir",
+        "kural 76"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 76: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-77": {
+      "patterns": [
+        "futbol kurali 77",
+        "kural 77 nedir",
+        "kural 77"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 77: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-78": {
+      "patterns": [
+        "futbol kurali 78",
+        "kural 78 nedir",
+        "kural 78"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 78: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-79": {
+      "patterns": [
+        "futbol kurali 79",
+        "kural 79 nedir",
+        "kural 79"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 79: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-80": {
+      "patterns": [
+        "futbol kurali 80",
+        "kural 80 nedir",
+        "kural 80"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 80: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-81": {
+      "patterns": [
+        "futbol kurali 81",
+        "kural 81 nedir",
+        "kural 81"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 81: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-82": {
+      "patterns": [
+        "futbol kurali 82",
+        "kural 82 nedir",
+        "kural 82"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 82: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-83": {
+      "patterns": [
+        "futbol kurali 83",
+        "kural 83 nedir",
+        "kural 83"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 83: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-84": {
+      "patterns": [
+        "futbol kurali 84",
+        "kural 84 nedir",
+        "kural 84"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 84: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-85": {
+      "patterns": [
+        "futbol kurali 85",
+        "kural 85 nedir",
+        "kural 85"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 85: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-86": {
+      "patterns": [
+        "futbol kurali 86",
+        "kural 86 nedir",
+        "kural 86"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 86: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-87": {
+      "patterns": [
+        "futbol kurali 87",
+        "kural 87 nedir",
+        "kural 87"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 87: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-88": {
+      "patterns": [
+        "futbol kurali 88",
+        "kural 88 nedir",
+        "kural 88"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 88: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-89": {
+      "patterns": [
+        "futbol kurali 89",
+        "kural 89 nedir",
+        "kural 89"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 89: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-90": {
+      "patterns": [
+        "futbol kurali 90",
+        "kural 90 nedir",
+        "kural 90"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 90: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-91": {
+      "patterns": [
+        "futbol kurali 91",
+        "kural 91 nedir",
+        "kural 91"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 91: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-92": {
+      "patterns": [
+        "futbol kurali 92",
+        "kural 92 nedir",
+        "kural 92"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 92: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-93": {
+      "patterns": [
+        "futbol kurali 93",
+        "kural 93 nedir",
+        "kural 93"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 93: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-94": {
+      "patterns": [
+        "futbol kurali 94",
+        "kural 94 nedir",
+        "kural 94"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 94: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-95": {
+      "patterns": [
+        "futbol kurali 95",
+        "kural 95 nedir",
+        "kural 95"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 95: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-96": {
+      "patterns": [
+        "futbol kurali 96",
+        "kural 96 nedir",
+        "kural 96"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 96: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-97": {
+      "patterns": [
+        "futbol kurali 97",
+        "kural 97 nedir",
+        "kural 97"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 97: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-98": {
+      "patterns": [
+        "futbol kurali 98",
+        "kural 98 nedir",
+        "kural 98"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 98: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-99": {
+      "patterns": [
+        "futbol kurali 99",
+        "kural 99 nedir",
+        "kural 99"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 99: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-100": {
+      "patterns": [
+        "futbol kurali 100",
+        "kural 100 nedir",
+        "kural 100"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 100: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-101": {
+      "patterns": [
+        "futbol kurali 101",
+        "kural 101 nedir",
+        "kural 101"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 101: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-102": {
+      "patterns": [
+        "futbol kurali 102",
+        "kural 102 nedir",
+        "kural 102"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 102: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-103": {
+      "patterns": [
+        "futbol kurali 103",
+        "kural 103 nedir",
+        "kural 103"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 103: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-104": {
+      "patterns": [
+        "futbol kurali 104",
+        "kural 104 nedir",
+        "kural 104"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 104: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-105": {
+      "patterns": [
+        "futbol kurali 105",
+        "kural 105 nedir",
+        "kural 105"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 105: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-106": {
+      "patterns": [
+        "futbol kurali 106",
+        "kural 106 nedir",
+        "kural 106"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 106: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-107": {
+      "patterns": [
+        "futbol kurali 107",
+        "kural 107 nedir",
+        "kural 107"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 107: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-108": {
+      "patterns": [
+        "futbol kurali 108",
+        "kural 108 nedir",
+        "kural 108"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 108: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-109": {
+      "patterns": [
+        "futbol kurali 109",
+        "kural 109 nedir",
+        "kural 109"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 109: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-110": {
+      "patterns": [
+        "futbol kurali 110",
+        "kural 110 nedir",
+        "kural 110"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 110: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-111": {
+      "patterns": [
+        "futbol kurali 111",
+        "kural 111 nedir",
+        "kural 111"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 111: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-112": {
+      "patterns": [
+        "futbol kurali 112",
+        "kural 112 nedir",
+        "kural 112"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 112: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-113": {
+      "patterns": [
+        "futbol kurali 113",
+        "kural 113 nedir",
+        "kural 113"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 113: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-114": {
+      "patterns": [
+        "futbol kurali 114",
+        "kural 114 nedir",
+        "kural 114"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 114: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-115": {
+      "patterns": [
+        "futbol kurali 115",
+        "kural 115 nedir",
+        "kural 115"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 115: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-116": {
+      "patterns": [
+        "futbol kurali 116",
+        "kural 116 nedir",
+        "kural 116"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 116: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-117": {
+      "patterns": [
+        "futbol kurali 117",
+        "kural 117 nedir",
+        "kural 117"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 117: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-118": {
+      "patterns": [
+        "futbol kurali 118",
+        "kural 118 nedir",
+        "kural 118"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 118: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-119": {
+      "patterns": [
+        "futbol kurali 119",
+        "kural 119 nedir",
+        "kural 119"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 119: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-120": {
+      "patterns": [
+        "futbol kurali 120",
+        "kural 120 nedir",
+        "kural 120"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 120: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-121": {
+      "patterns": [
+        "futbol kurali 121",
+        "kural 121 nedir",
+        "kural 121"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 121: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-122": {
+      "patterns": [
+        "futbol kurali 122",
+        "kural 122 nedir",
+        "kural 122"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 122: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-123": {
+      "patterns": [
+        "futbol kurali 123",
+        "kural 123 nedir",
+        "kural 123"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 123: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-124": {
+      "patterns": [
+        "futbol kurali 124",
+        "kural 124 nedir",
+        "kural 124"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 124: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-125": {
+      "patterns": [
+        "futbol kurali 125",
+        "kural 125 nedir",
+        "kural 125"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 125: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-126": {
+      "patterns": [
+        "futbol kurali 126",
+        "kural 126 nedir",
+        "kural 126"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 126: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-127": {
+      "patterns": [
+        "futbol kurali 127",
+        "kural 127 nedir",
+        "kural 127"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 127: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-128": {
+      "patterns": [
+        "futbol kurali 128",
+        "kural 128 nedir",
+        "kural 128"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 128: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-129": {
+      "patterns": [
+        "futbol kurali 129",
+        "kural 129 nedir",
+        "kural 129"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 129: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-130": {
+      "patterns": [
+        "futbol kurali 130",
+        "kural 130 nedir",
+        "kural 130"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 130: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-131": {
+      "patterns": [
+        "futbol kurali 131",
+        "kural 131 nedir",
+        "kural 131"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 131: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-132": {
+      "patterns": [
+        "futbol kurali 132",
+        "kural 132 nedir",
+        "kural 132"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 132: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-133": {
+      "patterns": [
+        "futbol kurali 133",
+        "kural 133 nedir",
+        "kural 133"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 133: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-134": {
+      "patterns": [
+        "futbol kurali 134",
+        "kural 134 nedir",
+        "kural 134"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 134: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-135": {
+      "patterns": [
+        "futbol kurali 135",
+        "kural 135 nedir",
+        "kural 135"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 135: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-136": {
+      "patterns": [
+        "futbol kurali 136",
+        "kural 136 nedir",
+        "kural 136"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 136: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-137": {
+      "patterns": [
+        "futbol kurali 137",
+        "kural 137 nedir",
+        "kural 137"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 137: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-138": {
+      "patterns": [
+        "futbol kurali 138",
+        "kural 138 nedir",
+        "kural 138"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 138: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-139": {
+      "patterns": [
+        "futbol kurali 139",
+        "kural 139 nedir",
+        "kural 139"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 139: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-140": {
+      "patterns": [
+        "futbol kurali 140",
+        "kural 140 nedir",
+        "kural 140"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 140: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-141": {
+      "patterns": [
+        "futbol kurali 141",
+        "kural 141 nedir",
+        "kural 141"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 141: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-142": {
+      "patterns": [
+        "futbol kurali 142",
+        "kural 142 nedir",
+        "kural 142"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 142: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-143": {
+      "patterns": [
+        "futbol kurali 143",
+        "kural 143 nedir",
+        "kural 143"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 143: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-144": {
+      "patterns": [
+        "futbol kurali 144",
+        "kural 144 nedir",
+        "kural 144"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 144: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-145": {
+      "patterns": [
+        "futbol kurali 145",
+        "kural 145 nedir",
+        "kural 145"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 145: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-146": {
+      "patterns": [
+        "futbol kurali 146",
+        "kural 146 nedir",
+        "kural 146"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 146: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-147": {
+      "patterns": [
+        "futbol kurali 147",
+        "kural 147 nedir",
+        "kural 147"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 147: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-148": {
+      "patterns": [
+        "futbol kurali 148",
+        "kural 148 nedir",
+        "kural 148"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 148: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    },
+    "kural-149": {
+      "patterns": [
+        "futbol kurali 149",
+        "kural 149 nedir",
+        "kural 149"
+      ],
+      "reply": "Futbol Oyun Kuralları Kitapçığı Madde 149: Bu kural, altyapı liglerinde oyunun dürüstlük, sportmenlik ve güvenlik ilkeleri çerçevesinde adilce yönetilmesini teminat altına alır."
+    }
+  }
+}

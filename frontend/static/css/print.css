@@ -1,0 +1,128 @@
+@media print {
+    /* Base reset for print */
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    /* Hide elements that should not print */
+    .sidebar,
+    .header,
+    .modal-overlay:not(#modal-player-report),
+    #modal-player-report .modal-close,
+    .btn-primary:not(.report-print-btn),
+    .btn-secondary,
+    .toast-container {
+        display: none !important;
+    }
+
+    /* Show the report modal as block (not overlay) */
+    #modal-player-report {
+        display: block !important;
+        position: static !important;
+        background: none !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Report card content fills the page */
+    #report-card-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        border-radius: 0 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    /* Report stat cards with white background and black border */
+    .report-stat-card {
+        background: #fff !important;
+        border: 1px solid #000 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Page break rules */
+    #report-card-content {
+        page-break-inside: avoid;
+    }
+
+    #report-attributes-bars {
+        page-break-inside: avoid;
+    }
+
+    /* Print Overrides for Health, Tactics, and Finance Reports */
+    body.print-health-report .sidebar,
+    body.print-health-report .sub-panel,
+    body.print-health-report .vertical-splitter,
+    body.print-health-report .main-header,
+    body.print-health-report .content-body > :not(#players-panel, #player-detail-panel),
+    body.print-health-report #player-detail-panel > :not(#section-detail-health),
+    body.print-health-report #section-detail-health > :not(.card),
+    body.print-health-report .btn-primary,
+    body.print-health-report .btn-secondary,
+    body.print-health-report .detail-tabs {
+        display: none !important;
+    }
+    body.print-health-report .content-body {
+        padding: 0 !important;
+        overflow: visible !important;
+        max-height: none !important;
+        display: block !important;
+    }
+    body.print-health-report #player-detail-panel {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    body.print-tactic-report .sidebar,
+    body.print-tactic-report .sub-panel,
+    body.print-tactic-report .vertical-splitter,
+    body.print-tactic-report .main-header,
+    body.print-tactic-report .content-body > :not(#tactics-view),
+    body.print-tactic-report #tactics-view .detail-tabs,
+    body.print-tactic-report #tactics-view button,
+    body.print-tactic-report #tactics-view select {
+        display: none !important;
+    }
+    body.print-tactic-report .content-body {
+        padding: 0 !important;
+        overflow: visible !important;
+        max-height: none !important;
+        display: block !important;
+    }
+    body.print-tactic-report #tactics-view {
+        display: flex !important;
+        width: 100% !important;
+    }
+
+    body.print-finance-report .sidebar,
+    body.print-finance-report .sub-panel,
+    body.print-finance-report .vertical-splitter,
+    body.print-finance-report .main-header,
+    body.print-finance-report .detail-tabs,
+    body.print-finance-report .content-body > :not(#finance-analysis-view),
+    body.print-finance-report #finance-analysis-view button {
+        display: none !important;
+    }
+    body.print-finance-report .content-body {
+        padding: 0 !important;
+        overflow: visible !important;
+        max-height: none !important;
+        display: block !important;
+    }
+    body.print-finance-report #finance-analysis-view {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Keep colors on print for accented elements */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
