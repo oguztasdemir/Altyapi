@@ -1,10 +1,10 @@
-# Altyapı Manager - Football Manager (FM) Esintili Altyapı Yönetim Sistemi
+# Altyapı Manager - Profesyonel Spor Altyapı Yönetim Sistemi
 
-Altyapı Manager, futbol altyapı takımlarının oyuncu gelişimlerini, performans verilerini, sağlık durumlarını, yoklama/katılım oranlarını, veli iletişim detaylarını ve görsel arşivlerini Football Manager (FM) ve EA FC oyun arayüzlerinden esinlenerek modern, premium bir tasarım ile yönetebilmenizi sağlayan web tabanlı bir uygulamadır.
+Altyapı Manager, spor altyapı takımlarının oyuncu gelişimlerini, performans verilerini, sağlık durumlarını, yoklama/katılım oranlarını, veli iletişim detaylarını ve görsel arşivlerini modern, premium bir tasarım ve gelişmiş veri analitiği araçları ile yönetebilmenizi sağlayan web tabanlı bir yönetim sistemidir.
 
 ---
 
-## 🚀 Eklenen ve Sunulan Özellikler
+## 🚀 Sunulan Özellikler
 
 ### 1. Panel Boyutlandırıcı Sürükle-Bırak Bölücüler (Splitters) & Kalıcılık
 *   **Kolon Bazlı Genişlik Kontrolü**: `Sidebar`, `Takımlar`, `Futbolcular` ve `Detay Paneli` arasındaki dikey sınırlar üzerinden mouse ile sürükleyerek genişliklerini dilediğiniz gibi ayarlayabilirsiniz.
@@ -12,7 +12,7 @@ Altyapı Manager, futbol altyapı takımlarının oyuncu gelişimlerini, perform
 *   **Dinamik Gizlenme**: Herhangi bir menü geçişinde yan paneller gizlendiğinde bölücüler de otomatik olarak gizlenir.
 
 ### 2. Etkileşimli İlk 11 / Taktik Saha Mevki Seçici (Direct Pitch Position Editor)
-*   **Saha Üzerinden Mevki Yönetimi**: Oyuncu profili detaylarında sağ üstte bulunan Taktik Saha Önizlemesine tıkladığınızda "Düzenleme Modu" aktif hale gelir ve diziliş seçeneği belirir.
+*   **Saha Üzerinden Mevki Yönetimi**: Oyuncu profili detaylarında bulunan Taktik Saha Önizlemesine tıkladığınızda "Düzenleme Modu" aktif hale gelir ve diziliş seçeneği belirir.
 *   **Döngüsel Tıklama Sistemi**:
     *   **1 Tıklama (Yeşil)**: Mevkiyi oyuncunun **Ana Mevkisi (Primary Position)** yapar. Diğer yeşil mevkiler otomatik sıfırlanır.
     *   **2 Tıklama (Sarı)**: Mevkiyi oyuncunun **Yan Mevkisi (Secondary Positions)** listesine ekler.
@@ -35,23 +35,23 @@ Altyapı Manager, futbol altyapı takımlarının oyuncu gelişimlerini, perform
 *   **Dinamik Değişken Eşleme**: Seçilen şablonun içeriği veli adı, oyuncu adı ve borç tutarı gibi güncel verilerle otomatik olarak doldurulur.
 *   **Tek Tıkla WhatsApp**: Hazırlanan veya el ile düzenlenen mesaj tek tıkla `https://wa.me/` API'si üzerinden velinin numarasına WhatsApp aracılığıyla yönlendirilir.
 
-### 6. Detaylı Oyuncu Profili & Attributes Grid (EA FC & FM Tarzı)
-*   **Yetenek Yıldızları**: Oyuncuların mevcut ve potansiyel yetenekleri FM tarzı yıldız derecelendirmesiyle gösterilir.
+### 6. Detaylı Oyuncu Gelişim ve Özellik Paneli (Attributes Grid)
+*   **Yetenek Değerlendirme Yıldızları**: Oyuncuların mevcut ve potansiyel yetenek seviyeleri profesyonel yıldız derecelendirmesiyle gösterilir.
 *   **Fiziksel Veriler**: Boy (cm), Kilo (kg), Tercih Ayak, Yaş, Uyruk ve Sözleşme Süreleri detaylı kartta yer alır.
-*   **Kategorize Edilmiş Özellikler**: Oyuncu yetenekleri zihinsel, teknik ve fiziksel olarak ayrılmıştır. Fareyle üzerine gelindiğinde Türkçe açıklamaları ve EA FC tarzında özellikleri gösteren detay kartı açılır.
-*   **Renkli İlerleme Çubukları**: Yetenek derecesine göre HSL tabanlı yeşil (mükemmel), sarı (iyi), turuncu (ortalama) ve kırmızı (zayıf) renk geçişleri tasarlanmıştır.
+*   **Kategorize Edilmiş Teknik Özellikler**: Oyuncu yetenekleri zihinsel, teknik ve fiziksel olarak ayrılmıştır. Fareyle üzerine gelindiğinde Türkçe açıklamaları ve özelliklerin detaylı seviyeleri açılır.
+*   **Renkli İlerleme Göstergeleri**: Yetenek derecesine göre HSL tabanlı yeşil (mükemmel), sarı (iyi), turuncu (ortalama) ve kırmızı (zayıf) renk geçişleri tasarlanmıştır.
 
-### 7. Performans Analizleri & Son 5 Maç İki Eksenli Grafik
+### 7. Performans Analizleri & Son 5 Maç Gelişim Grafiği
 *   **Reyting Gelişim Grafiği**: Oyuncunun zaman içindeki ortalama reyting gelişimini çizgi grafiği yardımıyla takip edebilirsiniz.
 *   **Son 5 Maç Performans Grafiği**: HTML5 Canvas tabanlı yeni iki eksenli grafikte; oyuncunun son 5 maçtaki golleri (yeşil bar), asistleri (mavi bar) ve maç reytingleri (sarı çizgi) bir arada gösterilir.
 
 ### 8. Sporcu Karnesi PDF/Yazıcı Çıktısı (A4 Scout Raporu)
-*   **A4 Rapor Çıktı Şablonu**: Profil panelinde yer alan "Rapor Yazdır" butonu, oyuncunun güncel profil fotoğrafını, fiziksel ölçümlerini, mevki bilgilerini, detay yetenek puanlarını, sezon istatistiklerini, sakatlık geçmişini ve antrenör değerlendirme notlarını A4 kağıdı formatında profesyonel bir karne olarak düzenleyerek tarayıcı yazdırma (`window.print()`) arayüzünü tetikler.
+*   **A4 Rapor Çıktı Şablonu**: Profil panelinde yer alan "Rapor Yazdır" butonu; oyuncunun güncel profil fotoğrafını, fiziksel ölçümlerini, mevki bilgilerini, detay yetenek puanlarını, sezon istatistiklerini, sakatlık geçmişini ve antrenör değerlendirme notlarını A4 kağıdı formatında profesyonel bir karne olarak düzenleyerek tarayıcı yazdırma (`window.print()`) arayüzünü tetikler.
 
-### 10. Premium Akademi Yönetim Özellikleri (Yeni)
+### 9. Gelişmiş Akademi Yönetim Modülleri
 *   **Yoklama ve Gelişim Korelasyonu**: Oyuncuların antrenman katılım oranları dinamik olarak hesaplanarak gelişim ve performans verileriyle ilişkilendirilir.
-*   **Haftanın En Formda 5 Futbolcusu & Otomatik Rozetler**: Son maç reytinglerine göre otomatik olarak belirlenen en formda 5 oyuncu anasayfada taktik saha görünümüyle listelenir. Ayrıca oyunculara kazandıkları başarılara göre otomatik rozetler ve başarı kartları (Achievements) atanır.
-*   **Etkileşimli Sakatlık Rehabilitasyon Takibi**: Sakat oyuncular için interaktif aşama seçimi (Dinlenme ➡️ Fizik Tedavi ➡️ Bireysel Koşu ➡️ Takımla İdman) ve `%0-%100` ilerleme çubuğu (slider) ile iyileşme süreci anlık olarak takip edilir.
+*   **Haftanın En Formda 5 Futbolcusu & Otomatik Rozetler**: Son maç reytinglerine göre otomatik olarak belirlenen en formda 5 oyuncu anasayfada listelenir. Ayrıca oyunculara kazandıkları başarılara göre otomatik başarı rozetleri (Achievements) atanır.
+*   **Sporcu Sağlığı Rehabilitasyon Takibi**: Sakat oyuncular için interaktif aşama seçimi (Dinlenme ➡️ Fizik Tedavi ➡️ Bireysel Koşu ➡️ Takımla İdman) ve `%0-%100` ilerleme çubuğu ile iyileşme süreci anlık olarak takip edilir.
 *   **Finansal Trend ve Nakit Akış Grafiği (Gelir/Gider)**: Finans sekmesinde son 6 aya ait aidat gelirleri ve kulüp giderleri, canvas tabanlı özel etkileşimli bir sütun grafiği ile görselleştirilerek net bakiye analiz edilir.
 
 ---

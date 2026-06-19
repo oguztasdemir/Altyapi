@@ -65,6 +65,8 @@ export function switchTab(tabId) {
     if (tacticPanel) tacticPanel.style.display = "none";
     const tacticsView = document.getElementById("tactics-view");
     if (tacticsView) tacticsView.style.display = "none";
+    const simView = document.getElementById("simulation-view");
+    if (simView) simView.style.display = "none";
     document.getElementById("empty-state-view").style.display = "none";
     document.getElementById("attendance-view").style.display = "none";
     document.getElementById("finance-view").style.display = "none";
@@ -77,6 +79,7 @@ export function switchTab(tabId) {
     document.getElementById("training-view").style.display = "none";
     document.getElementById("tournaments-view").style.display = "none";
     document.getElementById("announcements-view").style.display = "none";
+    document.getElementById("transfers-view").style.display = "none";
 
     const notSelectedEl = document.getElementById("player-not-selected-view");
     if (notSelectedEl) notSelectedEl.style.display = "none";
@@ -95,6 +98,12 @@ export function switchTab(tabId) {
                 } else if (tabId === "nav-tactics") {
                     document.getElementById("teams-panel").style.display = "none";
                     if (tacticsView) tacticsView.style.display = "flex";
+                    
+                    const btnBoard = document.getElementById("btn-tactic-mode-board");
+                    if (btnBoard) {
+                        btnBoard.click();
+                    }
+                    
                     if (state.activeTeamId) {
                         import("./lineup.js").then(lineupMod => {
                             lineupMod.loadAndRenderTacticsPage();
@@ -214,6 +223,11 @@ export function switchTab(tabId) {
                     if (state.activeTeamId) {
                         import("./announcements.js").then(mod => mod.loadAnnouncementsData());
                     }
+                } else if (tabId === "nav-transfers") {
+                    document.getElementById("teams-panel").style.display = "none";
+                    document.getElementById("transfers-view").style.display = "flex";
+                    
+                    import("./transfers.js").then(mod => mod.initTransfersView());
                 } else if (tabId === "nav-admin") {
                     document.getElementById("teams-panel").style.display = "none";
                     document.getElementById("admin-view").style.display = "block";
@@ -227,7 +241,6 @@ export function switchTab(tabId) {
     });
 }
 
-// Populate Dashboard (Overview stats)
 export async function populateDashboard() {
     const totalSquadsCount = state.teams.length;
     const totalPlayersCount = state.teams.reduce((acc, t) => acc + (t.players ? t.players.length : 0), 0);
@@ -238,8 +251,21 @@ export async function populateDashboard() {
     const playersEl = document.getElementById("db-stat-total-players");
     if (playersEl) playersEl.innerText = totalPlayersCount;
 
-    const activeTeam = state.teams.find(t => t.id === state.activeTeamId);
-    if (!activeTeam) {
+    const dbFilter = document.getElementById("dashboard-team-filter");
+    const selectedTeamId = dbFilter ? dbFilter.value : "all";
+
+    let activeTeam = null;
+    let isAllTeams = selectedTeamId === "all";
+
+    if (!isAllTeams) {
+        activeTeam = state.teams.find(t => t.id === selectedTeamId);
+        if (!activeTeam && state.activeTeamId) {
+            activeTeam = state.teams.find(t => t.id === state.activeTeamId);
+            if (dbFilter) dbFilter.value = state.activeTeamId;
+        }
+    }
+
+    if (!isAllTeams && !activeTeam) {
         document.getElementById("db-stat-active-injuries").innerText = "0";
         document.getElementById("db-upcoming-trainings").innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Lütfen bir takım seçin.</div>`;
         document.getElementById("db-upcoming-matches").innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Lütfen bir takım seçin.</div>`;
@@ -247,20 +273,31 @@ export async function populateDashboard() {
         return;
     }
 
-    // 1. Stats
-    const injuredCount = activeTeam.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı").length;
+    // 1. Stats (Injuries)
+    let injuredCount = 0;
+    if (isAllTeams) {
+        state.teams.forEach(t => {
+            injuredCount += t.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı").length;
+        });
+    } else {
+        injuredCount = activeTeam.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı").length;
+    }
     document.getElementById("db-stat-active-injuries").innerText = injuredCount;
 
     // 2. Announcements Ticker
     try {
-        const annRes = await fetch(`/api/announcements?team_id=${activeTeam.id}`);
+        const queryUrl = isAllTeams ? "/api/announcements?team_id=all" : `/api/announcements?team_id=${activeTeam.id}`;
+        const annRes = await fetch(queryUrl);
         if (annRes.ok) {
             const anns = await annRes.json();
             const pinned = anns.filter(a => a.is_pinned);
             const ticker = document.getElementById("dashboard-announcements-ticker");
             const tickerText = document.getElementById("dashboard-ticker-text");
             if (pinned.length > 0 && ticker && tickerText) {
-                tickerText.innerText = pinned.map(p => `${p.title}: ${p.content}`).join("  |  ");
+                tickerText.innerText = pinned.map(p => {
+                    const prefix = isAllTeams ? `[${p.team_name || "Tüm"}] ` : "";
+                    return `${prefix}${p.title}: ${p.content}`;
+                }).join("  |  ");
                 ticker.style.display = "flex";
             } else if (ticker) {
                 ticker.style.display = "none";
@@ -272,24 +309,27 @@ export async function populateDashboard() {
 
     // 3. Upcoming trainings
     try {
-        const trainRes = await fetch(`/api/training?team_id=${activeTeam.id}`);
+        const queryUrl = isAllTeams ? "/api/training?team_id=all" : `/api/training?team_id=${activeTeam.id}`;
+        const trainRes = await fetch(queryUrl);
         if (trainRes.ok) {
             const trainings = await trainRes.json();
             const nowStr = new Date().toISOString().split("T")[0];
             const upcoming = trainings.filter(t => t.date >= nowStr).sort((a,b) => a.date.localeCompare(b.date));
             const trainContainer = document.getElementById("db-upcoming-trainings");
             if (upcoming.length > 0) {
-                trainContainer.innerHTML = upcoming.map(t => `
+                trainContainer.innerHTML = upcoming.map(t => {
+                    const prefix = isAllTeams ? `[${t.team_name || "Tüm"}] ` : "";
+                    return `
                     <div class="list-item" style="border-left: 3px solid ${t.color || '#00ff88'}; padding: 10px; background: rgba(255,255,255,0.02); display: flex; justify-content: space-between; align-items: center; border-radius: var(--border-radius);">
                         <div>
-                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">${t.title}</div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">${prefix}${t.title}</div>
                             <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">📍 ${t.location || 'Saha'} | 🕒 ${t.start_time || '16:00'}-${t.end_time || '18:00'}</div>
                         </div>
                         <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-color); background: rgba(106, 27, 154, 0.2); padding: 4px 8px; border-radius: 4px;">
                             ${t.date.split("-").reverse().join("/")}
                         </div>
                     </div>
-                `).join("");
+                `}).join("");
             } else {
                 trainContainer.innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Yaklaşan çalışma kaydı bulunmuyor.</div>`;
             }
@@ -300,7 +340,8 @@ export async function populateDashboard() {
 
     // 4. Upcoming & Recent Matches
     try {
-        const matchRes = await fetch(`/api/matches?team_id=${activeTeam.id}`);
+        const queryUrl = isAllTeams ? "/api/matches?team_id=all" : `/api/matches?team_id=${activeTeam.id}`;
+        const matchRes = await fetch(queryUrl);
         if (matchRes.ok) {
             const matches = await matchRes.json();
             const sortedMatches = matches.sort((a,b) => b.date.localeCompare(a.date)).slice(0, 5);
@@ -310,10 +351,11 @@ export async function populateDashboard() {
                     const isUpcoming = new Date(m.date) > new Date();
                     const scoreText = isUpcoming ? "VS" : `${m.our_score} - ${m.opponent_score}`;
                     const resultColor = isUpcoming ? "var(--text-muted)" : (m.our_score > m.opponent_score ? "var(--attr-excellent)" : (m.our_score < m.opponent_score ? "var(--attr-poor)" : "var(--attr-average)"));
+                    const prefix = isAllTeams ? `[${m.team_name || "Tüm"}] ` : "";
                     return `
                         <div class="list-item" style="padding: 10px; background: rgba(255,255,255,0.02); display: flex; justify-content: space-between; align-items: center; border-radius: var(--border-radius);">
                             <div>
-                                <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">vs ${m.opponent}</div>
+                                <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">${prefix}vs ${m.opponent}</div>
                                 <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">📅 ${m.date.split("-").reverse().join("/")}</div>
                             </div>
                             <div style="font-size: 0.8rem; font-weight: 800; color: ${resultColor}; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; min-width: 50px; text-align: center;">
@@ -333,19 +375,33 @@ export async function populateDashboard() {
     // 5. Active Injuries list on dashboard
     const injuryContainer = document.getElementById("db-active-injuries-list");
     if (injuryContainer) {
-        const injuredPlayers = activeTeam.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı");
+        let injuredPlayers = [];
+        if (isAllTeams) {
+            state.teams.forEach(t => {
+                const injured = t.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı");
+                injured.forEach(p => {
+                    p.team_name = t.name;
+                });
+                injuredPlayers = injuredPlayers.concat(injured);
+            });
+        } else {
+            injuredPlayers = activeTeam.players.filter(p => p.injuryStatus && p.injuryStatus !== "Sağlıklı");
+        }
+
         if (injuredPlayers.length > 0) {
-            injuryContainer.innerHTML = injuredPlayers.map(p => `
+            injuryContainer.innerHTML = injuredPlayers.map(p => {
+                const teamSubtext = isAllTeams ? ` | Takım: ${p.team_name || "Bilinmeyen"}` : "";
+                return `
                 <div class="list-item" style="padding: 10px; background: rgba(255, 69, 58, 0.03); border-left: 3px solid var(--attr-poor); display: flex; justify-content: space-between; align-items: center; border-radius: var(--border-radius);">
                     <div>
                         <div style="font-weight: 700; font-size: 0.82rem; color: var(--text-primary);">${p.name}</div>
-                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Mevki: ${p.primaryPosition} | Durum: ${p.injuryStatus}</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Mevki: ${p.primaryPosition}${teamSubtext} | Durum: ${p.injuryStatus}</div>
                     </div>
                     <div style="font-size: 0.68rem; font-weight: 700; color: var(--attr-poor); background: rgba(255, 69, 58, 0.1); padding: 2px 6px; border-radius: 4px;">
                         🚨 Sakat
                     </div>
                 </div>
-            `).join("");
+            `}).join("");
         } else {
             injuryContainer.innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Aktif sakatlık kaydı bulunmuyor.</div>`;
         }
@@ -358,8 +414,19 @@ export async function populateDashboard() {
         bestPlayersList.innerHTML = "";
         pitchNodes.innerHTML = "";
 
-        // Sort players by matchRating desc, then name. Take top 5.
-        const sortedFormPlayers = [...activeTeam.players]
+        let allPlayers = [];
+        if (isAllTeams) {
+            state.teams.forEach(t => {
+                t.players.forEach(p => {
+                    p.team_name = t.name;
+                    allPlayers.push(p);
+                });
+            });
+        } else {
+            allPlayers = [...activeTeam.players];
+        }
+
+        const sortedFormPlayers = allPlayers
             .sort((a, b) => (b.matchRating || 0) - (a.matchRating || 0))
             .slice(0, 5);
 
@@ -368,24 +435,27 @@ export async function populateDashboard() {
             pitchNodes.innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 10px 0;">Oyuncu bulunmuyor.</div>`;
         } else {
             // Render List
-            bestPlayersList.innerHTML = sortedFormPlayers.map((p, idx) => `
+            bestPlayersList.innerHTML = sortedFormPlayers.map((p, idx) => {
+                const teamSubtext = isAllTeams ? ` · ${p.team_name || "Bilinmeyen"}` : "";
+                return `
                 <div class="list-item" style="padding: 8px 12px; background: rgba(255,255,255,0.02); display: flex; justify-content: space-between; align-items: center; border-radius: var(--border-radius); border-left: 3px solid var(--accent-color);">
                     <div>
                         <div style="font-weight: 700; font-size: 0.82rem; color: var(--text-primary);">${idx + 1}. ${p.name}</div>
-                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Mevki: ${p.primaryPosition} · ${p.age} Yaş</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Mevki: ${p.primaryPosition}${teamSubtext} · ${p.age} Yaş</div>
                     </div>
                     <div style="font-size: 0.8rem; font-weight: 850; color: var(--accent-color); background: rgba(0, 255, 136, 0.1); padding: 3px 8px; border-radius: 4px;">
                         ★ ${(p.matchRating || 6.0).toFixed(2)}
                     </div>
                 </div>
-            `).join("");
+            `}).join("");
 
             // Render Pitch Circles
             pitchNodes.innerHTML = sortedFormPlayers.map(p => {
                 const initials = p.name.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
+                const teamTooltip = isAllTeams ? ` (${p.team_name})` : "";
                 return `
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; position: relative;">
-                        <div style="width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color) 0%, #00b359 100%); border: 2px solid #fff; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 800; font-size: 0.75rem; box-shadow: 0 4px 10px rgba(0,255,136,0.3); cursor: pointer;" title="${p.name} (${p.primaryPosition}) - ★ ${(p.matchRating || 6.0).toFixed(2)}">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color) 0%, #00b359 100%); border: 2px solid #fff; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 800; font-size: 0.75rem; box-shadow: 0 4px 10px rgba(0,255,136,0.3); cursor: pointer;" title="${p.name} (${p.primaryPosition})${teamTooltip} - ★ ${(p.matchRating || 6.0).toFixed(2)}">
                             ${initials}
                         </div>
                         <span style="font-size: 0.65rem; color: #fff; font-weight: bold; background: rgba(0,0,0,0.6); padding: 1px 4px; border-radius: 3px; max-width: 60px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
@@ -396,6 +466,11 @@ export async function populateDashboard() {
             }).join("");
         }
     }
+
+    // Load recent audit logs
+    import("./extras.js").then(module => {
+        module.loadAndRenderDashboardAuditLogs();
+    }).catch(e => console.error("Failed to load loadAndRenderDashboardAuditLogs", e));
 }
 
 // Render Teams List (Left Panel)
@@ -443,6 +518,34 @@ export function renderTeams() {
             }
             select.appendChild(opt);
         });
+    }
+
+    // Populate Dashboard Filter
+    const dbFilter = document.getElementById("dashboard-team-filter");
+    if (dbFilter) {
+        const currentVal = dbFilter.value || "all";
+        dbFilter.innerHTML = `<option value="all">Tüm Takımlar</option>`;
+        state.teams.forEach(team => {
+            const opt = document.createElement("option");
+            opt.value = team.id;
+            opt.innerText = team.name;
+            dbFilter.appendChild(opt);
+        });
+        dbFilter.value = currentVal;
+    }
+
+    // Populate Calendar Filter
+    const calFilter = document.getElementById("calendar-team-filter");
+    if (calFilter) {
+        const currentVal = calFilter.value || "all";
+        calFilter.innerHTML = `<option value="all">Tüm Takımlar</option>`;
+        state.teams.forEach(team => {
+            const opt = document.createElement("option");
+            opt.value = team.id;
+            opt.innerText = team.name;
+            calFilter.appendChild(opt);
+        });
+        calFilter.value = currentVal;
     }
 }
 
@@ -510,6 +613,8 @@ export function selectTeam(id) {
     } else if (state.activeTab === "nav-finance") {
         import("./api.js").then(apiMod => apiMod.loadFinanceData());
         import("./charts.js").then(chartMod => chartMod.loadFinanceTrendChart(state.activeTeamId));
+    } else if (state.activeTab === "nav-transfers") {
+        import("./transfers.js").then(mod => mod.initTransfersView());
     }
 
     // Update Notification Center alerts for the active team
@@ -1143,31 +1248,38 @@ async function renderCalendar() {
     let baseCalEvents = [];
     let allEvents = [];
     
+    const calFilter = document.getElementById("calendar-team-filter");
+    const targetTeamId = calFilter ? calFilter.value : "all";
+    const isAllTeams = targetTeamId === "all";
+    
     try {
         const [trainRes, matchRes, tournRes, calRes] = await Promise.all([
-            fetch(`/api/training?team_id=${state.activeTeamId}`),
-            fetch(`/api/matches?team_id=${state.activeTeamId}`),
-            fetch(`/api/tournaments?team_id=${state.activeTeamId}`),
-            fetch(`/api/calendar-events?team_id=${state.activeTeamId}`)
+            fetch(`/api/training?team_id=${targetTeamId}`),
+            fetch(`/api/matches?team_id=${targetTeamId}`),
+            fetch(`/api/tournaments?team_id=${targetTeamId}`),
+            fetch(`/api/calendar-events?team_id=${targetTeamId}`)
         ]);
         
         if (trainRes.ok) {
             const trainings = await trainRes.json();
             trainings.forEach(t => {
-                allEvents.push({ date: t.date, type: "training", title: `🏋️ ${t.title}`, color: t.color || "#00ff88", time: t.start_time, sourceId: t.id });
+                const prefix = isAllTeams ? `[${t.team_name || "Tüm"}] ` : "";
+                allEvents.push({ date: t.date, type: "training", title: `🏋️ ${prefix}${t.title}`, color: t.color || "#00ff88", time: t.start_time, sourceId: t.id });
             });
         }
         if (matchRes.ok) {
             const matches = await matchRes.json();
             matches.forEach(m => {
                 const score = (m.our_score !== null && m.opponent_score !== null) ? ` (${m.our_score}-${m.opponent_score})` : '';
-                allEvents.push({ date: m.date, type: "match", title: `⚽ vs ${m.opponent}${score}`, color: "#ff453a", time: m.time || "17:00", sourceId: m.id });
+                const prefix = isAllTeams ? `[${m.team_name || "Tüm"}] ` : "";
+                allEvents.push({ date: m.date, type: "match", title: `⚽ ${prefix}vs ${m.opponent}${score}`, color: "#ff453a", time: m.time || "17:00", sourceId: m.id });
             });
         }
         if (tournRes.ok) {
             const tournaments = await tournRes.json();
             tournaments.forEach(t => {
-                allEvents.push({ date: t.start_date, type: "tournament", title: `🏆 ${t.name}`, color: "#ffd60a", time: "09:00", sourceId: t.id });
+                const prefix = isAllTeams ? `[${t.team_name || "Tüm"}] ` : "";
+                allEvents.push({ date: t.start_date, type: "tournament", title: `🏆 ${prefix}${t.name}`, color: "#ffd60a", time: "09:00", sourceId: t.id });
             });
         }
         if (calRes && calRes.ok) {
@@ -1175,10 +1287,11 @@ async function renderCalendar() {
             // Expand recurring events for this month
             const expanded = expandRecurringEvents(baseCalEvents, year, month);
             expanded.forEach(e => {
+                const prefix = isAllTeams ? `[${e.team_name || "Tüm"}] ` : "";
                 allEvents.push({ 
                     date: e.date, 
                     type: "custom", 
-                    title: e.title, 
+                    title: `${prefix}${e.title}`, 
                     color: e.color || "#4facfe", 
                     time: e.time,
                     id: e.id,
@@ -1193,7 +1306,6 @@ async function renderCalendar() {
     } catch (e) {
         console.error("Takvim verileri yüklenirken hata oluştu", e);
     }
-    
     gridDays.innerHTML = "";
     
     let firstDayIndex = new Date(year, month, 1).getDay() - 1;
@@ -1616,5 +1728,10 @@ export async function handleSaveCalendarEventSubmit() {
         showToast("Plan eklenirken hata oluştu.", "error");
     }
 }
+window.handleDashboardTeamFilterChange = function(val) {
+    populateDashboard();
+};
 
-
+window.handleCalendarTeamFilterChange = function(val) {
+    renderCalendar();
+};

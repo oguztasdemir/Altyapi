@@ -3,6 +3,7 @@ let currentColor = '#ffffff';
 let lineWidth = 3;
 let canvas = null;
 let ctx = null;
+let isEraserMode = false;
 
 // History of strokes for Undo functionality and responsive scaling.
 // Points are normalized (0 to 1) based on the canvas bounding rect.
@@ -48,8 +49,16 @@ export function initTacticsDraw() {
             const lastPt = currentStrokePoints[currentStrokePoints.length - 1];
             ctx.moveTo(lastPt.x * canvas.width, lastPt.y * canvas.height);
             ctx.lineTo(x * canvas.width, y * canvas.height);
-            ctx.strokeStyle = currentColor;
-            ctx.lineWidth = lineWidth;
+            
+            if (isEraserMode) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.lineWidth = lineWidth * 6;
+            } else {
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = lineWidth;
+            }
+            
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             ctx.stroke();
@@ -64,6 +73,16 @@ export function initTacticsDraw() {
     // Setup color buttons
     document.querySelectorAll('.btn-tactic-color').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            isEraserMode = false;
+            
+            // Style eraser button as normal
+            const eraserBtn = document.getElementById('btn-eraser-tactic-draw');
+            if (eraserBtn) {
+                eraserBtn.classList.remove('active');
+                eraserBtn.style.background = 'transparent';
+                eraserBtn.style.color = 'var(--text-primary)';
+            }
+            
             document.querySelectorAll('.btn-tactic-color').forEach(b => {
                 b.classList.remove('active');
                 b.style.border = '1px solid rgba(255,255,255,0.3)';
@@ -73,6 +92,24 @@ export function initTacticsDraw() {
             currentColor = btn.getAttribute('data-color') || '#ffffff';
         });
     });
+
+    // Setup eraser button
+    const eraserBtn = document.getElementById('btn-eraser-tactic-draw');
+    if (eraserBtn) {
+        eraserBtn.addEventListener('click', () => {
+            isEraserMode = true;
+            
+            // Remove active style from color buttons
+            document.querySelectorAll('.btn-tactic-color').forEach(b => {
+                b.classList.remove('active');
+                b.style.border = '1px solid rgba(255,255,255,0.3)';
+            });
+            
+            eraserBtn.classList.add('active');
+            eraserBtn.style.background = 'var(--accent-color)';
+            eraserBtn.style.color = '#000';
+        });
+    }
     
     // Setup clear button
     const clearBtn = document.getElementById('btn-clear-tactic-draw');
@@ -94,8 +131,16 @@ export function redrawCanvas() {
     strokes.forEach(stroke => {
         if (stroke.points.length < 1) return;
         ctx.beginPath();
-        ctx.strokeStyle = stroke.color;
-        ctx.lineWidth = stroke.width;
+        
+        if (stroke.isEraser) {
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.lineWidth = stroke.width * 6;
+        } else {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.strokeStyle = stroke.color;
+            ctx.lineWidth = stroke.width;
+        }
+        
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         
@@ -108,6 +153,9 @@ export function redrawCanvas() {
         }
         ctx.stroke();
     });
+    
+    // Restore default composite operation after drawing
+    ctx.globalCompositeOperation = 'source-over';
 }
 
 function resizeCanvas() {
@@ -137,8 +185,16 @@ function draw(e) {
     const lastPt = currentStrokePoints[currentStrokePoints.length - 1];
     ctx.moveTo(lastPt.x * canvas.width, lastPt.y * canvas.height);
     ctx.lineTo(x * canvas.width, y * canvas.height);
-    ctx.strokeStyle = currentColor;
-    ctx.lineWidth = lineWidth;
+    
+    if (isEraserMode) {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.lineWidth = lineWidth * 6;
+    } else {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = lineWidth;
+    }
+    
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.stroke();
@@ -151,7 +207,8 @@ function stopDrawing() {
         strokes.push({
             color: currentColor,
             width: lineWidth,
-            points: currentStrokePoints
+            points: currentStrokePoints,
+            isEraser: isEraserMode
         });
     }
     isDrawing = false;

@@ -22,7 +22,27 @@ def get_backups_log():
     init_backup_system()
     try:
         with open(LOG_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
+            log_data = json.load(f)
+            
+        updated_log = []
+        for entry in log_data:
+            filename = entry.get("filename")
+            size_str = "Bilinmiyor"
+            if filename:
+                file_path = os.path.join(BACKUP_DIR, filename)
+                if os.path.exists(file_path):
+                    size_bytes = os.path.getsize(file_path)
+                    if size_bytes >= 1024 * 1024:
+                        size_str = f"{size_bytes / (1024 * 1024):.2f} MB"
+                    else:
+                        size_str = f"{size_bytes / 1024:.1f} KB"
+                else:
+                    size_str = "Dosya Yok"
+            # Prevent altering the original log if we mutate entry directly
+            new_entry = dict(entry)
+            new_entry["size"] = size_str
+            updated_log.append(new_entry)
+        return updated_log
     except Exception as e:
         print("Error reading backups log:", e)
         return []
@@ -30,8 +50,16 @@ def get_backups_log():
 def save_backups_log(log_data):
     init_backup_system()
     try:
+        # Strip the dynamically added size field before saving
+        clean_log = []
+        for entry in log_data:
+            clean_entry = dict(entry)
+            if "size" in clean_entry:
+                del clean_entry["size"]
+            clean_log.append(clean_entry)
+            
         with open(LOG_PATH, "w", encoding="utf-8") as f:
-            json.dump(log_data, f, ensure_ascii=False, indent=2)
+            json.dump(clean_log, f, ensure_ascii=False, indent=2)
     except Exception as e:
         print("Error writing backups log:", e)
 
@@ -125,3 +153,45 @@ def restore_backup(backup_filename):
     except Exception as e:
         print("Error restoring backup from ZIP:", e)
         return False
+
+def delete_backup(backup_filename):
+    init_backup_system()
+    safe_filename = os.path.basename(backup_filename)
+    backup_file_path = os.path.join(BACKUP_DIR, safe_filename)
+    
+    if not os.path.exists(backup_file_path):
+        print(f"Backup file not found to delete: {safe_filename}")
+        return False
+        
+    try:
+        os.remove(backup_file_path)
+        
+        # Remove from log
+        log_data = get_backups_log()
+        updated_log = [entry for entry in log_data if entry.get("filename") != safe_filename]
+        save_backups_log(updated_log)
+        
+        print(f"Backup file deleted successfully: {safe_filename}")
+        return True
+    except Exception as e:
+        print(f"Error deleting backup file {safe_filename}:", e)
+        return False
+
+def check_and_create_daily_backup():
+    init_backup_system()
+    log_data = get_backups_log()
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    
+    has_today_auto = False
+    for entry in log_data:
+        timestamp = entry.get("timestamp", "")
+        action = entry.get("action", "")
+        if timestamp.startswith(today_str) and "Otomatik Günlük Yedek" in action:
+            has_today_auto = True
+            break
+            
+    if not has_today_auto:
+        print("[+] Günün ilk açılışı: Otomatik günlük yedek oluşturuluyor...")
+        create_backup("Otomatik Günlük Yedek")
+    else:
+        print("[+] Bugün için otomatik günlük yedek zaten mevcut.")

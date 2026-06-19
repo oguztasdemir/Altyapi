@@ -2,7 +2,7 @@ import { POSITION_WEIGHTS } from "./state.js";
 
 // Calculate Weighted Rating based on position weights
 export function calculateWeightedRating(position, attrs) {
-    const weights = POSITION_WEIGHTS[position] || POSITION_WEIGHTS.ST;
+    const weights = POSITION_WEIGHTS[position] || POSITION_WEIGHTS.SNT;
     let rating = 0;
     let weightSum = 0;
     

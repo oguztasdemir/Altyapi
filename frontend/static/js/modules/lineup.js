@@ -20,8 +20,19 @@ function isPlayerCompatibleWithPosition(player, posCode) {
     
     const target = posCode.trim().toUpperCase();
     
-    // Extract position codes from player's primaryPosition (e.g., "Santrafor (ST)" -> "ST")
-    // Or it might be just "ST". Let's handle both.
+    const COMPATIBLE_PAIRS = {
+        "GK": ["GK", "KL"], "KL": ["GK", "KL"],
+        "CB": ["CB", "STP"], "STP": ["CB", "STP"],
+        "LB": ["LB", "SLB"], "SLB": ["LB", "SLB"],
+        "RB": ["RB", "SĞB"], "SĞB": ["RB", "SĞB"],
+        "DM": ["DM", "DOS"], "DOS": ["DM", "DOS"],
+        "CM": ["CM", "OS"], "OS": ["CM", "OS"],
+        "LM": ["LM", "SLK"], "SLK": ["LM", "SLK"],
+        "RM": ["RM", "SĞK"], "SĞK": ["RM", "SĞK"],
+        "AM": ["AM", "OOS"], "OOS": ["AM", "OOS"],
+        "ST": ["ST", "SNT"], "SNT": ["ST", "SNT"]
+    };
+    
     const extractCodes = (str) => {
         if (!str) return [];
         const matches = str.match(/\(([^)]+)\)/g);
@@ -35,7 +46,35 @@ function isPlayerCompatibleWithPosition(player, posCode) {
     const secondaryCodes = extractCodes(player.secondaryPositions);
     
     const allCompatibleCodes = [...primaryCodes, ...secondaryCodes];
-    return allCompatibleCodes.includes(target);
+    const equivalents = COMPATIBLE_PAIRS[target] || [target];
+    
+    return allCompatibleCodes.some(code => equivalents.includes(code));
+}
+
+// Position translation/migration map for English -> Turkish
+const posMigrationMap = {
+    "GK": "KL",
+    "CB": "STP",
+    "LB": "SLB",
+    "RB": "SĞB",
+    "DM": "DOS",
+    "CM": "OS",
+    "LM": "SLK",
+    "RM": "SĞK",
+    "AM": "OOS",
+    "ST": "SNT"
+};
+
+function migratePositionKey(key) {
+    const parts = key.split("_");
+    if (parts.length === 2) {
+        const engPos = parts[0];
+        const index = parts[1];
+        if (posMigrationMap[engPos]) {
+            return `${posMigrationMap[engPos]}_${index}`;
+        }
+    }
+    return key;
 }
 
 // Load all lineups for the active team and render the page
@@ -47,6 +86,26 @@ export function loadAndRenderTacticsPage() {
     if (savedLineups) {
         try {
             teamLineups = JSON.parse(savedLineups);
+            
+            // Migrate old English keys to Turkish mevkiler keys
+            let migrated = false;
+            teamLineups.forEach(lineup => {
+                if (lineup.positions) {
+                    const newPositions = {};
+                    for (const [key, val] of Object.entries(lineup.positions)) {
+                        const newKey = migratePositionKey(key);
+                        if (newKey !== key) {
+                            migrated = true;
+                        }
+                        newPositions[newKey] = val;
+                    }
+                    lineup.positions = newPositions;
+                }
+            });
+            
+            if (migrated) {
+                localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
+            }
         } catch(e) {
             teamLineups = [];
         }
@@ -227,6 +286,99 @@ export function saveTeamLineup() {
     renderTeamLineupPool();
 }
 
+export function handleFormationChange(val) {
+    if (!state.activeTeamId || !activeLineup) return;
+    activeLineup.formation = val;
+    localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
+    showToast("Diziliş güncellendi.", "info");
+    renderTeamLineupPitch();
+    renderTeamLineupBench();
+    renderTeamLineupPool();
+}
+
+// Setup drag start helper
+function handleDragStart(e, playerId, sourceType, sourceKey) {
+    e.dataTransfer.setData("text/plain", playerId);
+    e.dataTransfer.setData("sourceType", sourceType);
+    e.dataTransfer.setData("sourceKey", sourceKey);
+}
+
+// Handle drop event on a target slot (either pitch or bench)
+function handleDropOnSlot(e, targetType, targetKey) {
+    e.preventDefault();
+    const draggedPlayerId = e.dataTransfer.getData("text/plain");
+    const sourceType = e.dataTransfer.getData("sourceType");
+    const sourceKey = e.dataTransfer.getData("sourceKey");
+
+    if (!draggedPlayerId) return;
+
+    // Retrieve player assigned to target slot currently (if any)
+    let targetPlayerId = null;
+    if (targetType === 'pitch') {
+        targetPlayerId = activeLineup.positions[targetKey];
+    } else if (targetType === 'bench') {
+        targetPlayerId = activeLineup.bench[targetKey];
+    }
+
+    // 1. Clear dragged player from previous slot
+    if (sourceType === 'pitch') {
+        delete activeLineup.positions[sourceKey];
+    } else if (sourceType === 'bench') {
+        delete activeLineup.bench[sourceKey];
+    }
+
+    // 2. Clear target player from target slot
+    if (targetType === 'pitch') {
+        delete activeLineup.positions[targetKey];
+    } else if (targetType === 'bench') {
+        delete activeLineup.bench[targetKey];
+    }
+
+    // 3. Assign dragged player to target slot
+    if (targetType === 'pitch') {
+        activeLineup.positions[targetKey] = draggedPlayerId;
+    } else if (targetType === 'bench') {
+        activeLineup.bench[targetKey] = draggedPlayerId;
+    }
+
+    // 4. Swap logic: put target player into source slot (if source was a slot, not pool)
+    if (targetPlayerId && (sourceType === 'pitch' || sourceType === 'bench')) {
+        if (sourceType === 'pitch') {
+            activeLineup.positions[sourceKey] = targetPlayerId;
+        } else if (sourceType === 'bench') {
+            activeLineup.bench[sourceKey] = targetPlayerId;
+        }
+    }
+
+    // Save and re-render
+    localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
+    renderTeamLineupPitch();
+    renderTeamLineupBench();
+    renderTeamLineupPool();
+}
+
+function handleDropOnPool(e) {
+    e.preventDefault();
+    const draggedPlayerId = e.dataTransfer.getData("text/plain");
+    const sourceType = e.dataTransfer.getData("sourceType");
+    const sourceKey = e.dataTransfer.getData("sourceKey");
+
+    if (!draggedPlayerId) return;
+
+    // Clear dragged player from previous slot
+    if (sourceType === 'pitch') {
+        delete activeLineup.positions[sourceKey];
+    } else if (sourceType === 'bench') {
+        delete activeLineup.bench[sourceKey];
+    }
+
+    // Save and re-render
+    localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
+    renderTeamLineupPitch();
+    renderTeamLineupBench();
+    renderTeamLineupPool();
+}
+
 // Backward compatibility helper
 export function selectTeamLineupBoard() {
     loadAndRenderTacticsPage();
@@ -234,6 +386,16 @@ export function selectTeamLineupBoard() {
 
 // Render Starting 11 players on the tactical pitch
 export function renderTeamLineupPitch() {
+    import("./tactics_simulation.js").then(mod => {
+        if (mod.simState && mod.simState.isActive) {
+            mod.renderSimPitchNodes();
+        } else {
+            proceedRenderTeamLineupPitch();
+        }
+    });
+}
+
+function proceedRenderTeamLineupPitch() {
     const pitchField = document.getElementById("team-tactic-pitch-field");
     if (!pitchField) return;
     
@@ -269,8 +431,11 @@ export function renderTeamLineupPitch() {
         div.style.cursor = "pointer";
         div.style.zIndex = "10";
         
+        const shirtBorder = player ? (isCompatible ? '#fff' : '#ff9100') : 'rgba(255,255,255,0.4)';
+        const shirtShadow = player ? (isCompatible ? '0 4px 8px rgba(0,0,0,0.3)' : '0 0 12px #ff9100') : 'none';
+
         div.innerHTML = `
-            <div class="lineup-shirt ${player ? 'assigned' : 'empty'}" style="width: 42px; height: 42px; border-radius: 50%; background: ${player ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'}; color: ${player ? '#000' : '#fff'}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; border: 2.5px solid ${player ? '#fff' : 'rgba(255,255,255,0.4)'}; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transition: all 0.2s;">
+            <div class="lineup-shirt ${player ? 'assigned' : 'empty'}" style="width: 42px; height: 42px; border-radius: 50%; background: ${player ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'}; color: ${player ? '#000' : '#fff'}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; border: 2.5px solid ${shirtBorder}; box-shadow: ${shirtShadow}; transition: all 0.2s;">
                 ${player ? (player.name.charAt(0) + (player.name.split(" ")[1]?.charAt(0) || "")) : node.pos}
             </div>
             <div class="lineup-label" style="background: rgba(0,0,0,0.85); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: bold; margin-top: 5px; border: 1px solid rgba(255,255,255,0.15); max-width: 115px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
@@ -286,6 +451,7 @@ export function renderTeamLineupPitch() {
             removeBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
                 delete activeLineup.positions[slotKey];
+                localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
                 renderTeamLineupPitch();
                 renderTeamLineupPool();
             });
@@ -304,6 +470,35 @@ export function renderTeamLineupPitch() {
         // Slot assignment trigger
         div.addEventListener("click", () => {
             openAssignPlayerModal('pitch', slotKey);
+        });
+
+        // HTML5 Drag and Drop implementation for Pitch node
+        if (player) {
+            div.setAttribute("draggable", "true");
+            div.addEventListener("dragstart", (e) => {
+                handleDragStart(e, player.id, 'pitch', slotKey);
+            });
+        }
+
+        div.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        div.addEventListener("dragenter", (e) => {
+            e.preventDefault();
+            div.style.filter = "brightness(1.3)";
+            div.style.transform = "translate(-50%, 50%) scale(1.1)";
+        });
+
+        div.addEventListener("dragleave", () => {
+            div.style.filter = "";
+            div.style.transform = "translate(-50%, 50%) scale(1.0)";
+        });
+
+        div.addEventListener("drop", (e) => {
+            div.style.filter = "";
+            div.style.transform = "translate(-50%, 50%) scale(1.0)";
+            handleDropOnSlot(e, 'pitch', slotKey);
         });
         
         pitchField.appendChild(div);
@@ -333,7 +528,7 @@ export function renderTeamLineupBench() {
         slotDiv.style.justifyContent = "space-between";
         slotDiv.style.alignItems = "center";
         slotDiv.style.cursor = "pointer";
-        slotDiv.style.transition = "background 0.2s";
+        slotDiv.style.transition = "background 0.2s, border 0.2s";
         slotDiv.innerHTML = `
             <div style="display:flex; align-items:center; gap: 10px; flex: 1; min-width: 0;">
                 <span style="font-size:0.7rem; font-weight:bold; color:var(--text-muted); width: 45px;">Yedek ${i}</span>
@@ -358,6 +553,7 @@ export function renderTeamLineupBench() {
             removeBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
                 delete activeLineup.bench[slotKey];
+                localStorage.setItem(`fm_lineups_${state.activeTeamId}`, JSON.stringify(teamLineups));
                 renderTeamLineupBench();
                 renderTeamLineupPool();
             });
@@ -375,6 +571,35 @@ export function renderTeamLineupBench() {
         // Slot assignment trigger
         slotDiv.addEventListener("click", () => {
             openAssignPlayerModal('bench', slotKey);
+        });
+
+        // HTML5 Drag and Drop implementation for Bench slot
+        if (player) {
+            slotDiv.setAttribute("draggable", "true");
+            slotDiv.addEventListener("dragstart", (e) => {
+                handleDragStart(e, player.id, 'bench', slotKey);
+            });
+        }
+
+        slotDiv.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        slotDiv.addEventListener("dragenter", (e) => {
+            e.preventDefault();
+            slotDiv.style.border = "1.5px dashed var(--accent-color)";
+            slotDiv.style.background = "rgba(0, 255, 136, 0.05)";
+        });
+
+        slotDiv.addEventListener("dragleave", () => {
+            slotDiv.style.border = "1px solid var(--border-color)";
+            slotDiv.style.background = "var(--bg-dark)";
+        });
+
+        slotDiv.addEventListener("drop", (e) => {
+            slotDiv.style.border = "1px solid var(--border-color)";
+            slotDiv.style.background = "var(--bg-dark)";
+            handleDropOnSlot(e, 'bench', slotKey);
         });
         
         container.appendChild(slotDiv);
@@ -399,37 +624,65 @@ export function renderTeamLineupPool() {
     
     if (unassigned.length === 0) {
         container.innerHTML = `<div style="color:var(--text-muted); text-align:center; padding:10px 0;">Tüm oyuncular kadroya yerleştirildi.</div>`;
-        return;
-    }
-    
-    unassigned.forEach(p => {
-        const item = document.createElement("div");
-        item.style.background = "rgba(255,255,255,0.02)";
-        item.style.border = "1px solid rgba(255,255,255,0.05)";
-        item.style.borderRadius = "4px";
-        item.style.padding = "6px 10px";
-        item.style.display = "flex";
-        item.style.justifyContent = "space-between";
-        item.style.alignItems = "center";
-        
-        item.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 6px;">
-                <strong>${p.name}</strong>
-                <button class="pool-detail-view-btn" style="background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.2); color: var(--accent-color); font-size: 0.7rem; cursor: pointer; padding: 2px 6px; border-radius: 4px; font-weight: bold; transition: all 0.2s;" onmouseover="this.style.background='var(--accent-color)'; this.style.color='#000'" onmouseout="this.style.background='rgba(0, 255, 136, 0.1)'; this.style.color='var(--accent-color)'" title="Oyuncu Detayı">Detay</button>
-            </div>
-            <span style="color:var(--accent-color); font-weight:700;">${p.primaryPosition}</span>
-        `;
-        
-        const detBtn = item.querySelector(".pool-detail-view-btn");
-        if (detBtn) {
-            detBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                switchTab("nav-teams");
-                selectPlayer(p.id);
+    } else {
+        unassigned.forEach(p => {
+            const item = document.createElement("div");
+            item.style.background = "rgba(255,255,255,0.02)";
+            item.style.border = "1px solid rgba(255,255,255,0.05)";
+            item.style.borderRadius = "4px";
+            item.style.padding = "6px 10px";
+            item.style.display = "flex";
+            item.style.justifyContent = "space-between";
+            item.style.alignItems = "center";
+            item.style.cursor = "grab";
+            
+            item.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <strong>${p.name}</strong>
+                    <button class="pool-detail-view-btn" style="background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.2); color: var(--accent-color); font-size: 0.7rem; cursor: pointer; padding: 2px 6px; border-radius: 4px; font-weight: bold; transition: all 0.2s;" onmouseover="this.style.background='var(--accent-color)'; this.style.color='#000'" onmouseout="this.style.background='rgba(0, 255, 136, 0.1)'; this.style.color='var(--accent-color)'" title="Oyuncu Detayı">Detay</button>
+                </div>
+                <span style="color:var(--accent-color); font-weight:700;">${p.primaryPosition}</span>
+            `;
+            
+            const detBtn = item.querySelector(".pool-detail-view-btn");
+            if (detBtn) {
+                detBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    switchTab("nav-teams");
+                    selectPlayer(p.id);
+                });
+            }
+
+            // HTML5 Drag start for Pool items
+            item.setAttribute("draggable", "true");
+            item.addEventListener("dragstart", (e) => {
+                handleDragStart(e, p.id, 'pool', '');
             });
-        }
-        
-        container.appendChild(item);
+            
+            container.appendChild(item);
+        });
+    }
+
+    // Make the Squad Pool container itself a drop target to return players to the pool
+    container.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    });
+
+    container.addEventListener("dragenter", (e) => {
+        e.preventDefault();
+        container.style.border = "1.5px dashed var(--accent-color)";
+        container.style.background = "rgba(255, 255, 255, 0.02)";
+    });
+
+    container.addEventListener("dragleave", () => {
+        container.style.border = "none";
+        container.style.background = "transparent";
+    });
+
+    container.addEventListener("drop", (e) => {
+        container.style.border = "none";
+        container.style.background = "transparent";
+        handleDropOnPool(e);
     });
 }
 

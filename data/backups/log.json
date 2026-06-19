@@ -1,107 +1,152 @@
 [
   {
-    "timestamp": "2026-06-19 01:28:45",
+    "timestamp": "2026-06-19 12:24:01",
+    "action": "Otomatik Günlük Yedek",
+    "filename": "database_20260619_122401.zip"
+  },
+  {
+    "timestamp": "2026-06-19 11:41:53",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012845.zip"
+    "filename": "database_20260619_114153.zip"
   },
   {
-    "timestamp": "2026-06-19 01:28:42",
+    "timestamp": "2026-06-19 11:41:49",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012842.zip"
+    "filename": "database_20260619_114149.zip"
   },
   {
-    "timestamp": "2026-06-19 01:28:39",
+    "timestamp": "2026-06-19 10:18:36",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012839.zip"
+    "filename": "database_20260619_101836.zip"
   },
   {
-    "timestamp": "2026-06-19 01:28:32",
+    "timestamp": "2026-06-19 10:18:34",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012832.zip"
+    "filename": "database_20260619_101834.zip"
   },
   {
-    "timestamp": "2026-06-19 01:27:47",
+    "timestamp": "2026-06-19 10:14:45",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012747.zip"
+    "filename": "database_20260619_101445.zip"
   },
   {
-    "timestamp": "2026-06-19 01:27:32",
+    "timestamp": "2026-06-19 10:14:36",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012732.zip"
+    "filename": "database_20260619_101436.zip"
   },
   {
-    "timestamp": "2026-06-19 01:27:25",
+    "timestamp": "2026-06-19 10:14:30",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012725.zip"
+    "filename": "database_20260619_101430.zip"
   },
   {
-    "timestamp": "2026-06-19 01:27:22",
+    "timestamp": "2026-06-19 09:54:27",
+    "action": "Rehabilitasyon süreci güncellendi",
+    "filename": "database_20260619_095427.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:54:27",
+    "action": "Rehabilitasyon süreci güncellendi",
+    "filename": "database_20260619_095427.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:40:46",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_012721.zip"
+    "filename": "database_20260619_094045.zip"
   },
   {
-    "timestamp": "2026-06-19 01:07:11",
-    "action": "Veri silindi",
-    "filename": "database_20260619_010711.zip"
-  },
-  {
-    "timestamp": "2026-06-19 01:07:03",
+    "timestamp": "2026-06-19 09:40:37",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_010703.zip"
+    "filename": "database_20260619_094037.zip"
   },
   {
-    "timestamp": "2026-06-19 01:06:54",
+    "timestamp": "2026-06-19 09:40:31",
     "action": "Veri eklendi/güncellendi",
-    "filename": "database_20260619_010654.zip"
+    "filename": "database_20260619_094031.zip"
   },
   {
-    "timestamp": "2026-06-19 00:50:23",
-    "action": "Yoklama kaydı güncellendi",
-    "filename": "database_20260619_005023.zip"
+    "timestamp": "2026-06-19 09:40:24",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_094024.zip"
   },
   {
-    "timestamp": "2026-06-19 00:50:19",
-    "action": "Antrenman programı güncellendi",
-    "filename": "database_20260619_005019.zip"
+    "timestamp": "2026-06-19 09:40:18",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_094018.zip"
   },
   {
-    "timestamp": "2026-06-19 00:50:19",
-    "action": "Antrenman programı güncellendi",
-    "filename": "database_20260619_005019.zip"
+    "timestamp": "2026-06-19 09:40:10",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_094010.zip"
   },
   {
-    "timestamp": "2026-06-19 00:50:19",
-    "action": "Antrenman programı güncellendi",
-    "filename": "database_20260619_005019.zip"
+    "timestamp": "2026-06-19 09:40:03",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_094003.zip"
   },
   {
-    "timestamp": "2026-06-19 00:50:19",
-    "action": "Antrenman programı güncellendi",
-    "filename": "database_20260619_005019.zip"
+    "timestamp": "2026-06-19 09:40:00",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_094000.zip"
   },
   {
-    "timestamp": "2026-06-19 00:13:37",
-    "action": "Finansal işlem eklendi",
-    "filename": "database_20260619_001337.zip"
+    "timestamp": "2026-06-19 09:39:17",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093917.zip"
   },
   {
-    "timestamp": "2026-06-18 23:29:16",
-    "action": "Oyuncu eklendi/güncellendi",
-    "filename": "database_20260618_232916.zip"
+    "timestamp": "2026-06-19 09:39:01",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093901.zip"
   },
   {
-    "timestamp": "2026-06-18 23:29:08",
-    "action": "Oyuncu eklendi/güncellendi",
-    "filename": "database_20260618_232908.zip"
+    "timestamp": "2026-06-19 09:38:53",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093853.zip"
   },
   {
-    "timestamp": "2026-06-18 22:14:51",
-    "action": "Sıkıştırılmış İkinci Test Manuel Yedek",
-    "filename": "database_20260618_221451.zip"
+    "timestamp": "2026-06-19 09:38:47",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093847.zip"
   },
   {
-    "timestamp": "2026-06-18 22:10:36",
-    "action": "İlk Test Manuel Yedek",
-    "filename": "database_20260618_221036.db"
+    "timestamp": "2026-06-19 09:36:03",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093603.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:34:44",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093444.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:34:37",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093437.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:34:21",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093421.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:34:12",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093412.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:33:52",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093352.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:32:33",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093233.zip"
+  },
+  {
+    "timestamp": "2026-06-19 09:32:16",
+    "action": "Veri eklendi/güncellendi",
+    "filename": "database_20260619_093216.zip"
   }
 ]

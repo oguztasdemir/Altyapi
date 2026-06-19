@@ -1,0 +1,28 @@
+Searching in index.html:
+  Line 1603: <!-- Second row: Seasons and Transfers -->
+  Line 1630: <!-- Transfers Card -->
+  Line 1633: <h3>Transfer Takip Tablosu</h3>
+  Line 1634: <button class="btn-primary" onclick="window.openAddTransferModal()">Transfer Ekle</button>
+  Line 1648: <tbody id="transfers-list-tbody">
+  Line 3508: <!-- Modal: Add Transfer -->
+  Line 3509: <div class="modal-overlay" id="modal-add-transfer">
+  Line 3512: <h3>Yeni Transfer Kaydı</h3>
+  Line 3513: <button class="modal-close" onclick="closeModal('modal-add-transfer')">✕</button>
+  Line 3517: <label for="transfer-input-player">Futbolcu</label>
+  Line 3518: <select id="transfer-input-player" class="form-control">
+  Line 3524: <label for="transfer-input-type">Transfer Tipi</label>
+  Line 3525: <select id="transfer-input-type" class="form-control">
+  Line 3526: <option value="Gelen">Gelen Transfer</option>
+  Line 3527: <option value="Giden">Giden Transfer</option>
+  Line 3533: <label for="transfer-input-fee">Bonservis Bedeli (TL)</label>
+  Line 3534: <input type="number" id="transfer-input-fee" class="form-control" min="0" placeholder="0 = Bedelsiz">
+  Line 3539: <label for="transfer-input-from">Geldiği Kulüp</label>
+  Line 3540: <input type="text" id="transfer-input-from" class="form-control" placeholder="Eski kulübü">
+  Line 3543: <label for="transfer-input-to">Gittiği Kulüp</label>
+  Line 3544: <input type="text" id="transfer-input-to" class="form-control" placeholder="Yeni kulübü">
+  Line 3548: <label for="transfer-input-date">Transfer Tarihi</label>
+  Line 3549: <input type="date" id="transfer-input-date" class="form-control">
+  Line 3552: <label for="transfer-input-notes">Notlar</label>
+  Line 3553: <textarea id="transfer-input-notes" class="form-control" rows="2" placeholder="Sözleşme şartları, sonraki satıştan pay vb."></textarea>
+  Line 3557: <button class="btn-secondary" onclick="closeModal('modal-add-transfer')">İptal</button>
+  Line 3558: <button class="btn-primary" id="btn-save-transfer">Kaydet</button>

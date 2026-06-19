@@ -174,14 +174,14 @@ export function selectPlayer(id) {
     let roleTitle = "Yaratıcı Forvet";
     let posSummary = "Hücumcu (Merkez)";
     const pos = player.primaryPosition;
-    if (pos === "GK") { roleTitle = "Libero Kaleci"; posSummary = "Kaleci (GK)"; }
-    else if (pos === "CB") { roleTitle = "Geniş Alan Stoperi"; posSummary = "Defender (Right/Left/Centre)"; }
-    else if (pos === "LB" || pos === "RB") { roleTitle = "Kanat Beki"; posSummary = "Defender / Midfielder (Side)"; }
-    else if (pos === "DM") { roleTitle = "Savaşçı Önlibero"; posSummary = "Defensive Midfielder"; }
-    else if (pos === "CM") { roleTitle = "İki Yönlü Orta Saha"; posSummary = "Merkez Orta Saha"; }
-    else if (pos === "LM" || pos === "RM") { roleTitle = "Ters Ayaklı Kanat"; posSummary = "Midfielder / Attacker (Side)"; }
-    else if (pos === "AM") { roleTitle = "Gizli Oyun Kurucu"; posSummary = "Attacking Midfielder"; }
-    else if (pos === "ST") { roleTitle = "Fırsatçı Golcü"; posSummary = "Striker (Centre)"; }
+    if (pos === "KL") { roleTitle = "Libero Kaleci"; posSummary = "Kaleci (KL)"; }
+    else if (pos === "STP") { roleTitle = "Geniş Alan Stoperi"; posSummary = "Stoper (STP)"; }
+    else if (pos === "SLB" || pos === "SĞB") { roleTitle = "Kanat Beki"; posSummary = "Sol/Sağ Bek (SLB/SĞB)"; }
+    else if (pos === "DOS") { roleTitle = "Savaşçı Önlibero"; posSummary = "Defansif Orta Saha (DOS)"; }
+    else if (pos === "OS") { roleTitle = "İki Yönlü Orta Saha"; posSummary = "Merkez Orta Saha (OS)"; }
+    else if (pos === "SLK" || pos === "SĞK") { roleTitle = "Ters Ayaklı Kanat"; posSummary = "Kanat Oyuncusu (SLK/SĞK)"; }
+    else if (pos === "OOS") { roleTitle = "Gizli Oyun Kurucu"; posSummary = "Ofansif Orta Saha (OOS)"; }
+    else if (pos === "SNT") { roleTitle = "Fırsatçı Golcü"; posSummary = "Santrafor (SNT)"; }
     
     document.getElementById("detail-role-title").innerText = roleTitle;
     document.getElementById("detail-positions-summary").innerText = posSummary;

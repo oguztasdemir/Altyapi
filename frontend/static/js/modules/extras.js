@@ -151,6 +151,45 @@ export async function loadAndRenderAuditLog() {
     }
 }
 
+export async function loadAndRenderDashboardAuditLogs() {
+    const container = document.getElementById("db-recent-audit-logs");
+    if (!container) return;
+    try {
+        const res = await fetch("/api/audit-log?limit=8");
+        const logs = await res.json();
+        if (!logs.length) {
+            container.innerHTML = `<div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Henüz işlem kaydı yok.</div>`;
+            return;
+        }
+        const typeColors = { 
+            admin: "rgba(79, 172, 254, 0.15)", 
+            backup: "rgba(0, 255, 136, 0.15)", 
+            security: "rgba(255, 107, 107, 0.15)" 
+        };
+        const typeTextColors = {
+            admin: "#4facfe",
+            backup: "#00ff88",
+            security: "#ff6b6b"
+        };
+        container.innerHTML = logs.map(l => `
+            <div style="display: flex; align-items: start; gap: 12px; padding: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 0.8rem; margin-bottom: 6px;">
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-family: monospace; white-space: nowrap; margin-top: 2px;">
+                    ${escHtml(l.timestamp.split(" ")[1] || l.timestamp)}
+                </span>
+                <div style="flex: 1;">
+                    <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 2px;">${escHtml(l.action)}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.75rem;">${escHtml(l.detail)}</div>
+                </div>
+                <span style="font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; background: ${typeColors[l.entity_type] || "rgba(255,255,255,0.05)"}; color: ${typeTextColors[l.entity_type] || "var(--text-secondary)"}; font-weight: 600; text-transform: uppercase;">
+                    ${escHtml(l.entity_type || "sistem")}
+                </span>
+            </div>
+        `).join("");
+    } catch(e) {
+        container.innerHTML = `<div style="color: var(--attr-poor); font-size: 0.8rem; text-align: center; padding: 20px 0;">İşlem günlükleri yüklenemedi.</div>`;
+    }
+}
+
 // ──────────────────────────────────────────────
 // FINANCIAL KPI
 // ──────────────────────────────────────────────

@@ -39,6 +39,7 @@ import { initNotifications } from "./modules/notifications.js";
 import { handleCreateManualBackup } from "./modules/admin.js";
 import { openPlayerReport, printPlayerReport } from "./modules/report.js";
 import { initGlobalSearch, initKeyboardShortcuts, loadAndRenderAuditLog, loadFinanceKPI, loadTrainingLoad } from "./modules/extras.js";
+import { setupSimulationListeners } from "./modules/tactics_simulation.js";
 
 // Bind functions to window object for inline HTML event handlers
 window.switchTab = switchTab;
@@ -158,6 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     loadData().then(() => {
         switchTab(initialTab);
+        if (initialTab === "nav-transfers") {
+            import("./modules/transfers.js").then(mod => mod.initTransfersView());
+        }
     });
 
     window.addEventListener("hashchange", () => {
@@ -173,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTacticsDraw();
     initNotifications();
     initPlayerPrint();
+    setupSimulationListeners();
 
     initGlobalSearch();
     initKeyboardShortcuts();
@@ -204,6 +209,7 @@ function setupEventListeners() {
     document.getElementById("nav-teams").addEventListener("click", () => switchTab("nav-teams"));
     document.getElementById("nav-finance").addEventListener("click", () => { switchTab("nav-finance"); if(state.activeTeamId) loadFinanceKPI(state.activeTeamId); });
     document.getElementById("nav-management").addEventListener("click", () => switchTab("nav-management"));
+    document.getElementById("nav-transfers").addEventListener("click", () => switchTab("nav-transfers"));
     document.getElementById("nav-admin").addEventListener("click", () => { switchTab("nav-admin"); if(state.isAdminLoggedIn) { loadAndRenderAuditLog(); } });
     document.getElementById("nav-matches").addEventListener("click", () => switchTab("nav-matches"));
     document.getElementById("nav-training").addEventListener("click", () => { switchTab("nav-training"); if(state.activeTeamId) loadTrainingLoad(state.activeTeamId); });
@@ -707,8 +713,8 @@ function setupEventListeners() {
 
     const teamFormationSelect = document.getElementById("team-formation-select");
     if (teamFormationSelect) {
-        teamFormationSelect.addEventListener("change", () => {
-            import("./modules/lineup.js").then(mod => mod.renderTeamLineupPitch());
+        teamFormationSelect.addEventListener("change", (e) => {
+            import("./modules/lineup.js").then(mod => mod.handleFormationChange(e.target.value));
         });
     }
 
@@ -1146,4 +1152,236 @@ document.addEventListener("DOMContentLoaded", () => {
     setupBulkFeeModal();
     setupPlayerFeeModal();
 });
+
+// ============================================================
+// Transfer Tracking Implementation
+// ============================================================
+window.executeInternalTransfer = async function() {
+    const playerId = document.getElementById("internal-transfer-player")?.value;
+    const targetTeamId = document.getElementById("internal-transfer-target-team")?.value;
+    const notes = document.getElementById("internal-transfer-notes")?.value.trim() || "";
+
+    if (!playerId || !targetTeamId) {
+        showToast("Lütfen transfer edilecek futbolcuyu ve hedef takımı seçin.", "error");
+        return;
+    }
+
+    if (!state.activeTeamId) {
+        showToast("Takım seçilmedi.", "error");
+        return;
+    }
+
+    const activeTeam = state.teams.find(t => t.id === state.activeTeamId);
+    const targetTeam = state.teams.find(t => t.id === targetTeamId);
+    const player = activeTeam?.players?.find(p => p.id === playerId);
+
+    if (!player || !targetTeam) {
+        showToast("Futbolcu veya hedef takım bilgisi bulunamadı.", "error");
+        return;
+    }
+
+    const payload = {
+        ...player,
+        team_id: targetTeamId
+    };
+
+    try {
+        // Step 1: Update player squad
+        const playerRes = await fetch("/api/players", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (!playerRes.ok) {
+            showToast("Oyuncu kulüp içi takım güncellemesi başarısız.", "error");
+            return;
+        }
+
+        // Step 2: Post to transfers log
+        const transferPayload = {
+            player_id: playerId,
+            team_id: state.activeTeamId, // Log under current team/view context
+            transfer_type: "Kulüp İçi",
+            from_team: activeTeam.name,
+            to_team: targetTeam.name,
+            date: new Date().toISOString().split("T")[0],
+            fee: 0,
+            notes: notes || "Kulüp içi kadro değişikliği."
+        };
+
+        const transferRes = await fetch("/api/transfers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(transferPayload)
+        });
+
+        if (transferRes.ok) {
+            showToast(`${player.name} başarıyla ${targetTeam.name} takımına transfer edildi.`, "success");
+            
+            // Reload local app state data
+            await loadData();
+            
+            // Clear notes field
+            const notesEl = document.getElementById("internal-transfer-notes");
+            if (notesEl) notesEl.value = "";
+
+            // Re-render transfers view lists & history
+            const { initTransfersView } = await import("./modules/transfers.js");
+            initTransfersView();
+        } else {
+            showToast("Transfer kaydı oluşturulamadı.", "error");
+        }
+    } catch (e) {
+        console.error(e);
+        showToast("Bağlantı hatası.", "error");
+    }
+};
+
+window.executeExternalTransfer = async function() {
+    const transferType = document.getElementById("ext-transfer-type")?.value || "Dış Kulüp";
+    const date = document.getElementById("ext-transfer-date")?.value || new Date().toISOString().split("T")[0];
+    const name = document.getElementById("ext-transfer-player-name")?.value.trim();
+    const position = document.getElementById("ext-transfer-position")?.value || "ST";
+    const age = parseInt(document.getElementById("ext-transfer-age")?.value || "16");
+    const fromClub = document.getElementById("ext-transfer-from-club")?.value.trim() || "";
+    const fee = parseInt(document.getElementById("ext-transfer-fee")?.value || "0");
+    const targetTeamId = document.getElementById("ext-transfer-target-team")?.value;
+
+    if (!name) {
+        showToast("Lütfen futbolcunun adını girin.", "error");
+        return;
+    }
+
+    if (!targetTeamId) {
+        showToast("Lütfen kaydedileceği takımı seçin.", "error");
+        return;
+    }
+
+    const targetTeam = state.teams.find(t => t.id === targetTeamId);
+    if (!targetTeam) {
+        showToast("Kayıt takımı bulunamadı.", "error");
+        return;
+    }
+
+    // Default base attributes
+    const defaultAttributes = {
+        crossing: 50, finishing: 50, heading: 50, dribbling: 50, passing: 50, shooting: 50, freekick: 50, penalty: 50, volley: 50, longshots: 50, corner: 50, firsttouch: 50, technique: 50, tackling: 50, sliding: 50, longpassing: 50, curve: 50,
+        decision: 50, vision: 50, determination: 50, teamwork: 50, positioning: 50, aggression: 50, anticipation: 50, bravery: 50, composure: 50, concentration: 50, leadership: 50, workrate: 50,
+        pace: 50, acceleration: 50, stamina: 50, strength: 50, agility: 50, jumping: 50, balance: 50, naturalfitness: 50, flair: 50,
+        gk_handling: 50, gk_kicking: 50, gk_reflexes: 50, gk_oneonones: 50, gk_aerial: 50
+    };
+
+    const newPlayerId = `player-tr-${Date.now()}`;
+    const newPlayerPayload = {
+        id: newPlayerId,
+        team_id: targetTeamId,
+        name: name,
+        age: age,
+        nationality: "TÜRKİYE",
+        foot: "Sağ",
+        primaryPosition: position,
+        secondaryPositions: "",
+        photo: null,
+        attributes: defaultAttributes,
+        squadRole: "Rotasyon",
+        height: 170,
+        weight: 65,
+        injuryStatus: "Sağlıklı",
+        coachNotes: `${transferType} yoluyla yeni kayıt.`,
+        matchesPlayed: 0,
+        goals: 0,
+        assists: 0,
+        yellowCards: 0,
+        redCards: 0,
+        matchRating: 6.0,
+        parentName: "",
+        parentPhone: "",
+        feeStatus: "Ödenmedi",
+        currentAbility: 3,
+        potentialAbility: 4,
+        bloodType: "Bilinmiyor",
+        chronicIllnesses: "",
+        allergies: "",
+        medications: ""
+    };
+
+    try {
+        // Step 1: Create the new player in database
+        const playerRes = await fetch("/api/players", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newPlayerPayload)
+        });
+
+        if (!playerRes.ok) {
+            showToast("Yeni oyuncu kaydı başarısız.", "error");
+            return;
+        }
+
+        // Step 2: Post to transfers log
+        const transferPayload = {
+            player_id: newPlayerId,
+            team_id: state.activeTeamId || targetTeamId, // Log under active view context if available, otherwise target
+            transfer_type: transferType,
+            from_team: fromClub || (transferType === "Seçmeler" ? "Seçmeler" : "Dış Kulüp"),
+            to_team: targetTeam.name,
+            date: date,
+            fee: fee,
+            notes: `${transferType} transfer kaydı. Geldiği yer: ${fromClub || 'Bilinmiyor'}.`
+        };
+
+        const transferRes = await fetch("/api/transfers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(transferPayload)
+        });
+
+        if (transferRes.ok) {
+            showToast(`${name} başarıyla ${targetTeam.name} kadrosuna kaydedildi.`, "success");
+
+            // Reload local app state data
+            await loadData();
+
+            // Clear inputs
+            const nameEl = document.getElementById("ext-transfer-player-name");
+            if (nameEl) nameEl.value = "";
+            const fromClubEl = document.getElementById("ext-transfer-from-club");
+            if (fromClubEl) fromClubEl.value = "";
+            const feeEl = document.getElementById("ext-transfer-fee");
+            if (feeEl) feeEl.value = "0";
+
+            // Re-render transfers view lists & history
+            const { initTransfersView } = await import("./modules/transfers.js");
+            initTransfersView();
+        } else {
+            showToast("Transfer kaydı oluşturulamadı.", "error");
+        }
+    } catch (e) {
+        console.error(e);
+        showToast("Bağlantı hatası.", "error");
+    }
+};
+
+window.deleteTransferLog = async function(id) {
+    if (!confirm("Bu transfer kaydını silmek istediğinize emin misiniz?")) return;
+
+    try {
+        const res = await fetch(`/api/transfers?id=${id}`, {
+            method: "DELETE"
+        });
+
+        if (res.ok) {
+            showToast("Transfer kaydı başarıyla silindi.", "success");
+            const { initTransfersView } = await import("./modules/transfers.js");
+            initTransfersView();
+        } else {
+            showToast("Kayıt silinemedi.", "error");
+        }
+    } catch (e) {
+        console.error(e);
+        showToast("Bağlantı hatası.", "error");
+    }
+};
+
 

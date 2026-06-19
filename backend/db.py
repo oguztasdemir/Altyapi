@@ -804,18 +804,18 @@ def delete_coach(coach_id):
 
 def calculate_overall_rating(primary_position, attributes_dict):
     weights_map = {
-        "GK": { "positioning": 0.35, "agility": 0.30, "decision": 0.20, "strength": 0.15 },
-        "CB": { "marking": 0.40, "strength": 0.20, "positioning": 0.20, "heading": 0.10, "decision": 0.10 },
-        "LB": { "pace": 0.30, "crossing": 0.20, "marking": 0.20, "stamina": 0.20, "passing": 0.10 },
-        "RB": { "pace": 0.30, "crossing": 0.20, "marking": 0.20, "stamina": 0.20, "passing": 0.10 },
-        "DM": { "marking": 0.30, "passing": 0.25, "positioning": 0.20, "teamwork": 0.15, "stamina": 0.10 },
-        "CM": { "passing": 0.35, "vision": 0.25, "decision": 0.15, "teamwork": 0.15, "stamina": 0.10 },
-        "LM": { "pace": 0.35, "dribbling": 0.25, "crossing": 0.20, "passing": 0.10, "shooting": 0.10 },
-        "RM": { "pace": 0.35, "dribbling": 0.25, "crossing": 0.20, "passing": 0.10, "shooting": 0.10 },
-        "AM": { "passing": 0.30, "vision": 0.30, "dribbling": 0.20, "decision": 0.10, "shooting": 0.10 },
-        "ST": { "finishing": 0.35, "shooting": 0.25, "pace": 0.20, "heading": 0.10, "dribbling": 0.10 }
+        "KL": { "positioning": 0.35, "agility": 0.30, "decision": 0.20, "strength": 0.15 },
+        "STP": { "marking": 0.40, "strength": 0.20, "positioning": 0.20, "heading": 0.10, "decision": 0.10 },
+        "SLB": { "pace": 0.30, "crossing": 0.20, "marking": 0.20, "stamina": 0.20, "passing": 0.10 },
+        "SĞB": { "pace": 0.30, "crossing": 0.20, "marking": 0.20, "stamina": 0.20, "passing": 0.10 },
+        "DOS": { "marking": 0.30, "passing": 0.25, "positioning": 0.20, "teamwork": 0.15, "stamina": 0.10 },
+        "OS": { "passing": 0.35, "vision": 0.25, "decision": 0.15, "teamwork": 0.15, "stamina": 0.10 },
+        "SLK": { "pace": 0.35, "dribbling": 0.25, "crossing": 0.20, "passing": 0.10, "shooting": 0.10 },
+        "SĞK": { "pace": 0.35, "dribbling": 0.25, "crossing": 0.20, "passing": 0.10, "shooting": 0.10 },
+        "OOS": { "passing": 0.30, "vision": 0.30, "dribbling": 0.20, "decision": 0.10, "shooting": 0.10 },
+        "SNT": { "finishing": 0.35, "shooting": 0.25, "pace": 0.20, "heading": 0.10, "dribbling": 0.10 }
     }
-    weights = weights_map.get(primary_position, weights_map["ST"])
+    weights = weights_map.get(primary_position, weights_map["SNT"])
     rating = 0.0
     weight_sum = 0.0
     for key, w in weights.items():
@@ -1173,6 +1173,52 @@ def get_matches(team_id):
     conn.close()
     return matches
 
+def get_all_matches():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT m.*, t.name as team_name 
+        FROM matches m 
+        LEFT JOIN teams t ON m.team_id = t.id 
+        ORDER BY m.date DESC
+    """)
+    rows = cursor.fetchall()
+    matches = []
+    for r in rows:
+        match = {
+            "id": r["id"],
+            "team_id": r["team_id"],
+            "team_name": r["team_name"],
+            "opponent": r["opponent"],
+            "date": r["date"],
+            "our_score": r["our_score"],
+            "opponent_score": r["opponent_score"],
+            "player_stats": []
+        }
+        # Fetch player stats
+        cursor.execute("""
+            SELECT mps.*, p.name as player_name 
+            FROM match_player_stats mps
+            JOIN players p ON mps.player_id = p.id
+            WHERE mps.match_id = ?
+        """, (r["id"],))
+        p_rows = cursor.fetchall()
+        for pr in p_rows:
+            match["player_stats"].append({
+                "player_id": pr["player_id"],
+                "player_name": pr["player_name"],
+                "goals": pr["goals"],
+                "assists": pr["assists"],
+                "saves": pr["saves"] if "saves" in pr.keys() else 0,
+                "yellow_cards": pr["yellow_cards"],
+                "red_cards": pr["red_cards"],
+                "rating": pr["rating"]
+            })
+        matches.append(match)
+    conn.close()
+    return matches
+
+
 def add_match(match_id, team_id, opponent, date, our_score, opponent_score, player_stats):
     conn = get_connection()
     cursor = conn.cursor()
@@ -1287,11 +1333,40 @@ def get_training_sessions(team_id, date_from=None, date_to=None):
     cursor = conn.cursor()
     if date_from and date_to:
         cursor.execute("SELECT * FROM training_sessions WHERE team_id = ? AND date BETWEEN ? AND ? ORDER BY date ASC, start_time ASC", (team_id, date_from, date_to))
+def get_training_sessions(team_id, date_from=None, date_to=None):
+    conn = get_connection()
+    cursor = conn.cursor()
+    if date_from and date_to:
+        cursor.execute("SELECT * FROM training_sessions WHERE team_id = ? AND date >= ? AND date <= ? ORDER BY date ASC, start_time ASC", (team_id, date_from, date_to))
     else:
         cursor.execute("SELECT * FROM training_sessions WHERE team_id = ? ORDER BY date ASC, start_time ASC", (team_id,))
     rows = cursor.fetchall()
     conn.close()
     return [{"id": r["id"], "team_id": r["team_id"], "title": r["title"], "date": r["date"],
+             "start_time": r["start_time"], "end_time": r["end_time"], "location": r["location"] or "",
+             "notes": r["notes"] or "", "color": r["color"] or "#00ff88"} for r in rows]
+
+def get_all_training_sessions(date_from=None, date_to=None):
+    conn = get_connection()
+    cursor = conn.cursor()
+    if date_from and date_to:
+        cursor.execute("""
+            SELECT ts.*, t.name as team_name 
+            FROM training_sessions ts
+            JOIN teams t ON ts.team_id = t.id
+            WHERE ts.date >= ? AND ts.date <= ? 
+            ORDER BY ts.date ASC, ts.start_time ASC
+        """, (date_from, date_to))
+    else:
+        cursor.execute("""
+            SELECT ts.*, t.name as team_name 
+            FROM training_sessions ts
+            JOIN teams t ON ts.team_id = t.id
+            ORDER BY ts.date ASC, ts.start_time ASC
+        """)
+    rows = cursor.fetchall()
+    conn.close()
+    return [{"id": r["id"], "team_id": r["team_id"], "team_name": r["team_name"], "title": r["title"], "date": r["date"],
              "start_time": r["start_time"], "end_time": r["end_time"], "location": r["location"] or "",
              "notes": r["notes"] or "", "color": r["color"] or "#00ff88"} for r in rows]
 
@@ -1368,6 +1443,27 @@ def get_tournaments(team_id):
     conn.close()
     return result
 
+def get_all_tournaments():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT tr.*, t.name as team_name 
+        FROM tournaments tr
+        LEFT JOIN teams t ON tr.team_id = t.id 
+        ORDER BY tr.start_date DESC
+    """)
+    rows = cursor.fetchall()
+    result = []
+    for r in rows:
+        cursor.execute("SELECT COUNT(*) as total, SUM(CASE WHEN our_score > opponent_score THEN 1 ELSE 0 END) as wins, SUM(CASE WHEN our_score = opponent_score THEN 1 ELSE 0 END) as draws, SUM(CASE WHEN our_score < opponent_score THEN 1 ELSE 0 END) as losses, SUM(our_score) as gf, SUM(opponent_score) as ga FROM matches WHERE tournament_id = ?", (r["id"],))
+        stats = cursor.fetchone()
+        result.append({"id": r["id"], "team_id": r["team_id"], "team_name": r["team_name"], "name": r["name"], "type": r["type"],
+                        "start_date": r["start_date"], "end_date": r["end_date"] or "", "notes": r["notes"] or "",
+                        "stats": {"total": stats["total"] or 0, "wins": stats["wins"] or 0, "draws": stats["draws"] or 0,
+                                  "losses": stats["losses"] or 0, "gf": stats["gf"] or 0, "ga": stats["ga"] or 0}})
+    conn.close()
+    return result
+
 def add_tournament(tid, team_id, name, ttype, start_date, end_date, notes):
     conn = get_connection()
     cursor = conn.cursor()
@@ -1400,6 +1496,32 @@ def get_calendar_events(team_id):
         WHERE team_id = ?
         ORDER BY date ASC, time ASC
     """, (team_id,))
+    rows = cursor.fetchall()
+    result = []
+    for r in rows:
+        d = dict(r)
+        try:
+            d["cancelled_dates"] = json.loads(d["cancelled_dates"] or "[]")
+        except:
+            d["cancelled_dates"] = []
+        result.append(d)
+    conn.close()
+    return result
+
+def get_all_calendar_events():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT ce.id, ce.team_id, ce.title, ce.date, ce.time, ce.color,
+               COALESCE(ce.event_type, 'Özel') as event_type,
+               COALESCE(ce.description, '') as description,
+               COALESCE(ce.recurrence, 'none') as recurrence,
+               COALESCE(ce.cancelled_dates, '[]') as cancelled_dates,
+               ce.linked_id, t.name as team_name
+        FROM calendar_events ce
+        JOIN teams t ON ce.team_id = t.id
+        ORDER BY ce.date ASC, ce.time ASC
+    """)
     rows = cursor.fetchall()
     result = []
     for r in rows:
@@ -1539,6 +1661,20 @@ def get_announcements(team_id):
     rows = cursor.fetchall()
     conn.close()
     return [{"id": r["id"], "team_id": r["team_id"], "title": r["title"], "content": r["content"],
+             "priority": r["priority"], "is_pinned": bool(r["is_pinned"]), "created_at": r["created_at"]} for r in rows]
+
+def get_all_announcements():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT a.*, t.name as team_name 
+        FROM announcements a
+        LEFT JOIN teams t ON a.team_id = t.id 
+        ORDER BY a.is_pinned DESC, a.created_at DESC
+    """)
+    rows = cursor.fetchall()
+    conn.close()
+    return [{"id": r["id"], "team_id": r["team_id"], "team_name": r["team_name"], "title": r["title"], "content": r["content"],
              "priority": r["priority"], "is_pinned": bool(r["is_pinned"]), "created_at": r["created_at"]} for r in rows]
 
 def add_announcement(aid, team_id, title, content, priority, is_pinned, created_at):

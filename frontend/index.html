@@ -74,6 +74,7 @@
                     Taktik Tahtası
                 </a>
 
+
                 <div class="sidebar-category">Yönetim & Bütçe</div>
                 <a href="#nav-attendance" class="nav-item" id="nav-attendance" title="Yoklama Takibi">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -129,6 +130,16 @@
                     Takım Yönetimi
                 </a>
 
+                <a href="#nav-transfers" class="nav-item" id="nav-transfers" title="Transfer Takip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                        <path d="M16 3h5v5"></path>
+                        <path d="M8 21H3v-5"></path>
+                        <path d="M21 3L12 12"></path>
+                        <path d="M3 21l9-9"></path>
+                    </svg>
+                    Transfer Takip
+                </a>
+
                 <a href="#nav-announcements" class="nav-item" id="nav-announcements" title="Duyurular">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
@@ -178,16 +189,16 @@
                 <input type="text" id="player-search" class="form-control" style="padding: 6px 10px; font-size: 0.8rem;" placeholder="Oyuncu ismi ara...">
                 <select id="player-filter-pos" class="form-control" style="padding: 6px 10px; font-size: 0.8rem;">
                     <option value="ALL">Tüm Mevkiler</option>
-                    <option value="GK">Kaleci (GK)</option>
-                    <option value="CB">Stoper (CB)</option>
-                    <option value="LB">Sol Bek (LB)</option>
-                    <option value="RB">Sağ Bek (RB)</option>
-                    <option value="DM">Defansif Orta Saha (DM)</option>
-                    <option value="CM">Merkez Orta Saha (CM)</option>
-                    <option value="LM">Sol Kanat (LM)</option>
-                    <option value="RM">Sağ Kanat (RM)</option>
-                    <option value="AM">Ofansif Orta Saha (AM)</option>
-                    <option value="ST">Santrafor (ST)</option>
+                    <option value="KL">Kaleci (KL)</option>
+                    <option value="STP">Stoper (STP)</option>
+                    <option value="SLB">Sol Bek (SLB)</option>
+                    <option value="SĞB">Sağ Bek (SĞB)</option>
+                    <option value="DOS">Defansif Orta Saha (DOS)</option>
+                    <option value="OS">Merkez Orta Saha (OS)</option>
+                    <option value="SLK">Sol Kanat (SLK)</option>
+                    <option value="SĞK">Sağ Kanat (SĞK)</option>
+                    <option value="OOS">Ofansif Orta Saha (OOS)</option>
+                    <option value="SNT">Santrafor (SNT)</option>
                 </select>
                 <select id="player-sort-by" class="form-control" style="padding: 6px 10px; font-size: 0.8rem; margin-top: 2px;">
                     <option value="rating-desc">Güce Göre (Azalan)</option>
@@ -250,6 +261,20 @@
             <div class="content-body" id="main-view-content">
                 <!-- Dashboard (Overview) View -->
                 <div id="dashboard-view" style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Team Filter Header -->
+                    <div class="card" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; background: linear-gradient(135deg, rgba(15, 21, 36, 0.4) 0%, rgba(27, 34, 48, 0.4) 100%);">
+                        <div>
+                            <h2 style="margin: 0; font-size: 1.1rem; color: var(--text-primary); font-weight: 700;">Gösterge Paneli Filtresi</h2>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Verilerini analiz etmek istediğiniz takımı seçin.</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <label for="dashboard-team-filter" style="font-size: 0.8rem; font-weight: bold; color: var(--text-secondary);">Takım Seçimi:</label>
+                            <select id="dashboard-team-filter" class="form-control" style="background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); font-weight: bold; cursor: pointer; height: 35px; width: 220px; font-size: 0.8rem; padding: 4px 8px;" onchange="window.handleDashboardTeamFilterChange(this.value)">
+                                <option value="all">Tüm Takımlar</option>
+                            </select>
+                        </div>
+                    </div>
+                    
                     <!-- Announcement ticker banner -->
                     <div id="dashboard-announcements-ticker" class="card" style="display: none; align-items: center; gap: 15px; padding: 12px 20px; background: linear-gradient(90deg, rgba(233, 30, 99, 0.15) 0%, rgba(106, 27, 154, 0.15) 100%); border-left: 4px solid var(--accent-color); overflow: hidden; border-radius: var(--border-radius-lg);">
                         <span style="font-weight: 700; color: var(--accent-color); display: flex; align-items: center; gap: 6px; font-size: 0.85rem; white-space: nowrap;">
@@ -381,6 +406,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Dashboard Fifth Row: Recent Audit Logs Timeline -->
+                    <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
+                        <h3 style="margin: 0; font-size: 1.05rem; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            📜 Son Yapılan İşlemler (Sistem Günlüğü)
+                        </h3>
+                        <div id="db-recent-audit-logs" style="display: flex; flex-direction: column; gap: 10px; max-height: 250px; overflow-y: auto;">
+                            <div style="color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 20px 0;">Yükleniyor...</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Dedicated Calendar View -->
@@ -390,10 +425,18 @@
                             <h3 style="margin: 0; font-size: 1.15rem; color: var(--accent-color); font-weight: 800; display: flex; align-items: center; gap: 8px;">
                                 📅 Kulüp Takvim Planlayıcısı
                             </h3>
-                            <div style="display: flex; gap: 10px; align-items: center;">
-                                <button class="btn-secondary" id="calendar-prev-btn" style="padding: 4px 12px; font-weight: bold; cursor: pointer;">◀ Geri</button>
-                                <h4 id="calendar-month-year" style="margin: 0; min-width: 150px; text-align: center; color: #fff; font-weight: 700; font-size: 0.95rem;">Haziran 2026</h4>
-                                <button class="btn-secondary" id="calendar-next-btn" style="padding: 4px 12px; font-weight: bold; cursor: pointer;">İleri ▶</button>
+                            <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <label for="calendar-team-filter" style="font-size: 0.8rem; font-weight: bold; color: var(--text-secondary);">Takım Filtresi:</label>
+                                    <select id="calendar-team-filter" class="form-control" style="background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); font-weight: bold; cursor: pointer; height: 32px; width: 180px; font-size: 0.78rem; padding: 2px 6px;" onchange="window.handleCalendarTeamFilterChange(this.value)">
+                                        <option value="all">Tüm Takımlar</option>
+                                    </select>
+                                </div>
+                                <div style="display: flex; gap: 5px; align-items: center;">
+                                    <button class="btn-secondary" id="calendar-prev-btn" style="padding: 4px 12px; font-weight: bold; cursor: pointer;">◀ Geri</button>
+                                    <h4 id="calendar-month-year" style="margin: 0; min-width: 150px; text-align: center; color: #fff; font-weight: 700; font-size: 0.95rem;">Haziran 2026</h4>
+                                    <button class="btn-secondary" id="calendar-next-btn" style="padding: 4px 12px; font-weight: bold; cursor: pointer;">İleri ▶</button>
+                                </div>
                             </div>
                         </div>
                         
@@ -421,42 +464,199 @@
                 <!-- Tactics View -->
                 <div id="tactics-view" style="display: none; flex-direction: column; gap: 20px;">
                     <div class="card" style="padding: 20px; display: flex; flex-direction: column; background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg);">
-                        <div style="display: flex; gap: 15px; margin-bottom: 20px; justify-content: space-between; align-items: center; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                                <h3 style="margin: 0; font-size: 1.05rem; color: var(--accent-color); font-weight: 800; display: flex; align-items: center; gap: 8px;">📋 Taktik Kadrolar:</h3>
-                                <select id="tactic-lineup-select" class="form-control" style="width: 200px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.8rem; font-weight: bold; cursor: pointer;"></select>
-                                <button class="btn-primary" id="btn-add-tactic-lineup" style="padding: 6px 12px; font-size: 0.75rem; background: var(--accent-color); color: #000;">+ Yeni Kadro</button>
-                                <button class="btn-secondary" id="btn-rename-tactic-lineup" style="padding: 6px 12px; font-size: 0.75rem;">Adlandır</button>
-                                <button class="btn-secondary" id="btn-copy-tactic-lineup" style="padding: 6px 12px; font-size: 0.75rem;">📋 Kadroyu Kopyala</button>
-                                <button class="btn-secondary" id="btn-delete-tactic-lineup" style="padding: 6px 12px; font-size: 0.75rem; border-color: var(--attr-poor); color: var(--attr-poor);">Sil</button>
-                                <div style="display: flex; gap: 8px; align-items: center; background: rgba(255,255,255,0.03); padding: 4px 8px; border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-left: 10px;">
-                                    <span style="font-size: 0.72rem; font-weight: bold; color: var(--text-secondary);">✏️ Çizim:</span>
-                                    <button class="btn-tactic-color" data-color="#ff453a" style="width: 14px; height: 14px; border-radius: 50%; background: #ff453a; border: 1px solid #fff; cursor: pointer; padding:0;"></button>
-                                    <button class="btn-tactic-color" data-color="#ffd60a" style="width: 14px; height: 14px; border-radius: 50%; background: #ffd60a; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; padding:0;"></button>
-                                    <button class="btn-tactic-color" data-color="#0a84ff" style="width: 14px; height: 14px; border-radius: 50%; background: #0a84ff; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; padding:0;"></button>
-                                    <button class="btn-tactic-color active" data-color="#ffffff" style="width: 14px; height: 14px; border-radius: 50%; background: #ffffff; border: 2px solid var(--accent-color); cursor: pointer; padding:0;"></button>
-                                    <button class="btn-secondary" id="btn-undo-tactic-draw" style="padding: 2px 6px; font-size: 0.65rem; border-color: rgba(255,255,255,0.2); cursor: pointer; height: 20px; line-height: 14px; margin-right: 4px;">Geri Al</button>
-                                    <button class="btn-secondary" id="btn-clear-tactic-draw" style="padding: 2px 6px; font-size: 0.65rem; border-color: rgba(255,255,255,0.2); cursor: pointer; height: 20px; line-height: 14px;">Temizle</button>
+                        <div class="card-header" style="padding: 15px 20px; display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid var(--border-color);">
+                            <!-- Top Mode Switcher -->
+                            <div style="display: flex; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; margin-bottom: 5px;">
+                                <button class="btn-secondary active" id="btn-tactic-mode-board" style="padding: 6px 16px; font-size: 0.8rem; font-weight: bold; border-radius: var(--border-radius); display: flex; align-items: center; gap: 6px; border-color: var(--accent-color); color: var(--accent-color); background: rgba(0, 255, 136, 0.05);">📋 Taktik Tahtası</button>
+                                <button class="btn-secondary" id="btn-tactic-mode-sim" style="padding: 6px 16px; font-size: 0.8rem; font-weight: bold; border-radius: var(--border-radius); display: flex; align-items: center; gap: 6px;">🏃‍♂️ Simülasyon</button>
+                                <button class="btn-secondary" id="btn-tactic-mode-ai" style="padding: 6px 16px; font-size: 0.8rem; font-weight: bold; border-radius: var(--border-radius); display: flex; align-items: center; gap: 6px;">🤖 AI Taktik Üreteci</button>
+                            </div>
+
+                            <!-- Mode 1: Board Controls -->
+                            <div id="tactic-board-controls-wrapper" style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+                                <!-- Top Row: Lineup Selector & Actions -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%;">
+                                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                                        <h3 style="margin: 0; font-size: 1.05rem; color: var(--accent-color); font-weight: 800; display: flex; align-items: center; gap: 8px; white-space: nowrap;">📋 Taktik Kadrolar:</h3>
+                                        <select id="tactic-lineup-select" class="form-control" style="width: 180px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 35px; font-size: 0.8rem; font-weight: bold; cursor: pointer;"></select>
+                                        <button class="btn-primary" id="btn-add-tactic-lineup" style="padding: 8px 12px; font-size: 0.75rem; background: var(--accent-color); color: #000; height: 35px;">+ Yeni Kadro</button>
+                                        <button class="btn-secondary" id="btn-rename-tactic-lineup" style="padding: 8px 12px; font-size: 0.75rem; height: 35px;">Adlandır</button>
+                                        <button class="btn-secondary" id="btn-copy-tactic-lineup" style="padding: 8px 12px; font-size: 0.75rem; height: 35px;">📋 Kadroyu Kopyala</button>
+                                        <button class="btn-secondary" id="btn-delete-tactic-lineup" style="padding: 8px 12px; font-size: 0.75rem; border-color: var(--attr-poor); color: var(--attr-poor); height: 35px;">Sil</button>
+                                    </div>
+                                    
+                                    <!-- Right Column: Formation Dropdown -->
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <label for="team-formation-select" style="font-size: 0.8rem; font-weight: bold; color: var(--text-secondary);">Diziliş:</label>
+                                        <select id="team-formation-select" class="form-control" style="width: 130px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 35px; font-size: 0.8rem; font-weight: bold; cursor: pointer;">
+                                            <option value="4-4-2">4-4-2</option>
+                                            <option value="4-3-3-holding" selected>4-3-3 Holding</option>
+                                            <option value="4-3-3-attack">4-3-3 Attack</option>
+                                            <option value="4-2-3-1-wide">4-2-3-1 Wide</option>
+                                            <option value="4-2-3-1-narrow">4-2-3-1 Narrow</option>
+                                            <option value="3-5-2">3-5-2</option>
+                                            <option value="3-4-3">3-4-3</option>
+                                            <option value="5-3-2">5-3-2</option>
+                                            <option value="5-4-1">5-4-1</option>
+                                        </select>
+                                        <button class="btn-primary" id="btn-save-team-lineup" style="padding: 8px 15px; font-size: 0.8rem; height: 35px;">Kaydet</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bottom Row: Drawing tools -->
+                                <div style="display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; width: 100%;">
+                                    <div style="display: flex; gap: 8px; align-items: center; background: rgba(255,255,255,0.02); padding: 6px 12px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                                        <span style="font-size: 0.72rem; font-weight: bold; color: var(--text-secondary); margin-right: 4px;">✏️ Çizim:</span>
+                                        <button class="btn-tactic-color" data-color="#ff453a" style="width: 14px; height: 14px; border-radius: 50%; background: #ff453a; border: 1px solid #fff; cursor: pointer; padding:0;"></button>
+                                        <button class="btn-tactic-color" data-color="#ffd60a" style="width: 14px; height: 14px; border-radius: 50%; background: #ffd60a; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; padding:0;"></button>
+                                        <button class="btn-tactic-color" data-color="#0a84ff" style="width: 14px; height: 14px; border-radius: 50%; background: #0a84ff; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; padding:0;"></button>
+                                        <button class="btn-tactic-color active" data-color="#ffffff" style="width: 14px; height: 14px; border-radius: 50%; background: #ffffff; border: 2px solid var(--accent-color); cursor: pointer; padding:0;"></button>
+                                        
+                                        <div style="width: 1px; height: 14px; background: var(--border-color); margin: 0 4px;"></div>
+                                        
+                                        <button class="btn-secondary" id="btn-eraser-tactic-draw" style="padding: 2px 8px; font-size: 0.65rem; border-color: rgba(255,255,255,0.2); cursor: pointer; height: 22px; display: flex; align-items: center; gap: 2px; border-radius: 4px; background: transparent; color: var(--text-primary);">🧹 Silgi</button>
+                                        <button class="btn-secondary" id="btn-undo-tactic-draw" style="padding: 2px 8px; font-size: 0.65rem; border-color: rgba(255,255,255,0.2); cursor: pointer; height: 22px; border-radius: 4px;">Geri Al</button>
+                                        <button class="btn-secondary" id="btn-clear-tactic-draw" style="padding: 2px 8px; font-size: 0.65rem; border-color: rgba(255,255,255,0.2); cursor: pointer; height: 22px; border-radius: 4px;">Temizle</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="display: flex; gap: 10px; align-items: center;">
-                                <label for="team-formation-select" style="font-size: 0.8rem; font-weight: bold; color: var(--text-secondary);">Diziliş:</label>
-                                <select id="team-formation-select" class="form-control" style="width: 140px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.8rem; font-weight: bold; cursor: pointer;">
-                                    <option value="4-4-2">4-4-2</option>
-                                    <option value="4-3-3-holding" selected>4-3-3 Holding</option>
-                                    <option value="4-3-3-attack">4-3-3 Attack</option>
-                                    <option value="4-2-3-1-wide">4-2-3-1 Wide</option>
-                                    <option value="4-2-3-1-narrow">4-2-3-1 Narrow</option>
-                                    <option value="3-5-2">3-5-2</option>
-                                    <option value="3-4-3">3-4-3</option>
-                                    <option value="5-3-2">5-3-2</option>
-                                    <option value="5-4-1">5-4-1</option>
-                                </select>
-                                <button class="btn-primary" id="btn-save-team-lineup" style="padding: 6px 15px; font-size: 0.8rem;">Kaydet</button>
+
+                            <!-- Mode 2: Simulation Controls -->
+                            <div id="tactic-sim-controls-wrapper" style="display: none; flex-direction: column; gap: 10px; width: 100%;">
+                                <!-- Row 1: Playback and Step management -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%;">
+                                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                                        <button class="btn-secondary" id="btn-sim-reset" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">⏮️ Sıfırla</button>
+                                        <button class="btn-primary" id="btn-sim-play" style="padding: 6px 15px; font-size: 0.75rem; height: 32px; background: var(--accent-color); color: #000; border-color: var(--accent-color); font-weight: bold;">▶️ Oynat</button>
+                                        <button class="btn-secondary" id="btn-sim-add-step" style="padding: 6px 12px; font-size: 0.75rem; height: 32px; border-color: var(--accent-color); color: var(--accent-color);">+ Yeni Adım</button>
+                                        <button class="btn-secondary" id="btn-sim-del-step" style="padding: 6px 12px; font-size: 0.75rem; height: 32px; border-color: var(--attr-poor); color: var(--attr-poor);">🗑️ Adımı Sil</button>
+                                        <button class="btn-secondary" id="btn-sim-clear" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">🧹 Tüm Yolları Temizle</button>
+                                        <button class="btn-secondary" id="btn-sim-undo" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">↩️ Geri Al</button>
+                                        <button class="btn-secondary" id="btn-sim-eraser" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">🧹 Silgi Modu</button>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <label for="select-sim-speed" style="font-size: 0.75rem; color: var(--text-secondary); font-weight: bold;">Adım Süresi:</label>
+                                        <select id="select-sim-speed" class="form-control" style="width: 100px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="4000">4 Saniye</option>
+                                            <option value="2000" selected>2 Saniye</option>
+                                            <option value="1000">1 Saniye</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 2: Step Navigation Tabs -->
+                                <div style="display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; width: 100%;">
+                                    <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">Adımlar:</span>
+                                    <div id="sim-step-tabs" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; flex: 1;">
+                                        <!-- Step buttons rendered dynamically -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 3: Step Properties (Ball, Action) -->
+                                <div style="display: flex; gap: 15px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; flex-wrap: wrap; width: 100%;">
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">⚽ Top Sahibi:</span>
+                                        <select id="select-sim-ball-owner" class="form-control" style="width: 130px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 30px; font-size: 0.75rem; padding: 2px 6px;"></select>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">🎯 Aksiyon:</span>
+                                        <select id="select-sim-action" class="form-control" style="width: 140px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 30px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="dribble">🏃‍♂️ Koşu / Top Sürme</option>
+                                            <option value="pass">🔀 Pas At</option>
+                                            <option value="shot">💥 Şut Çek</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div id="wrapper-sim-pass-receiver" style="display: none; gap: 6px; align-items: center;">
+                                        <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">👤 Alıcı:</span>
+                                        <select id="select-sim-pass-receiver" class="form-control" style="width: 130px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 30px; font-size: 0.75rem; padding: 2px 6px;"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mode 3: AI Tactics Controls -->
+                            <div id="tactic-ai-controls-wrapper" style="display: none; flex-direction: column; gap: 10px; width: 100%;">
+                                <!-- Row 1: Playback and Step management -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%;">
+                                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                                        <button class="btn-secondary" id="btn-ai-reset" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">⏮️ Sıfırla</button>
+                                        <button class="btn-primary" id="btn-ai-play" style="padding: 6px 15px; font-size: 0.75rem; height: 32px; background: var(--accent-color); color: #000; border-color: var(--accent-color); font-weight: bold;">▶️ Oynat</button>
+                                        <button class="btn-secondary" id="btn-ai-add-step" style="padding: 6px 12px; font-size: 0.75rem; height: 32px; border-color: var(--accent-color); color: var(--accent-color);">+ Yeni Adım</button>
+                                        <button class="btn-secondary" id="btn-ai-del-step" style="padding: 6px 12px; font-size: 0.75rem; height: 32px; border-color: var(--attr-poor); color: var(--attr-poor);">🗑️ Adımı Sil</button>
+                                        <button class="btn-secondary" id="btn-ai-clear" style="padding: 6px 12px; font-size: 0.75rem; height: 32px;">🧹 Tüm Yolları Temizle</button>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <label for="select-ai-speed" style="font-size: 0.75rem; color: var(--text-secondary); font-weight: bold;">Adım Süresi:</label>
+                                        <select id="select-ai-speed" class="form-control" style="width: 100px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="4000">4 Saniye</option>
+                                            <option value="2000" selected>2 Saniye</option>
+                                            <option value="1000">1 Saniye</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 2: Step Navigation Tabs -->
+                                <div style="display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; width: 100%;">
+                                    <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">Adımlar:</span>
+                                    <div id="ai-step-tabs" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; flex: 1;">
+                                        <!-- AI Step buttons rendered dynamically -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Row 3: Step AI Play Style and Generator -->
+                                <div style="display: flex; gap: 15px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; flex-wrap: wrap; width: 100%; background: rgba(0, 123, 255, 0.05); padding: 10px; border-radius: var(--border-radius); border: 1px dashed rgba(0, 123, 255, 0.25);">
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <label for="select-ai-step-style" style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">🤖 AI Oyun Tarzı (Bu Adım İçin):</label>
+                                        <select id="select-ai-step-style" class="form-control" style="width: 180px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 30px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="tiki-taka" selected>🔀 Tiki-Taka / Pas Oyunu</option>
+                                            <option value="wing-attack">📐 Kanat Akını</option>
+                                            <option value="dribble-attack">🏃‍♂️ Merkez Dripling</option>
+                                            <option value="long-ball">🚀 Uzun Top (Hedef Santrafor)</option>
+                                            <option value="defense-press">🛡️ Yoğun Pres / Savunma</option>
+                                            <option value="shot-chance">💥 Şut Girişimi</option>
+                                            <option value="free-kick">📐 Frikik Organizasyonu</option>
+                                            <option value="corner">🚩 Korner Organizasyonu</option>
+                                            <option value="penalty">🥅 Penaltı Vuruşu</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <label for="select-ai-opponent-style" style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">🛡️ Rakip AI Stratejisi:</label>
+                                        <select id="select-ai-opponent-style" class="form-control" style="width: 170px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 30px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="balanced" selected>⚖️ Dengeli Yerleşim</option>
+                                            <option value="compact-def">🧱 Otobüsü Çek (Kompakt)</option>
+                                            <option value="aggressive-press">🔥 Tam Saha Pres (Agresif)</option>
+                                            <option value="counter-attack">⚡ Hızlı Çıkış (Kontra)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button class="btn-primary" id="btn-ai-simulate-step" style="padding: 6px 12px; font-size: 0.75rem; height: 30px; background: #007bff; color: #fff; border-color: #007bff; font-weight: bold; cursor: pointer;">⚡ Bu Adımı AI ile Simüle Et</button>
+                                    <button class="btn-primary" id="btn-ai-simulate-full" style="padding: 6px 12px; font-size: 0.75rem; height: 30px; background: var(--accent-color); color: #000; border-color: var(--accent-color); font-weight: bold; cursor: pointer; margin-left: 8px;">🔥 Tüm Atağı Otomatik Simüle Et</button>
+                                </div>
+
+                                <!-- Row 4: Saving and Loading AI tactics -->
+                                <div style="display: flex; gap: 15px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; flex-wrap: wrap; width: 100%;">
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">📂 Kayıtlı AI Taktikleri:</span>
+                                        <select id="select-ai-saved-tactics" class="form-control" style="width: 180px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.75rem; padding: 2px 6px;">
+                                            <option value="">-- Taktik Seçin --</option>
+                                        </select>
+                                        <button class="btn-secondary" id="btn-ai-delete-saved-tactic" style="padding: 4px 8px; font-size: 0.75rem; height: 32px; border-color: var(--attr-poor); color: var(--attr-poor);">Sil</button>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 12px;">
+                                        <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">💾 Taktiği Kaydet:</span>
+                                        <input type="text" id="input-ai-tactic-name" placeholder="Taktik Adı..." class="form-control" style="width: 160px; background: var(--bg-dark); color: #fff; border: 1px solid var(--border-color); height: 32px; font-size: 0.75rem; padding: 2px 6px;" />
+                                        <button class="btn-primary" id="btn-ai-save-tactic" style="padding: 6px 12px; font-size: 0.75rem; height: 32px; background: var(--accent-color); color: #000; font-weight: bold; border: none; cursor: pointer;">Kaydet</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 20px; width: 100%; align-items: start;">
+                        <!-- Mode 1 Pitch and Sidebar -->
+                        <div id="tactic-board-pitch-row" style="display: grid; grid-template-columns: 1fr 320px; gap: 20px; width: 100%; align-items: start;">
                             <!-- Large Tactical Pitch (Left) -->
                             <div style="background: linear-gradient(180deg, #1b5e20 0%, #124116 100%); border: 3px solid rgba(255,255,255,0.4); border-radius: 12px; height: 520px; position: relative; overflow: hidden; box-shadow: inset 0 0 100px rgba(0,0,0,0.5);" id="team-tactic-pitch-field">
                                 <!-- Drawing canvas overlay -->
@@ -485,8 +685,62 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Mode 2 Pitch (Simulation - 1fr 320px Columns) -->
+                        <div id="tactic-sim-pitch-row" style="display: none; grid-template-columns: 1fr 320px; gap: 20px; width: 100%; align-items: start;">
+                            <div style="background: linear-gradient(180deg, #1b5e20 0%, #124116 100%); border: 3px solid rgba(255,255,255,0.4); border-radius: 12px; height: 550px; position: relative; overflow: hidden; box-shadow: inset 0 0 100px rgba(0,0,0,0.5);" id="sim-pitch-field">
+                                <!-- Simulation drawing canvas for path lines -->
+                                <canvas id="sim-pitch-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none;"></canvas>
+                                <!-- Pitch lines -->
+                                <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.25); pointer-events: none;"></div>
+                                <div style="position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; border: 2px solid rgba(255,255,255,0.25); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none;"></div>
+                                <div style="position: absolute; top: 0; left: 50%; width: 180px; height: 80px; border: 2px solid rgba(255,255,255,0.25); border-top: none; transform: translateX(-50%); pointer-events: none;"></div>
+                                <div style="position: absolute; bottom: 0; left: 50%; width: 180px; height: 80px; border: 2px solid rgba(255,255,255,0.25); border-bottom: none; transform: translateX(-50%); pointer-events: none;"></div>
+                            </div>
+                            
+                            <!-- Simulation Steps (Right Sidebar) -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div class="card" style="padding: 15px; background: var(--bg-subpanel); border: 1px solid var(--border-color); height: 550px; display: flex; flex-direction: column;">
+                                    <h4 style="margin: 0 0 10px 0; font-size: 0.9rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                                        <span>🏃‍♂️ Simülasyon Adımları</span>
+                                        <span id="sim-steps-count-badge" style="font-size: 0.72rem; padding: 2px 6px; background: rgba(0, 255, 136, 0.15); color: var(--accent-color); border-radius: 4px; font-weight: bold;">0 Adım</span>
+                                    </h4>
+                                    <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;" id="sim-steps-timeline-container">
+                                        <div style="color: var(--text-muted); font-size: 0.75rem; text-align: center; padding: 20px 0;">Henüz adım eklenmedi.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mode 3 Pitch (AI Simulation - 1fr 320px Columns) -->
+                        <div id="tactic-ai-pitch-row" style="display: none; grid-template-columns: 1fr 320px; gap: 20px; width: 100%; align-items: start;">
+                            <div style="background: linear-gradient(180deg, #1b5e20 0%, #124116 100%); border: 3px solid rgba(255,255,255,0.4); border-radius: 12px; height: 550px; position: relative; overflow: hidden; box-shadow: inset 0 0 100px rgba(0,0,0,0.5);" id="ai-pitch-field">
+                                <!-- AI drawing canvas for path lines -->
+                                <canvas id="ai-pitch-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none;"></canvas>
+                                <!-- Pitch lines -->
+                                <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.25); pointer-events: none;"></div>
+                                <div style="position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; border: 2px solid rgba(255,255,255,0.25); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none;"></div>
+                                <div style="position: absolute; top: 0; left: 50%; width: 180px; height: 80px; border: 2px solid rgba(255,255,255,0.25); border-top: none; transform: translateX(-50%); pointer-events: none;"></div>
+                                <div style="position: absolute; bottom: 0; left: 50%; width: 180px; height: 80px; border: 2px solid rgba(255,255,255,0.25); border-bottom: none; transform: translateX(-50%); pointer-events: none;"></div>
+                            </div>
+                            
+                            <!-- AI Simulation Steps (Right Sidebar) -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div class="card" style="padding: 15px; background: var(--bg-subpanel); border: 1px solid var(--border-color); height: 550px; display: flex; flex-direction: column;">
+                                    <h4 style="margin: 0 0 10px 0; font-size: 0.9rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                                        <span>🤖 AI Simülasyon Adımları</span>
+                                        <span id="ai-steps-count-badge" style="font-size: 0.72rem; padding: 2px 6px; background: rgba(0, 255, 136, 0.15); color: var(--accent-color); border-radius: 4px; font-weight: bold;">0 Adım</span>
+                                    </h4>
+                                    <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;" id="ai-steps-timeline-container">
+                                        <div style="color: var(--text-muted); font-size: 0.75rem; text-align: center; padding: 20px 0;">Henüz adım eklenmedi.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+
 
 
                 <!-- Player Not Selected Placeholder -->
@@ -1278,31 +1532,7 @@
                                 </div>
                             </div>
 
-                            <!-- Injury Rehabilitation Progress Card -->
-                            <div class="card" id="injury-rehab-card" style="padding: 20px; display: none;">
-                                <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                                    <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">🩹 Sakatlık Rehabilitasyon Takibi</h3>
-                                    <span id="rehab-percent-badge" style="background: var(--accent-color); color: #000; font-weight: 800; font-size: 0.75rem; padding: 2px 8px; border-radius: 10px;">%0</span>
-                                </div>
-                                <div style="display: flex; flex-direction: column; gap: 15px;">
-                                    <div>
-                                        <span style="font-size: 0.58rem; color: var(--text-muted); font-weight: 800; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Rehabilitasyon Aşaması</span>
-                                        <div style="display: flex; gap: 10px; flex-wrap: wrap;" id="rehab-stage-container">
-                                            <button class="btn-secondary rehab-stage-btn" data-stage="Dinlenme" style="padding: 6px 12px; font-size: 0.75rem;">1. Dinlenme</button>
-                                            <button class="btn-secondary rehab-stage-btn" data-stage="Fizik Tedavi" style="padding: 6px 12px; font-size: 0.75rem;">2. Fizik Tedavi</button>
-                                            <button class="btn-secondary rehab-stage-btn" data-stage="Bireysel Koşu" style="padding: 6px 12px; font-size: 0.75rem;">3. Bireysel Koşu</button>
-                                            <button class="btn-secondary rehab-stage-btn" data-stage="Takımla İdman" style="padding: 6px 12px; font-size: 0.75rem;">4. Takımla İdman</button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span style="font-size: 0.58rem; color: var(--text-muted); font-weight: 800; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Aşama İlerlemesi</span>
-                                        <div style="display: flex; align-items: center; gap: 15px;">
-                                            <input type="range" id="rehab-progress-slider" min="0" max="100" value="0" style="flex: 1; accent-color: var(--accent-color);" />
-                                            <button class="btn-primary" id="btn-save-rehab" style="padding: 6px 15px; font-size: 0.75rem;">İlerlemeyi Kaydet</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Injury Rehabilitation Card Removed -->
 
                             <!-- Injury History -->
                             <div class="card" style="display:flex; flex-direction:column; min-height: 240px;">
@@ -2105,11 +2335,17 @@
                             <div class="card" style="grid-column: span 2;">
                                 <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                                     <h3>Veritabanı Yedekleme & Geri Yükleme</h3>
-                                    <button class="btn-primary" id="btn-create-manual-backup" style="padding: 8px 16px;">Yeni Manuel Yedek Oluştur</button>
+                                    <div style="display: flex; gap: 10px; align-items: center;">
+                                        <button class="btn-primary" id="btn-create-manual-backup" style="padding: 8px 16px;">Yeni Manuel Yedek Oluştur</button>
+                                        <button class="btn-secondary" id="btn-import-backup" style="padding: 8px 16px; border-color: var(--accent-color); color: var(--accent-color); font-weight: bold; position: relative;">
+                                            📥 Yedek Yükle (İçeri Aktar)
+                                            <input type="file" id="input-import-backup" accept=".zip" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;" />
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="card-body" style="padding: 20px;">
                                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">
-                                        Sistemdeki her veri değişikliği öncesinde otomatik olarak yedek alınır. Bir hata durumunda geçmiş listesinden istediğiniz bir ana geri dönebilirsiniz.
+                                        Otomatik günlük yedekler ve manuel olarak aldığınız yedekler burada listelenir. Bir veri kaybı veya hata durumunda istediğiniz bir yedeğe geri dönebilirsiniz.
                                     </p>
                                     <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                         <table class="table" style="width: 100%; border-collapse: collapse; text-align: left;">
@@ -2118,12 +2354,13 @@
                                                     <th style="padding: 12px 10px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Tarih / Saat</th>
                                                     <th style="padding: 12px 10px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Değişiklik / Açıklama</th>
                                                     <th style="padding: 12px 10px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Dosya</th>
+                                                    <th style="padding: 12px 10px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Boyut</th>
                                                     <th style="padding: 12px 10px; font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-align: right;">Aksiyon</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="backups-table-body">
                                                 <tr>
-                                                    <td colspan="4" style="text-align: center; padding: 20px; color: var(--text-muted);">Yedek listesi yükleniyor...</td>
+                                                    <td colspan="5" style="text-align: center; padding: 20px; color: var(--text-muted);">Yedek listesi yükleniyor...</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -2320,6 +2557,131 @@
                                 <textarea id="template-preview-text" class="form-control" rows="10" readonly style="resize: none; background: var(--bg-dark); color: var(--text-primary); font-family: monospace; font-size: 0.85rem; line-height: 1.6; border-color: var(--border-color);"></textarea>
                                 <button class="btn-primary" id="btn-copy-template-msg" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #00ff88, #00a8cc); border: none;">Panoya Kopyala</button>
                             </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Transfers View -->
+            <div id="transfers-view" style="display: none; flex-direction: column; gap: 20px;">
+                <!-- Inner Subtabs -->
+                <div style="display: flex; gap: 10px; margin-bottom: 5px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; flex-wrap: wrap;">
+                    <button class="btn-primary" id="tab-transfer-internal" style="padding: 8px 16px; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 6px;">🔄 Kulüp İçi Transfer</button>
+                    <button class="btn-secondary" id="tab-transfer-external" style="padding: 8px 16px; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 6px;">⚽ Dış Transfer & Seçmeler</button>
+                    <button class="btn-secondary" id="tab-transfer-history" style="padding: 8px 16px; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 6px;">📋 Transfer Geçmişi</button>
+                </div>
+
+                <!-- Container 1: Kulüp İçi Transfer -->
+                <div id="transfer-internal-container" style="display: block;">
+                    <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+                        <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent-color); font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">🔄 Kulüp İçi Takım Değişikliği</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div>
+                                <label for="internal-transfer-player" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Futbolcu Seçin</label>
+                                <select id="internal-transfer-player" class="form-control" style="background: var(--bg-dark); color: #fff; width: 100%; border: 1px solid var(--border-color);"></select>
+                            </div>
+                            <div>
+                                <label for="internal-transfer-target-team" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Gideceği Takım (Kadro)</label>
+                                <select id="internal-transfer-target-team" class="form-control" style="background: var(--bg-dark); color: #fff; width: 100%; border: 1px solid var(--border-color);"></select>
+                            </div>
+                            <div>
+                                <label for="internal-transfer-notes" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Notlar / Ayrıntılar</label>
+                                <input type="text" id="internal-transfer-notes" class="form-control" style="background: var(--bg-dark); color: #fff;" placeholder="Örn: U19 kadrosuna terfi ettirildi.">
+                            </div>
+                            <button class="btn-primary" onclick="window.executeInternalTransfer()" style="width: 100%; padding: 10px; font-weight: bold; border-radius: 6px; cursor: pointer; border: none; background: var(--accent-color); color: #000; margin-top: 10px;">Tek Tıkla Transfer Et</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container 2: Dış Transfer & Seçmeler -->
+                <div id="transfer-external-container" style="display: none;">
+                    <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+                        <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent-color); font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">⚽ Dış Transfer & Seçmelerden Alım</h3>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-type" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Transfer Tipi</label>
+                                    <select id="ext-transfer-type" class="form-control" style="background: var(--bg-dark); color: #fff; width: 100%; border: 1px solid var(--border-color);">
+                                        <option value="Dış Kulüp">Dış Kulüpten Transfer</option>
+                                        <option value="Seçmeler">Seçmelerden Oyuncu Alımı</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-date" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Tarih</label>
+                                    <input type="date" id="ext-transfer-date" class="form-control" style="background: var(--bg-dark); color: #fff;">
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-player-name" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Futbolcu Adı Soyadı</label>
+                                    <input type="text" id="ext-transfer-player-name" class="form-control" style="background: var(--bg-dark); color: #fff;" placeholder="Adı Soyadı">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-position" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Mevki</label>
+                                    <select id="ext-transfer-position" class="form-control" style="background: var(--bg-dark); color: #fff; width: 100%; border: 1px solid var(--border-color);">
+                                        <option value="KL">KL (Kaleci)</option>
+                                        <option value="STP">STP (Stoper)</option>
+                                        <option value="SLB">SLB (Sol Bek)</option>
+                                        <option value="SĞB">SĞB (Sağ Bek)</option>
+                                        <option value="DOS">DOS (Defansif Orta Saha)</option>
+                                        <option value="OS">OS (Merkez Orta Saha)</option>
+                                        <option value="SLK">SLK (Sol Kanat)</option>
+                                        <option value="SĞK">SĞK (Sağ Kanat)</option>
+                                        <option value="OOS">OOS (Ofansif Orta Saha)</option>
+                                        <option value="SNT" selected>SNT (Santrafor)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-age" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Yaş</label>
+                                    <input type="number" id="ext-transfer-age" class="form-control" style="background: var(--bg-dark); color: #fff;" min="6" max="23" value="16">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-from-club" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Geldiği Kulüp / Kaynak</label>
+                                    <input type="text" id="ext-transfer-from-club" class="form-control" style="background: var(--bg-dark); color: #fff;" placeholder="Örn: Altınordu, Seçmeler vb.">
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-fee" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Bonservis Bedeli (TL)</label>
+                                    <input type="number" id="ext-transfer-fee" class="form-control" style="background: var(--bg-dark); color: #fff;" min="0" value="0">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label for="ext-transfer-target-team" style="display: block; font-size: 0.78rem; font-weight: bold; color: var(--text-secondary); margin-bottom: 6px;">Kaydedileceği Takım (Kadro)</label>
+                                    <select id="ext-transfer-target-team" class="form-control" style="background: var(--bg-dark); color: #fff; width: 100%; border: 1px solid var(--border-color);"></select>
+                                </div>
+                            </div>
+
+                            <button class="btn-primary" onclick="window.executeExternalTransfer()" style="width: 100%; padding: 10px; font-weight: bold; border-radius: 6px; cursor: pointer; border: none; background: var(--accent-color); color: #000; margin-top: 10px;">Kayıt Aç ve Transfer Et</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container 3: Transfer Geçmişi -->
+                <div id="transfer-history-container" style="display: none;">
+                    <div class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 15px;">
+                        <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent-color); font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">📋 Transfer Kayıt Geçmişi</h3>
+                        <div class="squad-table-container">
+                            <table class="squad-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Oyuncu</th>
+                                        <th>Tür</th>
+                                        <th>Geldiği Takım/Kulüp</th>
+                                        <th>Gittiği Takım/Kadro</th>
+                                        <th>Bonservis</th>
+                                        <th>Notlar</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transfers-view-list-tbody">
+                                    <!-- Dynamically filled -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -2549,16 +2911,16 @@
                             <div class="form-group">
                                 <label for="player-primary-pos">Mevki</label>
                                 <select id="player-primary-pos" class="form-control">
-                                    <option value="GK">Kaleci (GK)</option>
-                                    <option value="CB">Stoper (CB)</option>
-                                    <option value="LB">Sol Bek (LB)</option>
-                                    <option value="RB">Sağ Bek (RB)</option>
-                                    <option value="DM">Defansif Orta Saha (DM)</option>
-                                    <option value="CM">Merkez Orta Saha (CM)</option>
-                                    <option value="LM">Sol Kanat (LM)</option>
-                                    <option value="RM">Sağ Kanat (RM)</option>
-                                    <option value="AM">Ofansif Orta Saha (AM)</option>
-                                    <option value="ST">Santrafor (ST)</option>
+                                    <option value="KL">Kaleci (KL)</option>
+                                    <option value="STP">Stoper (STP)</option>
+                                    <option value="SLB">Sol Bek (SLB)</option>
+                                    <option value="SĞB">Sağ Bek (SĞB)</option>
+                                    <option value="DOS">Defansif Orta Saha (DOS)</option>
+                                    <option value="OS">Merkez Orta Saha (OS)</option>
+                                    <option value="SLK">Sol Kanat (SLK)</option>
+                                    <option value="SĞK">Sağ Kanat (SĞK)</option>
+                                    <option value="OOS">Ofansif Orta Saha (OOS)</option>
+                                    <option value="SNT">Santrafor (SNT)</option>
                                 </select>
                             </div>
                         </div>
@@ -4154,6 +4516,83 @@
                 }
                 messages.scrollTop = messages.scrollHeight;
             }
+
+            window.confirmChatbotAction = async function(action, day) {
+                const messages = document.getElementById("chatbot-messages");
+                const loadingMsg = document.createElement("div");
+                loadingMsg.style.cssText = "align-self: flex-start; background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 12px 12px 12px 0; max-width: 85%; color: var(--text-muted); font-style: italic;";
+                loadingMsg.innerText = "İşlem yapılıyor...";
+                messages.appendChild(loadingMsg);
+                messages.scrollTop = messages.scrollHeight;
+                
+                let teamId = "team-1";
+                try {
+                    const stateMod = await import("/static/js/modules/state.js");
+                    if (stateMod && stateMod.state && stateMod.state.activeTeamId) {
+                        teamId = stateMod.state.activeTeamId;
+                    }
+                } catch(e) {}
+                
+                try {
+                    const res = await fetch("/api/chatbot", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ message: "onayla", team_id: teamId, confirm_action: action, day: day })
+                    });
+                    
+                    messages.removeChild(loadingMsg);
+                    
+                    if (res.ok) {
+                        const data = await res.json();
+                        const botMsg = document.createElement("div");
+                        botMsg.style.cssText = "align-self: flex-start; background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 12px 12px 12px 0; max-width: 85%; word-break: break-word;";
+                        
+                        let formattedReply = data.reply || "";
+                        formattedReply = formattedReply
+                            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                            .replace(/\*(.*?)\*/g, "<em>$1</em>")
+                            .replace(/\n/g, "<br>");
+                            
+                        botMsg.innerHTML = formattedReply;
+                        messages.appendChild(botMsg);
+                        
+                        // Reload components and views dynamically
+                        try {
+                            const uiMod = await import("/static/js/modules/ui.js");
+                            if (uiMod && typeof uiMod.initCalendarHub === "function") {
+                                uiMod.initCalendarHub();
+                            }
+                            if (uiMod && typeof uiMod.loadAndRenderTeams === "function") {
+                                await uiMod.loadAndRenderTeams();
+                            }
+                            if (uiMod && typeof uiMod.renderActivePlayerView === "function") {
+                                uiMod.renderActivePlayerView();
+                            }
+                        } catch(e) {}
+                    } else {
+                        const errorMsg = document.createElement("div");
+                        errorMsg.style.cssText = "align-self: flex-start; background: rgba(255,59,48,0.1); color: #ff3b30; padding: 8px 12px; border-radius: 12px; max-width: 85%;";
+                        errorMsg.innerText = "Bağlantı hatası oluştu.";
+                        messages.appendChild(errorMsg);
+                    }
+                } catch (err) {
+                    if (loadingMsg.parentNode) messages.removeChild(loadingMsg);
+                    const errorMsg = document.createElement("div");
+                    errorMsg.style.cssText = "align-self: flex-start; background: rgba(255,59,48,0.1); color: #ff3b30; padding: 8px 12px; border-radius: 12px; max-width: 85%;";
+                    errorMsg.innerText = "Sistemsel bir hata oluştu.";
+                    messages.appendChild(errorMsg);
+                }
+                messages.scrollTop = messages.scrollHeight;
+            };
+
+            window.selectPlayerFromChat = function(playerId) {
+                import("/static/js/modules/ui.js").then(uiMod => {
+                    if (uiMod && typeof uiMod.switchTab === "function" && typeof uiMod.selectPlayer === "function") {
+                        uiMod.switchTab("nav-teams");
+                        uiMod.selectPlayer(playerId);
+                    }
+                });
+            };
 
             sendBtn.addEventListener("click", sendMessage);
             input.addEventListener("keydown", (e) => {

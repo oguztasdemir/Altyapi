@@ -22,30 +22,16 @@ export async function loadInjuriesHistory(playerId) {
                     textEl.innerHTML = `<strong>${activeInjury.injury_type}</strong><br><span style="font-size:0.75rem; color:var(--text-muted);">${formatDateText(activeInjury.start_date)} tarihinden beri.</span>${activeInjury.notes ? `<br><i style="font-size:0.75rem;">"${activeInjury.notes}"</i>` : ""}`;
                 }
                 if (actionEl) {
-                    actionEl.innerHTML = `<button class="btn-primary" style="padding: 5px 12px; font-size:0.75rem;" onclick="handleResolveInjury('${activeInjury.id}', '${activeInjury.player_id}', '${activeInjury.injury_type}', '${activeInjury.start_date}', '${activeInjury.notes}')">İyileşti Olarak İşaretle</button>`;
-                }
-                
-                const rehabCard = document.getElementById("injury-rehab-card");
-                if (rehabCard) {
-                    rehabCard.style.display = "block";
-                    const badge = document.getElementById("rehab-percent-badge");
-                    if (badge) badge.innerText = `%${activeInjury.rehab_progress || 0}`;
-                    
-                    const slider = document.getElementById("rehab-progress-slider");
-                    if (slider) slider.value = activeInjury.rehab_progress || 0;
-                    
-                    const activeStage = activeInjury.rehab_stage || "Dinlenme";
-                    document.querySelectorAll(".rehab-stage-btn").forEach(btn => {
-                        if (btn.getAttribute("data-stage") === activeStage) {
-                            btn.className = "btn-primary rehab-stage-btn";
-                            btn.style.boxShadow = "0 0 10px var(--accent-color)";
-                        } else {
-                            btn.className = "btn-secondary rehab-stage-btn";
-                            btn.style.boxShadow = "none";
-                        }
+                    actionEl.innerHTML = "";
+                    const btn = document.createElement("button");
+                    btn.className = "btn-primary";
+                    btn.style.padding = "5px 12px";
+                    btn.style.fontSize = "0.75rem";
+                    btn.innerText = "İyileşti Olarak İşaretle";
+                    btn.addEventListener("click", () => {
+                        handleResolveInjury(activeInjury.id, activeInjury.player_id, activeInjury.injury_type, activeInjury.start_date, activeInjury.notes || "");
                     });
-                    
-                    setupRehabListeners(activeInjury.id, activeInjury.player_id);
+                    actionEl.appendChild(btn);
                 }
             } else {
                 if (badgeEl) {
@@ -58,11 +44,7 @@ export async function loadInjuriesHistory(playerId) {
                 if (actionEl) {
                     actionEl.innerHTML = "";
                 }
-                
-                const rehabCard = document.getElementById("injury-rehab-card");
-                if (rehabCard) rehabCard.style.display = "none";
             }
-            
             const resolvedInjuries = data.filter(item => item.end_date);
             const tbody = document.getElementById("injury-list-tbody");
             if (tbody) {

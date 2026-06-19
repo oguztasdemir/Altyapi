@@ -7,7 +7,7 @@ import sys
 # Ensure backend folder is in path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from backend import db, api
+from backend import db, api, backup
 
 PORT = 8080
 
@@ -33,6 +33,12 @@ if __name__ == "__main__":
     print("[+] Veritabanı kontrol ediliyor...")
     db.init_db()
     print("[+] Veritabanı hazır.")
+    
+    # Check and run daily automatic backup on startup
+    try:
+        backup.check_and_create_daily_backup()
+    except Exception as e:
+        print("[-] Otomatik günlük yedekleme başlatılamadı:", e)
     
     # Start server thread
     server_thread = threading.Thread(target=start_server, daemon=True)
