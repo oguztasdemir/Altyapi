@@ -1,4 +1,4 @@
-const CACHE_NAME = 'altyapi-manager-v17';
+const CACHE_NAME = 'altyapi-manager-v19';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -58,7 +58,7 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Intercept requests and serve from cache if offline
+// Intercept requests and serve from network (network-first) or cache
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
 
@@ -94,11 +94,21 @@ self.addEventListener('fetch', (e) => {
         })
     );
   } else {
-    // Cache-first policy for static assets
+    // Network-first policy for static assets to ensure updates propagate immediately in development
     e.respondWith(
-      caches.match(e.request).then((cachedResponse) => {
-        return cachedResponse || fetch(e.request);
-      })
+      fetch(e.request)
+        .then((response) => {
+          if (response.status === 200) {
+            const cacheCopy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(e.request, cacheCopy);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(e.request);
+        })
     );
   }
 });
