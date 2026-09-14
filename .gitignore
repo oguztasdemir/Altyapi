@@ -1,0 +1,18 @@
+# Veritabanı ve Yerel Veriler
+*.sqlite
+*.sqlite3
+*.db
+data/*.sqlite
+data/uploads/
+uploads/
+
+# Ortam & Gizli Anahtarlar
+.env
+*.env
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.vscode/
+.idea/
